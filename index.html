@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<body style='background-color: white'>
+
+<h2>IFRAME</h2>
+
+Click no btn para disparar
+
+<button onclick="enviarEventoMenuParaPrincipal()" type="button">Disparar</button>
+
+<br>
+
+<script type="text/javascript">
+ 
+ function enviarEventoMenuParaPrincipal()
+  {
+    parent.postMessage(
+    {
+      "event": "ga4_event",
+      "event_name": "evento_iframe"
+    },
+      "http://gambicode.com/timeline.html"
+    );
+  }
+
+</script>
+
+
+</body>
+</html>
