@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Home">
+  <meta name="keywords" content="nikolawissenklaus, nw, francisco, chico, home">
+  <meta name="author" content="Nikola W. (F. Lucas)">
+  <title>Home</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    ul {
+      margin: 0px;
+      padding: 0px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+    a:hover {
+      color: red;
+    }
+    #logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-sizing: border-box;
+      height: 70px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: black;
+      z-index: 999;
+      box-shadow: 0 10px 80px 0 blue, 0 6px 20px 0 blue;
+    }
+    #menu {
+      display: flex;
+      list-style: none;
+      gap: 0.5rem;
+    }
+    #menu a {
+      display: block;
+      padding: 0.5rem;
+    }
+    #btn-mobile {
+      color: white;
+      display: none;
+    }
+    @media (max-width: 600px) {
+      #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: rgb(30, 60, 90);
+        transition: 0.6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+      }
+      #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+      }
+      #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid white;
+      }
+      #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+      }
+      #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+      }
+      #hamburger::after,
+      #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+      }
+      #nav.active #hamburger {
+        border-top-color: transparent;
+      }
+      #nav.active #hamburger::before {
+        transform: rotate(135deg);
+      }
+      #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+      }
+    }
+    .content {
+        margin-top: 120px; /* Aumentei a margem superior para dar espaço para o menu fixo */
+        padding: 20px;
+    }
+    .footer {
+      background-color: black;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+
+      border-top: 1px solid white;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+
+      box-shadow: 0 10px 80px 0 blue, 0 6px 20px 0 blue;
+
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    /* ------------------------------------- */
+    #articleScope {
+      width: 100%;
+      min-height: 1500px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      color: white;
+      
+      border: 1px solid white;
+      
+    }
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2em;
+      width: 100%;
+      text-align: center;
+    }
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      text-align: center;
+    }
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-indent: 2em;
+    }
+    /* ------------------------------------- */
+    
+    /* ------------------------------------- */
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a id="logo" href="https://nikolawissenklaus.com">Logo</a>
+    <nav id="nav">
+      <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+        <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li role="menuitem"><a href="https://nikolawissenklaus.com" >Home</a></li>
+        <li role="menuitem"><a href="https://nikolawissenklaus.com/articles.html" >Artigos</a></li>
+        <li role="menuitem"><a href="https://nikolawissenklaus.com/projects.html">Projetos</a></li>
+        <li role="menuitem"><a href="https://nikolawissenklaus.com/about.html">Sobre</a></li>
+        <li role="menuitem"><a href="https://nikolawissenklaus.com/contact.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="content">
+    <article id="articleScope">
+      
+    </article>
+  </main>
+  <script>
+    const btnMobile = document.getElementById('btn-mobile');
+    function toggleMenu(event) {
+      if (event.type === 'touchstart') event.preventDefault();
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+      const active = nav.classList.contains('active');
+      event.currentTarget.setAttribute('aria-expanded', active);
+      if (active) {
+        event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+      } else {
+        event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+      }
+    }
+    btnMobile.addEventListener('click', toggleMenu);
+    btnMobile.addEventListener('touchstart', toggleMenu);
+    
+  </script>
+  <footer class="footer">
+    <p>&copy; 2023 Todos os direitos reservados. Exemplo de Footer</p>
+    <p>Desenvolvido por <a href="#">Nikola Wissenklaus (FLS)</a></p>
+  </footer>
+</body>
+</html>
