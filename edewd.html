@@ -20,6 +20,9 @@
     <meta name="googlebot-news" content="noindex">
     <meta name="googlebot-news" content="nosnippet">
 
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -226,10 +229,14 @@
       figcaption {
           margin-top: 0.5rem;
           font-style: italic;
-          color: #666;
+          color: red;
+      }
+      img {
+        max-width: 800px;
       }
 
     </style>
+    <link rel="preload" as="image" href="waves-of-the-night.png">
 </head>
 <body>
     <header id="header">
@@ -265,7 +272,12 @@
             </p>
           </div>
             <figure>
-                <img src="waves-of-the-night.png" width="100%" alt="Frame with a painting that represents the waves of the night." />
+                <img 
+                  src="waves-of-the-night.webp" 
+                  width="800px" 
+                  height="357px"
+                  alt="Frame with a painting that represents the waves of the night."
+                  loading="lazy">
                 <figcaption>unknown dark waves</figcaption>
             </figure>
             
