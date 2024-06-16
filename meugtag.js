@@ -785,7 +785,6 @@ Vh.last_name="ln",Vh.street="sa",Vh.city="ct",Vh.region="rg",Vh.country="co",Vh.
           Xh[Q.g.Oa] = 1, Xh[Q.g.vc] = 1, Xh[Q.g.Wc] = 1, Xh[Q.g.la] = 1, Xh[Q.g.gg] = 1, Xh[Q.g.bd] = 1, Xh[Q.g.Td] = 1, Xh[Q.g.Ud] = 1, Xh[Q.g.yc] = 1, Xh[Q.g.qg] = 1, Xh[Q.g.Wb] = 1, Xh[Q.g.ug] = 1, Xh[Q.g.Xd] = 1, Xh[Q.g.df] = 1, Xh[Q.g.Xb] = 1, Xh[Q.g.Ib] = 1, Xh[Q.g.xa] = 1, Xh[Q.g.ef] = 1, Xh[Q.g.Yb] = 1, Xh[Q.g.Ka] = 1, Xh[Q.g.Zb] =
              1, Xh[Q.g.jd] = 1, Xh[Q.g.kd] = 1, Xh[Q.g.hf] = 1, Xh[Q.g.ld] = 1, Xh[Q.g.Mb] = 1, Xh[Q.g.ac] = 1, Xh[Q.g.de] = 1, Xh[Q.g.eb] = 1, Xh[Q.g.me] = 1, Xh));
  Object.freeze([Q.g.ya, Q.g.Fa, Q.g.Kb, Q.g.Pa, Q.g.ff, Q.g.Da, Q.g.cf, Q.g.Ai]);
- console.log(Xh);
  
 var Zh={},$h=Object.freeze((Zh[Q.g.ii]=1,Zh[Q.g.ji]=1,Zh[Q.g.ki]=1,Zh[Q.g.li]=1,Zh[Q.g.mi]=1,Zh[Q.g.ni]=1,Zh[Q.g.oi]=1,Zh[Q.g.ri]=1,Zh[Q.g.si]=1,Zh[Q.g.Nc]=1,Zh)),ai={},bi=Object.freeze((ai[Q.g.Wf]=1,ai[Q.g.Xf]=1,ai[Q.g.oc]=1,ai[Q.g.qc]=1,ai[Q.g.Yf]=1,ai[Q.g.Sb]=1,ai[Q.g.rc]=1,ai[Q.g.ib]=1,ai[Q.g.Db]=1,ai[Q.g.jb]=1,ai[Q.g.Ja]=1,ai[Q.g.sc]=1,ai[Q.g.Na]=1,ai[Q.g.Zf]=1,ai)),ci=Object.freeze([Q.g.oa,Q.g.lb,Q.g.vc,Q.g.yc,Q.g.dd,Q.g.Ka,Q.g.ac]),di=Object.freeze([].concat(ra(ci))),ei=Object.freeze([Q.g.Wa,
 Q.g.Ud,Q.g.kd,Q.g.hf,Q.g.Pd]),fi=Object.freeze([].concat(ra(ei))),gi={},hi=(gi[Q.g.T]="1",gi[Q.g.W]="2",gi[Q.g.P]="3",gi[Q.g.Aa]="4",gi),ii={},ji=Object.freeze((ii[Q.g.oa]=1,ii[Q.g.Hd]=1,ii[Q.g.Ea]=1,ii[Q.g.Ub]=1,ii[Q.g.We]=1,ii[Q.g.Id]=1,ii[Q.g.Jd]=1,ii[Q.g.Kd]=1,ii[Q.g.fa]=1,ii[Q.g.Ld]=1,ii[Q.g.ab]=1,ii[Q.g.wa]=1,ii[Q.g.Va]=1,ii[Q.g.Wa]=1,ii[Q.g.cb]=1,ii[Q.g.Oa]=1,ii[Q.g.Ba]=1,ii[Q.g.Md]=1,ii[Q.g.la]=1,ii[Q.g.Ei]=1,ii[Q.g.Rd]=1,ii[Q.g.Sd]=1,ii[Q.g.cf]=1,ii[Q.g.yc]=1,ii[Q.g.Xb]=1,ii[Q.g.Ib]=1,ii[Q.g.Pa]=
@@ -8237,7 +8236,6 @@ function GF() {
 GF.K = "internal.getUserAgent";
 var HF = !1,
     IF = function(a) {
-        console.log("bbbbbbbb", a);
         var b = a.eventName === Q.g.Tb && cm() && lt(a),
             c = a.metadata.is_sgtm_service_worker,
             d = a.metadata.batch_on_navigation,
@@ -8689,7 +8687,6 @@ var tG = {},
         Fi.m && (d.tag_exp = Fi.m);
         var g = a.C[Q.g.sb];
         g && (d.gdid = g);
-        console.log("ccccccccccccc", a);
         e.en = String(a.eventName);
         a.metadata.is_first_visit && (e._fv = a.metadata.is_first_visit_conversion ? 2 : 1);
         a.metadata.is_new_to_site && (e._nsi = 1);
@@ -9286,10 +9283,14 @@ ca.Dm = function(a) {
             O ? O = "" + O : (O = Xo(), S = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
             QF(a, O, S)
         }
+        console.log("dado a", a);
         var R = Math.floor(a.metadata.event_start_timestamp_ms / 1E3),
             oa = void 0;
         a.metadata.is_new_to_site || (oa = aG(a) || C);
+        console.log("dado oa", oa);
+        console.log("dado Q", oa);
         var ka = yb(W(a.o, Q.g.kd, 30));
+        
         ka = Math.min(475, ka);
         ka = Math.max(5, ka);
         var ha = yb(W(a.o, Q.g.hf, 1E4)),
@@ -9299,6 +9300,7 @@ ca.Dm = function(a) {
         a.metadata.join_timer_sec = 0;
         ia && ia.Ah && (a.metadata.join_timer_sec = Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
         var Ja = !1;
+        console.log("dado ia antes", ia);
         ia || (Ja = a.metadata.is_first_visit = !0, ia = {
             sessionId: String(R),
             Lc: 1,
@@ -9307,11 +9309,7 @@ ca.Dm = function(a) {
             Gc: !1,
             we: void 0
         });
-        console.log("eitaaa R", R);
-        console.log("eitaaa ia", ia);
-        console.log("eitaaa ka", ka);
-        console.log("eitaaa Ja", Ja);
-        console.log("eitaaa", "R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);");
+        console.log("dado ia depois", ia);
         R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);
         
         if (Ja) a.metadata.is_session_start = !0, F.Pl(a);
@@ -9641,7 +9639,6 @@ var dH = function(a) {
         var b = function(c) {
             return !!c && c.conversion
         };
-        console.log("aaaaaaaa", a);
         a.metadata.is_conversion = b(nt(a));
         a.metadata.is_first_visit && (a.metadata.is_first_visit_conversion = b(nt(a, "first_visit")));
         a.metadata.is_session_start && (a.metadata.is_session_start_conversion = b(nt(a, "session_start")))
