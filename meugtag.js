@@ -9283,19 +9283,15 @@ ca.Dm = function(a) {
             O ? O = "" + O : (O = Xo(), S = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
             QF(a, O, S)
         }
-        console.log("dado a", a);
         var R = Math.floor(a.metadata.event_start_timestamp_ms / 1E3),
             oa = void 0;
         a.metadata.is_new_to_site || (oa = aG(a) || C);
-        console.log("dado oa", oa);
-        console.log("dado Q", oa);
      
         var ka = yb(W(a.o, Q.g.kd, 30));
-        console.log("xxxxx", ka);
+        console.log("xxxxx", a.o, Q.g.kd, 30);
         ka = Math.min(475, ka);
-        console.log("yyyyy", ka);
         ka = Math.max(5, ka);
-        console.log("zzzzzz", ka);
+     
         var ha = yb(W(a.o, Q.g.hf, 1E4)),
             ia = VF(oa);
         a.metadata.is_first_visit = !1;
