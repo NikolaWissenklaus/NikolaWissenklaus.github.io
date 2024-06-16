@@ -9307,10 +9307,10 @@ ca.Dm = function(a) {
             Gc: !1,
             we: void 0
         });
-        console.log("eitaaa", R);
-        console.log("eitaaa", ia);
-        console.log("eitaaa", ka);
-        console.log("eitaaa", Ja);
+        console.log("eitaaa R", R);
+        console.log("eitaaa ia", ia);
+        console.log("eitaaa ka", ka);
+        console.log("eitaaa Ja", Ja);
         console.log("eitaaa", "R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);");
         R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);
         
