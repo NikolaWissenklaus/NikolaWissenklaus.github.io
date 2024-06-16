@@ -8994,6 +8994,7 @@ KG.prototype.J = function(a, b) {
     Mv(a.o.eventId, a.eventName)
 };
 KG.prototype.add = function(a) {
+    console.log("sera?", a);
     a.metadata.euid_mode_enabled && !HF ? this.aa(a) : this.J(a)
 };
 KG.prototype.flush = function() {
@@ -9295,12 +9296,14 @@ ca.Dm = function(a) {
      
         var ha = yb(W(a.o, Q.g.hf, 1E4)),
             ia = VF(oa);
+        console.log("sbsajkka ha", ha);
+        console.log("sbsajkka ss antes", a.metadata.is_session_start);
         a.metadata.is_first_visit = !1;
         a.metadata.is_session_start = !1;
         a.metadata.join_timer_sec = 0;
+        console.log("sbsajkka ss depois", a.metadata.is_session_start);
         ia && ia.Ah && (a.metadata.join_timer_sec = Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
         var Ja = !1;
-        console.log("dado ia antes", ia);
         ia || (Ja = a.metadata.is_first_visit = !0, ia = {
             sessionId: String(R),
             Lc: 1,
@@ -9309,9 +9312,12 @@ ca.Dm = function(a) {
             Gc: !1,
             we: void 0
         });
-        console.log("dado ia depois", ia);
+
         R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);
-        
+        console.log("sbsajkka Ja", Ja);
+        console.log("sbsajkka session_start", a.metadata.is_session_star);
+        console.log("sbsajkka F.Hl()", F.Hl());
+        console.log("sbsajkka ia", ia);
         if (Ja) a.metadata.is_session_start = !0, F.Pl(a);
         else if (F.Hl() > ha || a.eventName == Q.g.Tb) ia.zd = !0;
         a.metadata.euid_mode_enabled ? W(a.o, Q.g.Da) ? ia.Gc = !0 :
