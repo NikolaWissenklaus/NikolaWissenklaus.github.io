@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="google-site-verification" content="...">-->
+    <meta name="author" content="Nikola Wissenklaus">
+    <meta name="description" content="Let's try to understand how sessions actually work on our website and what cookies do on the client side.">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="public, max-age=7884000">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="theme-color" content="#000000">
+    
+    <title>Post de Blog</title>
+
+    <meta name='googlebot' content='index, follow'>
+    <meta name='googlebot' content='max-image-preview:large'>
+    <meta name='googlebot' content='max-snippet:-1'>
+    <meta name="googlebot-news" content="noindex">
+    <meta name="googlebot-news" content="nosnippet">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Nikola Wissenklaus"
+        "alternateName": ["NW", "NWK", "Nikola Wissen"],
+        "url" : "https://nikolawissenklaus.top/",
+        "headline": "GA4 Backend - How sessions actually work",
+        "description": "Let's try to understand how sessions actually work on our website and what cookies do on the client side.",
+        "datePublished": "2024-06-15T18:46:48-03:00",
+        "dateModified": "2024-06-15T18:46:48-03:00",
+        "author": [{
+            "@type": "Person",
+            "name": "Nikola Wissenklaus",
+            "jobTitle": "Analytics Engineer",
+            "url": "https://www.linkedin.com/in/francisco-lucas-231b02169/"
+        }]
+      }
+    </script>
+
+    <link rel="icon" href="favicon.png">
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        a {
+        color: white;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      a:hover {
+        color: red;
+      }
+      #logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        height: 70px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: black;
+        z-index: 999;
+        box-shadow: 0 10px 80px 0 blue, 0 6px 20px 0 blue;
+      }
+      #menu {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+      }
+      #menu a {
+        display: block;
+        padding: 0.5rem;
+      }
+      #btn-mobile {
+        color: white;
+        display: none;
+      }
+      @media (max-width: 600px) {
+        #menu {
+          display: block;
+          position: absolute;
+          width: 100%;
+          top: 70px;
+          right: 0px;
+          background: rgb(30, 60, 90);
+          transition: 0.6s;
+          z-index: 1000;
+          height: 0px;
+          visibility: hidden;
+          overflow-y: hidden;
+        }
+        #nav.active #menu {
+          height: calc(100vh - 70px);
+          visibility: visible;
+          overflow-y: auto;
+        }
+        #menu a {
+          padding: 1rem 0;
+          margin: 0 1rem;
+          border-bottom: 2px solid white;
+        }
+        #btn-mobile {
+          display: flex;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          border: none;
+          background: none;
+          cursor: pointer;
+          gap: 0.5rem;
+        }
+        #hamburger {
+          border-top: 2px solid;
+          width: 20px;
+        }
+        #hamburger::after,
+        #hamburger::before {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 2px;
+          background: currentColor;
+          margin-top: 5px;
+          transition: 0.3s;
+          position: relative;
+        }
+        #nav.active #hamburger {
+          border-top-color: transparent;
+        }
+        #nav.active #hamburger::before {
+          transform: rotate(135deg);
+        }
+        #nav.active #hamburger::after {
+          transform: rotate(-135deg);
+          top: -7px;
+        }
+      }
+
+      .footer {
+        background-color: black;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+
+        border-top: 1px solid white;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+
+        box-shadow: 0 10px 80px 0 blue, 0 6px 20px 0 blue;
+
+      }
+      .footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+     .content {
+          margin: 2rem auto;
+          margin-top: 120px; /* Aumentei a margem superior para dar espaço para o menu fixo */
+          padding: 1rem;
+          max-width: 800px;
+      }
+
+        article {
+            margin: 0;
+        }
+    #articleScope {
+        width: 100%;
+        min-height: 1500px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        
+        /*border: 1px solid white;*/
+        
+    }
+    h1 {
+        font-size: 2em;
+        color: rgb(81, 81, 244);
+        width: 100%;
+        text-align: center;
+        margin: 0;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+      }
+      p {
+        font-size: 16px;
+        text-indent: 2em;
+      }
+      #publicationData p {
+        font-size: 10px;
+      }
+      article ul {
+          margin: 1rem 0;
+          padding-left: 1.5rem;
+      }
+      article li {
+          margin: 0.5rem 0;
+      }
+      figure {
+          margin: 2rem 0;
+          text-align: center;
+      }
+
+      figcaption {
+          margin-top: 0.5rem;
+          font-style: italic;
+          color: #666;
+      }
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <a id="logo" href="https://nikolawissenklaus.com">Logo</a>
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li role="menuitem"><a href="https://nikolawissenklaus.com" >Home</a></li>
+            <li role="menuitem"><a href="https://nikolawissenklaus.com/articles.html" >Artigos</a></li>
+            <li role="menuitem"><a href="https://nikolawissenklaus.com/projects.html">Projetos</a></li>
+            <li role="menuitem"><a href="https://nikolawissenklaus.com/about.html">Sobre</a></li>
+            <li role="menuitem"><a href="https://nikolawissenklaus.com/contact.html">Contato</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <article id="articleScope">
+          <h1>GA4 Backend - How sessions actually work</h1>
+          <p>
+            <h2>
+              Let's try to understand how sessions actually work on our website and what cookies do on the client side.
+            </h2>
+          </p>
+          <hr>
+          <div id="publicationData">
+            <p data-nosnippet>
+              <b>By: </b> <i style="color: chartreuse;">Nikola Wissenklaus</i>
+            </p>
+            <p>
+              Posted Tuesday, July 20, 2021
+            </p>
+          </div>
+            <figure>
+                <img src="waves-of-the-night.png" width="100%" alt="Frame with a painting that represents the waves of the night." />
+                <figcaption>unknown dark waves</figcaption>
+            </figure>
+            
+            <p>Continuando o texto após a imagem, aenean vitae sem felis. Vestibulum non est erat. Maecenas sit amet justo efficitur, elementum urna in, tincidunt nunc. Sed condimentum, libero at facilisis luctus, urna felis feugiat magna, a consectetur risus turpis sed felis.</p>
+            
+            <ul>
+                <li>Item 1: Descrição do primeiro item.</li>
+                <li>Item 2: Descrição do segundo item.</li>
+                <li>Item 3: Descrição do terceiro item.</li>
+            </ul>
+
+            <p>Nam vehicula dui non urna gravida, quis vehicula magna facilisis. Vivamus scelerisque nec augue nec pulvinar. Donec tristique, dui non facilisis efficitur, leo dolor pulvinar erat, eget vehicula augue ipsum eget arcu. Aenean nec semper felis, in tincidunt nunc.</p>
+        </article>
+    </main>
+    <script>
+        const btnMobile = document.getElementById('btn-mobile');
+        function toggleMenu(event) {
+          if (event.type === 'touchstart') event.preventDefault();
+          const nav = document.getElementById('nav');
+          nav.classList.toggle('active');
+          const active = nav.classList.contains('active');
+          event.currentTarget.setAttribute('aria-expanded', active);
+          if (active) {
+            event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+          } else {
+            event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+          }
+        }
+        btnMobile.addEventListener('click', toggleMenu);
+        btnMobile.addEventListener('touchstart', toggleMenu);
+        
+    </script>
+    <footer class="footer">
+        <p>&copy; 2023 Todos os direitos reservados. Exemplo de Footer</p>
+        <p>Desenvolvido por <a href="#">Nikola Wissenklaus (FLS)</a></p>
+    </footer>
+</body>
+</html>
