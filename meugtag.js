@@ -8951,6 +8951,7 @@ var KG =
         this.F = -1
     };
 KG.prototype.J = function(a, b) {
+    console.log("vamola",a);
     var c = this,
         d = new vG(a, this.R, b),
         e = IF(a);
