@@ -9301,13 +9301,9 @@ ca.Dm = function(a) {
         a.metadata.is_session_start = !1;
         a.metadata.join_timer_sec = 0;
      
-        console.log("-- ia", a.metadata.join_timer_sec);
-        console.log("-- ia", ia.Ah);
+        console.log("-- ia", ia);
+        console.log("-- R", R);      
         console.log("-- a.metadata.join_timer_sec", a.metadata.join_timer_sec);
-        console.log("-- R", R);
-        console.log("-- ia.Je",ia.Je);
-        console.log("-- conta",Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
-        
         
         ia && ia.Ah && (a.metadata.join_timer_sec = Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
         var Ja = !1;
