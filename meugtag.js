@@ -9301,11 +9301,11 @@ ca.Dm = function(a) {
         a.metadata.is_session_start = !1;
         a.metadata.join_timer_sec = 0;
      
-        console.log("-- ia", ia);
-        console.log("-- R", R);      
-        console.log("-- a.metadata.join_timer_sec", a.metadata.join_timer_sec);
+        console.log("-- ia 1", ia);
         
         ia && ia.Ah && (a.metadata.join_timer_sec = Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
+        
+        console.log("-- ia 2", ia);
         var Ja = !1;
         ia || (Ja = a.metadata.is_first_visit = !0, ia = {
             sessionId: String(R),
@@ -9316,16 +9316,15 @@ ca.Dm = function(a) {
             we: void 0
         });
 
+        console.log("-- ia 3", ia);
+
         R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);
-        console.log("sbsajkka Ja", Ja);
-        console.log("sbsajkka session_start", a.metadata.is_session_star);
-        console.log("sbsajkka F.Hl()", F.Hl());
-        console.log("sbsajkka ia", ia);
+        
+        console.log("-- ia 4", ia);
+        
         if (Ja) a.metadata.is_session_start = !0, F.Pl(a);
         else if (F.Hl() > ha || a.eventName == Q.g.Tb) ia.zd = !0;
-        if (a.eventName == "errou") {
-             throw new Error("Valor inválido para a variável abacate");
-         }
+        
         a.metadata.euid_mode_enabled ? W(a.o, Q.g.Da) ? ia.Gc = !0 :
             (ia.Gc && !U(11) && (ia.we = void 0), ia.Gc = !1) : ia.Gc = !1;
         var Ba = ia.we;
