@@ -8951,7 +8951,6 @@ var KG =
         this.F = -1
     };
 KG.prototype.J = function(a, b) {
-    console.log("vamola",a);
     var c = this,
         d = new vG(a, this.R, b),
         e = IF(a);
@@ -8994,7 +8993,6 @@ KG.prototype.J = function(a, b) {
     Mv(a.o.eventId, a.eventName)
 };
 KG.prototype.add = function(a) {
-    console.log("sera?", a);
     a.metadata.euid_mode_enabled && !HF ? this.aa(a) : this.J(a)
 };
 KG.prototype.flush = function() {
@@ -9045,10 +9043,7 @@ var OG = function(a, b, c) {
 var QG = window,
     RG = document,
     SG = function(a) {
-        console.log("<> dentro SG QG",QG)
         var b = QG._gaUserPrefs;
-        console.log("<> dentro SG b",b)
-        console.log("<> dentro SG RG",RG)
         if (b && b.ioo && b.ioo() || RG.documentElement.hasAttribute("data-google-analytics-opt-out") || a && QG["ga-disable-" + a] === !0) return !0;
         try {
             var c = QG.external;
@@ -9127,9 +9122,11 @@ ca.Cm = function(a, b, c) {
         else {
             a !== Q.g.da && a !== Q.g.Ta && UG(a) && P(58);
             cH(c.m);
+            console.log("<--> e,a,c", e, a, c);
             var f = new ir(e, a, c);
             f.metadata.event_start_timestamp_ms = b;
             var g = [Q.g.W];
+            console.log("<--> f", f);
             if (jr(f, Q.g.Wb, W(f.o, Q.g.Wb)) || lt(f)) g.push(Q.g.T), g.push(Q.g.P);
             $t(function() {
                 qm(function() {
@@ -9295,7 +9292,6 @@ ca.Dm = function(a) {
         a.metadata.is_new_to_site || (oa = aG(a) || C);
      
         var ka = yb(W(a.o, Q.g.kd, 30));
-        console.log("xxxxx", a.o, Q.g.kd, 30);
         ka = Math.min(475, ka);
         ka = Math.max(5, ka);
      
