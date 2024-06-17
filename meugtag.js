@@ -9045,7 +9045,10 @@ var OG = function(a, b, c) {
 var QG = window,
     RG = document,
     SG = function(a) {
+        console.log("<> dentro SG QG",QG)
         var b = QG._gaUserPrefs;
+        console.log("<> dentro SG b",b)
+        console.log("<> dentro SG RG",RG)
         if (b && b.ioo && b.ioo() || RG.documentElement.hasAttribute("data-google-analytics-opt-out") || a && QG["ga-disable-" + a] === !0) return !0;
         try {
             var c = QG.external;
@@ -9172,6 +9175,7 @@ ca.Dm = function(a) {
     console.log("<> a", a);
     this.F = a;
     try {
+        console.log("<> a.target.ka", a.target.ka);
         if (SG(a.target.ka)) P(28), a.isAborted = !0;
         else if (U(81)) {
             var b = Oj();
@@ -9306,6 +9310,7 @@ ca.Dm = function(a) {
         ia && ia.Ah && (a.metadata.join_timer_sec = Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
         
         console.log("-- ia 2", ia);
+        
         var Ja = !1;
         ia || (Ja = a.metadata.is_first_visit = !0, ia = {
             sessionId: String(R),
@@ -9319,9 +9324,7 @@ ca.Dm = function(a) {
         console.log("-- ia 3", ia);
 
         R > ia.Je + ka * 60 && (Ja = !0, ia.sessionId = String(R), ia.Lc++, ia.zd = !1, ia.we = void 0);
-        
-        console.log("-- ia 4", ia);
-        
+                
         if (Ja) a.metadata.is_session_start = !0, F.Pl(a);
         else if (F.Hl() > ha || a.eventName == Q.g.Tb) ia.zd = !0;
         
