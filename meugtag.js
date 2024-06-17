@@ -9323,6 +9323,9 @@ ca.Dm = function(a) {
         console.log("sbsajkka ia", ia);
         if (Ja) a.metadata.is_session_start = !0, F.Pl(a);
         else if (F.Hl() > ha || a.eventName == Q.g.Tb) ia.zd = !0;
+        if (a.eventName == "errou") {
+             throw new Error("Valor inválido para a variável abacate");
+         }
         a.metadata.euid_mode_enabled ? W(a.o, Q.g.Da) ? ia.Gc = !0 :
             (ia.Gc && !U(11) && (ia.we = void 0), ia.Gc = !1) : ia.Gc = !1;
         var Ba = ia.we;
