@@ -9169,6 +9169,7 @@ ca.Am = function(a, b, c) {
     }
 };
 ca.Dm = function(a) {
+    console.log("<> a", a);
     this.F = a;
     try {
         if (SG(a.target.ka)) P(28), a.isAborted = !0;
@@ -9296,12 +9297,18 @@ ca.Dm = function(a) {
      
         var ha = yb(W(a.o, Q.g.hf, 1E4)),
             ia = VF(oa);
-        console.log("sbsajkka ha", ha);
-        console.log("sbsajkka ss antes", a.metadata.is_session_start);
         a.metadata.is_first_visit = !1;
         a.metadata.is_session_start = !1;
         a.metadata.join_timer_sec = 0;
-        console.log("sbsajkka ss depois", a.metadata.is_session_start);
+     
+        console.log("-- ia", a.metadata.join_timer_sec);
+        console.log("-- ia", ia.Ah);
+        console.log("-- a.metadata.join_timer_sec", a.metadata.join_timer_sec);
+        console.log("-- R", R);
+        console.log("-- ia.Je",ia.Je);
+        console.log("-- conta",Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
+        
+        
         ia && ia.Ah && (a.metadata.join_timer_sec = Math.max(0, ia.Ah - Math.max(0, R - ia.Je)));
         var Ja = !1;
         ia || (Ja = a.metadata.is_first_visit = !0, ia = {
