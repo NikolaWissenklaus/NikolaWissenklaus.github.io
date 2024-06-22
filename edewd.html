@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <meta charset="UTF-8">
     <!--<meta name="google-site-verification" content="...">-->
     <meta name="author" content="Nikola Wissenklaus">
     <meta name="description" content="Let's try to understand how sessions actually work on our website and what cookies do on the client side.">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="cache-control" content="public, max-age=7884000">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no">
-    
     <meta name="theme-color" content="#000000">
-    
     <title>Post de Blog</title>
-
     <meta name='googlebot' content='index, follow'>
     <meta name='googlebot' content='max-image-preview:large'>
     <meta name='googlebot' content='max-snippet:-1'>
     <meta name="googlebot-news" content="noindex">
     <meta name="googlebot-news" content="nosnippet">
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -39,20 +34,17 @@
         }]
       }
     </script>
-
     <link rel="icon" href="favicon.png">
     <link rel="preload" as="image" href="waves-of-the-night.webp">
-
-
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-        }
-        a {
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+      a {
         color: white;
         text-decoration: none;
         font-family: sans-serif;
@@ -151,21 +143,17 @@
           top: -7px;
         }
       }
-
       .footer {
         background-color: black;
         color: #fff;
         padding: 20px;
         text-align: center;
         font-size: 14px;
-
         border-top: 1px solid white;
         border-bottom: none;
         border-left: none;
         border-right: none;
-
         box-shadow: 0 10px 80px 0 blue, 0 6px 20px 0 blue;
-
       }
       .footer a {
         color: #fff;
@@ -174,26 +162,23 @@
       .footer a:hover {
         text-decoration: underline;
       }
-     .content {
+      .content {
           margin: 2rem auto;
           margin-top: 120px; /* Aumentei a margem superior para dar espaço para o menu fixo */
           padding: 1rem;
           max-width: 800px;
       }
-
-        article {
-            margin: 0;
-        }
-    #articleScope {
+      article {
+        margin: 0;
+      }
+      #articleScope {
         width: 100%;
         min-height: 1500px;
         margin-bottom: 20px;
         flex-wrap: wrap;
-        
         /*border: 1px solid white;*/
-        
-    }
-    h1 {
+      }
+      h1 {
         width: 100%;
         text-align: center;
         font-size: 40px;
@@ -208,7 +193,6 @@
         font-size: 24px;
         font-weight: 500;
         font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
       }
       p {
         font-size: 18px;
@@ -232,7 +216,6 @@
           margin: 2rem 0;
           text-align: center;
       }
-
       figcaption {
           margin-top: 0.5rem;
           font-style: italic;
@@ -241,100 +224,89 @@
       img {
         max-width: 800px;
       }
-
     </style>
-    
-    
-</head>
-<body>
+  </head>
+  <body>
     <header id="header">
-        <a id="logo" href="https://nikolawissenklaus.com">Logo</a>
-        <nav id="nav">
-          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
-            <span id="hamburger"></span>
-          </button>
-          <ul id="menu" role="menu">
-            <li role="menuitem"><a href="https://nikolawissenklaus.com" >Home</a></li>
-            <li role="menuitem"><a href="https://nikolawissenklaus.com/articles.html" >Artigos</a></li>
-            <li role="menuitem"><a href="https://nikolawissenklaus.com/projects.html">Projetos</a></li>
-            <li role="menuitem"><a href="https://nikolawissenklaus.com/about.html">Sobre</a></li>
-            <li role="menuitem"><a href="https://nikolawissenklaus.com/contact.html">Contato</a></li>
-          </ul>
-        </nav>
+      <a id="logo" href="https://nikolawissenklaus.com">Logo</a>
+      <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+          <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+          <li role="menuitem"><a href="https://nikolawissenklaus.com">Home</a></li>
+          <li role="menuitem"><a href="https://nikolawissenklaus.com/articles.html">Artigos</a></li>
+          <li role="menuitem"><a href="https://nikolawissenklaus.com/projects.html">Projetos</a></li>
+          <li role="menuitem"><a href="https://nikolawissenklaus.com/about.html">Sobre</a></li>
+          <li role="menuitem"><a href="https://nikolawissenklaus.com/contact.html">Contato</a></li>
+        </ul>
+      </nav>
     </header>
     <main class="content">
-        <article id="articleScope">
-          <h1>GA4 Backend - How sessions actually work</h1>
-          <p>
-            <h2>
-              Let's try to understand how sessions actually work on our website and what cookies do on the client side.
-            </h2>
+      <article id="articleScope">
+        <h1>GA4 Backend - How sessions actually work</h1>
+        <p>
+          <h2>
+            Let's try to understand how sessions actually work on our website and what cookies do on the client side.
+          </h2>
+        </p>
+        <hr>
+        <div id="publicationData">
+          <p data-nosnippet>
+            <b>By: </b> <i style="color: chartreuse;">Nikola Wissenklaus</i>
           </p>
-          <hr>
-          <div id="publicationData">
-            <p data-nosnippet>
-              <b>By: </b> <i style="color: chartreuse;">Nikola Wissenklaus</i>
-            </p>
-            <p>
-              Posted Tuesday, July 20, 2021
-            </p>
-          </div>
-            <figure>
-                <img 
-                  src="waves-of-the-night.webp" 
-                  width="800px" 
-                  height="357px"
-                  alt="Frame with a painting that represents the waves of the night."
-                >
-                <figcaption>unknown dark waves</figcaption>
-            </figure>
-            
-            <p>Continuando o texto após a imagem, aenean vitae sem felis. Vestibulum non est erat. Maecenas sit amet justo efficitur, elementum urna in, tincidunt nunc. Sed condimentum, libero at facilisis luctus, urna felis feugiat magna, a consectetur risus turpis sed felis.</p>
-            
-            <ul>
-                <li>Item 1: Descrição do primeiro item.</li>
-                <li>Item 2: Descrição do segundo item.</li>
-                <li>Item 3: Descrição do terceiro item.</li>
-            </ul>
-
-            <p>Nam vehicula dui non urna gravida, quis vehicula magna facilisis. Vivamus scelerisque nec augue nec pulvinar. Donec tristique, dui non facilisis efficitur, leo dolor pulvinar erat, eget vehicula augue ipsum eget arcu. Aenean nec semper felis, in tincidunt nunc.</p>
-
-            <figure>
-              <img 
-                src="waves-of-the-night.webp" 
-                width="800px" 
-                height="357px"
-                alt="Frame with a painting that represents the waves of the night."
-                loading="lazy">
-              <figcaption>unknown dark waves</figcaption>
-          </figure>
-        </article>
+          <p>
+            Posted Tuesday, July 20, 2021
+          </p>
+        </div>
+        <figure>
+          <img 
+            src="waves-of-the-night.webp" 
+            width="800px" 
+            height="357px"
+            alt="Frame with a painting that represents the waves of the night."
+          >
+          <figcaption>unknown dark waves</figcaption>
+        </figure>
+        <p>Continuando o texto após a imagem, aenean vitae sem felis. Vestibulum non est erat. Maecenas sit amet justo efficitur, elementum urna in, tincidunt nunc. Sed condimentum, libero at facilisis luctus, urna felis feugiat magna, a consectetur risus turpis sed felis.</p>
+        <ul>
+          <li>Item 1: Descrição do primeiro item.</li>
+          <li>Item 2: Descrição do segundo item.</li>
+          <li>Item 3: Descrição do terceiro item.</li>
+        </ul>
+        <p>Nam vehicula dui non urna gravida, quis vehicula magna facilisis. Vivamus scelerisque nec augue nec pulvinar. Donec tristique, dui non facilisis efficitur, leo dolor pulvinar erat, eget vehicula augue ipsum eget arcu. Aenean nec semper felis, in tincidunt nunc.</p>
+        <figure>
+          <img 
+            src="waves-of-the-night.webp" 
+            width="800px" 
+            height="357px"
+            alt="Frame with a painting that represents the waves of the night."
+            loading="lazy">
+          <figcaption>unknown dark waves</figcaption>
+        </figure>
+      </article>
     </main>
     <script async>
-        
-
-    document.addEventListener('DOMContentLoaded', () => {
-       const btnMobile = document.getElementById('btn-mobile');
-        function toggleMenu(event) {
-          if (event.type === 'touchstart') event.preventDefault();
-          const nav = document.getElementById('nav');
-          nav.classList.toggle('active');
-          const active = nav.classList.contains('active');
-          event.currentTarget.setAttribute('aria-expanded', active);
-          if (active) {
-            event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
-          } else {
-            event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
-          }
+      const btnMobile = document.getElementById('btn-mobile');
+      function toggleMenu(event) {
+        if (event.type === 'touchstart') event.preventDefault();
+        const nav = document.getElementById('nav');
+        nav.classList.toggle('active');
+        const active = nav.classList.contains('active');
+        event.currentTarget.setAttribute('aria-expanded', active);
+        if (active) {
+          event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+        } else {
+          event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
         }
-        btnMobile.addEventListener('click', toggleMenu);
-        btnMobile.addEventListener('touchstart', toggleMenu);
-    });
-        
+      }
+      btnMobile.addEventListener('click', toggleMenu);
+      btnMobile.addEventListener('touchstart', toggleMenu);
+      
     </script>
     <footer class="footer">
-        <p>&copy; 2023 Todos os direitos reservados. Exemplo de Footer</p>
-        <p>Desenvolvido por <a href="#">Nikola Wissenklaus (FLS)</a></p>
+      <p>&copy; 2023 Todos os direitos reservados. Exemplo de Footer</p>
+      <p>Desenvolvido por <a href="#">Nikola Wissenklaus (FLS)</a></p>
     </footer>
-</body>
+  </body>
 </html>
