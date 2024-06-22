@@ -41,6 +41,7 @@
     </script>
 
     <link rel="icon" href="favicon.png">
+    <link rel="preload" as="image" href="waves-of-the-night.webp">
 
 
     <style>
@@ -193,23 +194,32 @@
         
     }
     h1 {
-        font-size: 2em;
-        color: rgb(81, 81, 244);
         width: 100%;
         text-align: center;
+        font-size: 40px;
+        font-weight: 800;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(81, 81, 244);
         margin: 0;
       }
       h2 {
         width: 100%;
         text-align: center;
-        font-size: 1em;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
       }
       p {
+        font-size: 18px;
+        text-indent: 2em;
+        line-height: 1.6;
+        margin: 30px 0;
+      }
+      #publicationData > p {
         font-size: 16px;
         text-indent: 2em;
-      }
-      #publicationData p {
-        font-size: 10px;
+        margin: 0;
       }
       article ul {
           margin: 1rem 0;
@@ -233,7 +243,8 @@
       }
 
     </style>
-    <link rel="preload" as="image" href="waves-of-the-night.webp">
+    
+    
 </head>
 <body>
     <header id="header">
@@ -274,7 +285,7 @@
                   width="800px" 
                   height="357px"
                   alt="Frame with a painting that represents the waves of the night."
-                  >
+                >
                 <figcaption>unknown dark waves</figcaption>
             </figure>
             
@@ -287,6 +298,16 @@
             </ul>
 
             <p>Nam vehicula dui non urna gravida, quis vehicula magna facilisis. Vivamus scelerisque nec augue nec pulvinar. Donec tristique, dui non facilisis efficitur, leo dolor pulvinar erat, eget vehicula augue ipsum eget arcu. Aenean nec semper felis, in tincidunt nunc.</p>
+
+            <figure>
+              <img 
+                src="waves-of-the-night.webp" 
+                width="800px" 
+                height="357px"
+                alt="Frame with a painting that represents the waves of the night."
+                loading="lazy">
+              <figcaption>unknown dark waves</figcaption>
+          </figure>
         </article>
     </main>
     <script async>
@@ -304,7 +325,7 @@
           }
         }
         btnMobile.addEventListener('click', toggleMenu);
-        btnMobile.addEventListener('touchstart', toggleMenu, {passive: true});
+        btnMobile.addEventListener('touchstart', toggleMenu);
         
     </script>
     <footer class="footer">
