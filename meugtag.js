@@ -1,5 +1,6 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("pronto")
+console.log("pronto");
+
 (function() {
 
     var data = {
