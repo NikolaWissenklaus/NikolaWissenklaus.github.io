@@ -13225,7 +13225,7 @@ console.log("amjanjamla");
     }
     SF.F = "internal.getUserAgentClientHints";
     var UF = function(a) {
-            console.log("13228 a antes:",a);
+            
             var b = a.eventName === O.g.ac && $k() && Ot(a),
                 c = a.metadata.is_sgtm_service_worker,
                 d = a.metadata.batch_on_navigation,
@@ -13234,7 +13234,6 @@ console.log("amjanjamla");
                 g = a.metadata.create_dc_join,
                 k = a.metadata.create_google_join,
                 m = a.metadata.euid_mode_enabled && !!Nt(a);
-                console.log("13228 a depois:",a);
             return !(!Ec() && fc.sendBeacon === void 0 || e || m || f || g || k || b || c || !d && TF)
         },
         TF = !1;
@@ -14066,10 +14065,11 @@ console.log("amjanjamla");
         this.C = new Zf
     };
     eH.prototype.j = function(a, b) {
-        
+        console.log("13228 a antes:",a);
         var c = this,
             d = new NG(a, this.P, b),
             e = UF(a);
+        console.log("13228 a depois:",ee);
         e && this.C.P(d) || this.flush();
         if (e && this.C.add(d)) {
             if (this.H < 0) {
