@@ -14065,11 +14065,9 @@ console.log("amjanjamla");
         this.C = new Zf
     };
     eH.prototype.j = function(a, b) {
-        console.log("chicao antes:",a);
         var c = this,
             d = new NG(a, this.P, b),
             e = UF(a);
-        console.log("chicao depois:",e);
         e && this.C.P(d) || this.flush();
         if (e && this.C.add(d)) {
             if (this.H < 0) {
@@ -14331,6 +14329,7 @@ console.log("amjanjamla");
                 u = hG(p);
             a.metadata.is_first_visit = !1;
             a.metadata.is_session_start = !1;
+            console.log("14334 ss: ",a.metadata.is_session_start);
             a.metadata.join_timer_sec = 0;
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
             var v = !1;
@@ -14343,6 +14342,7 @@ console.log("amjanjamla");
                 Dd: void 0
             });
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
+            console.log("14347 v: ",v);
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Md = !0;
             a.metadata.euid_mode_enabled ? U(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !Q(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
