@@ -14363,6 +14363,10 @@ console.log("amjanjamla");
             console.log("r",r);
             console.log("a.eventName",a.eventName);
             console.log("O.g.ac",O.g.ac);
+            if(a.eventName == "troca"){
+                v = 1;
+            }
+
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Md = !0;
             a.metadata.euid_mode_enabled ? U(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !Q(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
