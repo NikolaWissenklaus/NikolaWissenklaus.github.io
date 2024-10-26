@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("pronto");
+console.log("amjanjamla");
 
 (function() {
 
@@ -6551,8 +6551,6 @@ console.log("pronto");
     }
 
     function gm(a, b, c) {
-        console.log("<6554: a, b, c>:",a, b, c);
-        console.log("<6554: Qj>:",Qj);
         if (Qj && a === "config") {
             var d, e = (d = Tl(b)) == null ? void 0 : d.ids;
             if (!(e && e.length > 1)) {
@@ -6894,7 +6892,6 @@ console.log("pronto");
             return a.destinations[c] = a.destinations[c] || new an
         },
         dn = function(a, b, c, d) {
-            console.log("<6897: a, b, c, d>: ",a, b, c, d);
             if (d.j) {
                 var e = Zm(a, d.j),
                     f = e.aa;
@@ -11063,11 +11060,21 @@ console.log("pronto");
             jx(this, a, b)
         },
         lx = function(a, b, c, d) {
+            console.log("11068 a-",a);
+            console.log("11068 b-",b);
+            console.log("11068 c-",c);
+            console.log("11068 d-",d);
             if (Ji.hasOwnProperty(b) || b === "__zone") return -1;
             var e = {};
             Rc(d) && (e = Sc(d, e));
             e.id = c;
             e.status = "timeout";
+            console.log("------------------------");
+            console.log("11068 a-",a);
+            console.log("11068 b-",b);
+            console.log("11068 c-",c);
+            console.log("11068 d-",d);
+            console.log("11068 e-",e);
             return a.eventData.tags.push(e) - 1
         },
         mx = function(a, b, c, d) {
@@ -14301,12 +14308,6 @@ console.log("pronto");
             }
         },
         CH = function(a, b, c, d, e) {
-            console.log();
-            console.log("<14305: a>: ",a);
-            console.log("<14305: b>: ",b);
-            console.log("<14305: c>: ",c);
-            console.log("<14305: d>: ",d);
-            console.log("<14305: e>: ",e);
 
             var f = U(a.m, O.g.tb);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? cG(a, f, 1) : (S(127), a.isAborted = !0);
