@@ -6551,6 +6551,8 @@ console.log("pronto");
     }
 
     function gm(a, b, c) {
+        console.log("6554: a, b, c",a, b, c);
+        console.log("6554: Qj",Qj);
         if (Qj && a === "config") {
             var d, e = (d = Tl(b)) == null ? void 0 : d.ids;
             if (!(e && e.length > 1)) {
