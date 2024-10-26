@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("quaqua");
+console.log("amjanjamla");
 
 (function() {
 
@@ -14354,9 +14354,15 @@ console.log("quaqua");
             console.log();
             var dbbkbfkds = n > u.cf + q * 60;
             console.log("n > u.cf + q * 60", dbbkbfkds);
-            
+
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
-            
+            console.log();
+            console.log();
+            console.log("que isso?",);
+            console.log("d.am()", d.am());
+            console.log("r",r);
+            console.log("a.eventName",a.eventName);
+            console.log("O.g.ac",O.g.ac);
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Md = !0;
             a.metadata.euid_mode_enabled ? U(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !Q(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
