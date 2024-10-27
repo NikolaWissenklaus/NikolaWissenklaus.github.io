@@ -14325,6 +14325,7 @@ console.log("amjanjamla");
             var q = kb(U(a.m, O.g.sd, 30));
             q = Math.min(475, q);
             q = Math.max(5, q);
+            console.log("p:",p);
             var r = kb(U(a.m, O.g.Pf, 1E4)),
                 u = hG(p);
             a.metadata.is_first_visit = !1;
@@ -14332,10 +14333,7 @@ console.log("amjanjamla");
             
             a.metadata.join_timer_sec = 0;
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
-            console.log("u:",u);
-            console.log("u.Xh:",u.Xh);
-            console.log("u.cf:",u.cf);
-            console.log("n:",n);
+            
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
@@ -14345,7 +14343,7 @@ console.log("amjanjamla");
                 Mc: !1,
                 Dd: void 0
             });
-            
+            //n == event timestamp do cookie
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
             
             if(a.eventName == "troca"){
