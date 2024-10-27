@@ -14332,6 +14332,10 @@ console.log("amjanjamla");
             
             a.metadata.join_timer_sec = 0;
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
+            console.log("u:",u);
+            console.log("u.Xh:",u.Xh);
+            console.log("u.cf:",u.cf);
+            console.log("n:",n);
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
@@ -14341,28 +14345,9 @@ console.log("amjanjamla");
                 Mc: !1,
                 Dd: void 0
             });
-            console.log("000 n: ",n);
-            console.log("000 u.cf: ",u.cf);
-            console.log("000 q: ",q);
-            console.log("000 v: ",v);
-            console.log("000 u.sessionId: ",u.sessionId);
-            console.log("000 u.Qc: ",u.Qc);
-            console.log("000 u.Md: ",v);
-            console.log("000 u.Dd: ",u.Dd);
-            console.log();
-            console.log("------------------------------");
-            console.log();
-            var dbbkbfkds = n > u.cf + q * 60;
-            console.log("n > u.cf + q * 60", dbbkbfkds);
-
+            
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
-            console.log();
-            console.log();
-            console.log("que isso?",);
-            console.log("d.am()", d.am());
-            console.log("r",r);
-            console.log("a.eventName",a.eventName);
-            console.log("O.g.ac",O.g.ac);
+            
             if(a.eventName == "troca"){
                 v = 1;
             }
