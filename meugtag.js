@@ -14321,11 +14321,13 @@ console.log("amjanjamla");
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
                     1E3),
                 p = void 0;
+            console.log("a:",a);
             a.metadata.is_new_to_site || (p = nG(a) || c);
             var q = kb(U(a.m, O.g.sd, 30));
             q = Math.min(475, q);
             q = Math.max(5, q);
-            console.log("p:",p);
+            
+            //p == é o cookie, ex: 1730068773.3.1.1730069635.0.0.0
             var r = kb(U(a.m, O.g.Pf, 1E4)),
                 u = hG(p);
             a.metadata.is_first_visit = !1;
