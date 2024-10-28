@@ -13379,6 +13379,7 @@ console.log("amjanjamla");
             var b = a.metadata.cookie_options,
                 c = b.prefix + "_ga",
                 d = gp(c, b.domain, b.path, fG, O.g.W);
+
             if (!d) {
                 var e = String(U(a.m, O.g.Ac, ""));
                 e && e !== c && (d = gp(e, b.domain, b.path, fG,
@@ -14301,57 +14302,40 @@ console.log("amjanjamla");
             }
         },
         CH = function(a, b, c, d, e) {
-            console.log("INIT");
-            console.log("a:",a);
-            console.log("b:",b);
-            console.log("c:",c);
-            console.log("d:",d);
-            console.log("e:",e);
+            
             var f = U(a.m, O.g.tb);
-            console.log("f:",f);
-            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? cG(a, f, 1) : (S(127), a.isAborted = !0);
             else {
-                console.log("entrou else ***************");
                 var g = f ? 1 : 8;
-                console.log("a:",a);
-                console.log("b:",b);
-                console.log("c:",c);
-                console.log("d:",d);
-                console.log("e:",e);
-                console.log("f:",f);
-                console.log("g:",g);
-                console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+                
                 a.metadata.is_new_to_site = !1;
-                console.log("a:",a);
                 f || (f = gG(a), g = 3);
-                console.log("f:",f);
                 f || (f = b, g = 5);
-                console.log("f:",f);
                 if (!f) {
                     var k = V(O.g.W),
                         m = $F();
-                    console.log("k:",m);
                     f = !m.from_cookie || k ? m.vid : void 0;
-                    console.log("f:",f);
                     g = 6
-                    console.log("g:",g);
                 }
-                console.log("cccccccccccccccccccccccccccccccccccccccccccccc");
                 f ? f = "" + f : (f = fp(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
-                console.log("a:",a);
-                console.log("b:",b);
-                console.log("c:",c);
-                console.log("d:",d);
-                console.log("e:",e);
-                console.log("f:",f);
-                console.log("g:",g);
-                console.log("ddddddddddddddddddddddddddddddd");
+                
+                
                 cG(a, f, g)
             }
+
+
+            console.log("xxxxxxxxxxxxxxxxxxx");
+            console.log("a.metadata.event_start_timestamp_ms",a.metadata.event_start_timestamp_ms);
+            console.log("1E3",1E3);
+            
+
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
                     1E3),
                 p = void 0;
+            console.log("n",n);
+            console.log("p",p);
+            console.log("xxxxxxxxxxxxxxxxxxx");
             
             a.metadata.is_new_to_site || (p = nG(a) || c);
             var q = kb(U(a.m, O.g.sd, 30));
