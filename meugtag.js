@@ -14338,21 +14338,19 @@ console.log("amjanjamla");
             
             
             //p == é o cookie, ex: 1730068773.3.1.1730069635.0.0.0
+            console.log("xxxxxxxxxxxxxxxxxxx");
+            console.log("p",p);
+            console.log("xxxxxxxxxxxxxxxxxxx");
             var r = kb(U(a.m, O.g.Pf, 1E4)),
                 u = hG(p);
             
             a.metadata.is_first_visit = !1;
             a.metadata.is_session_start = !1;
-            
             a.metadata.join_timer_sec = 0;
-
-            console.log("xxxxxxxxxxxxxxxxxxx");
-            console.log("u antes",u);
 
             
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
             
-            console.log("u depois",u);
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
