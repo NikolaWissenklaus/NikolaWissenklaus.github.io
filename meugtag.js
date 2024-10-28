@@ -14325,22 +14325,22 @@ console.log("amjanjamla");
             }
 
 
-            console.log("xxxxxxxxxxxxxxxxxxx");
-            console.log("a.metadata.event_start_timestamp_ms",a.metadata.event_start_timestamp_ms);
-            console.log("1E3",1E3);
-            
 
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
                     1E3),
                 p = void 0;
-            console.log("n",n);
-            console.log("p",p);
-            console.log("xxxxxxxxxxxxxxxxxxx");
             
+            console.log("xxxxxxxxxxxxxxxxxxx");
+            console.log("c",c);
+            console.log("nG(a)",nG(a));
             a.metadata.is_new_to_site || (p = nG(a) || c);
             var q = kb(U(a.m, O.g.sd, 30));
+            console.log("q",q);
             q = Math.min(475, q);
+            console.log("q",q);
             q = Math.max(5, q);
+            console.log("q",q);
+            console.log("xxxxxxxxxxxxxxxxxxx");
             
             //p == é o cookie, ex: 1730068773.3.1.1730069635.0.0.0
             var r = kb(U(a.m, O.g.Pf, 1E4)),
