@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-
+console.log("ss");
 (function() {
 
     var data = {
@@ -13147,6 +13147,7 @@
                 Mc: !1,
                 Dd: void 0
             });
+            console.log("ssss");
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Md = !0;
