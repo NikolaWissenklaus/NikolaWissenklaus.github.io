@@ -14338,9 +14338,7 @@ console.log("amjanjamla");
             
             
             //p == é o cookie, ex: 1730068773.3.1.1730069635.0.0.0
-            console.log("xxxxxxxxxxxxxxxxxxx");
-            console.log("p",p);
-            console.log("xxxxxxxxxxxxxxxxxxx");
+            
             var r = kb(U(a.m, O.g.Pf, 1E4)),
                 u = hG(p);
             
@@ -14360,8 +14358,6 @@ console.log("amjanjamla");
                 Mc: !1,
                 Dd: void 0
             });
-            console.log("v",v);
-            console.log("xxxxxxxxxxxxxxxxxxx");
             //n == event timestamp do cookie
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
             
@@ -14371,6 +14367,14 @@ console.log("amjanjamla");
 
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Md = !0;
+            console.log("xxxxxxxxxxxxxxxxxxx");
+            console.log("a.metadata.euid_mode_enabled",a.metadata.euid_mode_enabled);
+            console.log("U(a.m, O.g.Ca)",U(a.m, O.g.Ca));
+            console.log("u.Mc",u.Mc);
+            console.log("!Q(13)",!Q(13));
+            console.log("u.Dd",u.Dd);
+            
+            console.log("xxxxxxxxxxxxxxxxxxx");
             a.metadata.euid_mode_enabled ? U(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !Q(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
             var t = u.Dd;
             if (a.metadata.euid_mode_enabled || Ot(a)) {
