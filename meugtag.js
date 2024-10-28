@@ -1,5 +1,4 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("amjanjamla");
 
 (function() {
 
@@ -10,1033 +9,48 @@ console.log("amjanjamla");
             "macros": [{
                 "function": "__e"
             }, {
-                "function": "__c",
-                "vtp_value": "google.com.br"
-            }, {
-                "function": "__c",
-                "vtp_value": 0
+                "function": "__cid"
             }],
             "tags": [{
-                "function": "__ogt_1p_data_v2",
-                "priority": 6,
-                "vtp_isAutoEnabled": true,
-                "vtp_autoCollectExclusionSelectors": ["list", ["map", "exclusionSelector", ""]],
-                "vtp_isEnabled": true,
-                "vtp_cityType": "CSS_SELECTOR",
-                "vtp_manualEmailEnabled": false,
-                "vtp_firstNameType": "CSS_SELECTOR",
-                "vtp_countryType": "CSS_SELECTOR",
-                "vtp_cityValue": "",
-                "vtp_emailType": "CSS_SELECTOR",
-                "vtp_regionType": "CSS_SELECTOR",
-                "vtp_autoEmailEnabled": true,
-                "vtp_postalCodeValue": "",
-                "vtp_lastNameValue": "",
-                "vtp_phoneType": "CSS_SELECTOR",
-                "vtp_phoneValue": "",
-                "vtp_streetType": "CSS_SELECTOR",
-                "vtp_autoPhoneEnabled": false,
-                "vtp_postalCodeType": "CSS_SELECTOR",
-                "vtp_emailValue": "",
-                "vtp_firstNameValue": "",
-                "vtp_streetValue": "",
-                "vtp_lastNameType": "CSS_SELECTOR",
-                "vtp_autoAddressEnabled": false,
-                "vtp_regionValue": "",
-                "vtp_countryValue": "",
-                "vtp_isAutoCollectPiiEnabledFlag": false,
-                "tag_id": 4
-            }, {
-                "function": "__ccd_ga_first",
-                "priority": 5,
-                "vtp_instanceDestinationId": "G-10YHVQBD3V",
-                "tag_id": 11
-            }, {
-                "function": "__set_product_settings",
-                "priority": 4,
-                "vtp_instanceDestinationId": "G-10YHVQBD3V",
-                "vtp_foreignTldMacroResult": ["macro", 1],
-                "vtp_isChinaVipRegionMacroResult": ["macro", 2],
-                "tag_id": 10
-            }, {
-                "function": "__ccd_ga_regscope",
-                "priority": 3,
-                "vtp_settingsTable": ["list", ["map", "redactFieldGroup", "DEVICE_AND_GEO", "disallowAllRegions", false, "disallowedRegions", ""],
-                    ["map", "redactFieldGroup", "GOOGLE_SIGNALS", "disallowAllRegions", true, "disallowedRegions", ""]
-                ],
-                "vtp_instanceDestinationId": "G-10YHVQBD3V",
-                "tag_id": 9
-            }, {
-                "function": "__ccd_conversion_marking",
-                "priority": 2,
-                "vtp_conversionRules": ["list", ["map", "matchingRules", "{\"type\":5,\"args\":[{\"stringValue\":\"purchase\"},{\"contextValue\":{\"namespaceType\":1,\"keyParts\":[\"eventName\"]}}]}"]],
-                "vtp_instanceDestinationId": "G-10YHVQBD3V",
-                "tag_id": 8
-            }, {
-                "function": "__ccd_auto_redact",
-                "priority": 1,
-                "vtp_redactEmail": true,
-                "vtp_instanceDestinationId": "G-10YHVQBD3V",
-                "tag_id": 7
-            }, {
                 "function": "__gct",
-                "vtp_trackingId": "G-10YHVQBD3V",
-                "vtp_sessionDuration": 0,
+                "once_per_event": true,
+                "vtp_trackingId": ["macro", 1],
                 "tag_id": 1
-            }, {
-                "function": "__ccd_ga_last",
-                "priority": 0,
-                "vtp_instanceDestinationId": "G-10YHVQBD3V",
-                "tag_id": 6
             }],
             "predicates": [{
                 "function": "_eq",
                 "arg0": ["macro", 0],
                 "arg1": "gtm.js"
-            }, {
-                "function": "_eq",
-                "arg0": ["macro", 0],
-                "arg1": "gtm.init"
             }],
             "rules": [
                 [
                     ["if", 0],
-                    ["add", 6]
-                ],
-                [
-                    ["if", 1],
-                    ["add", 0, 7, 5, 4, 3, 2, 1]
+                    ["add", 0]
                 ]
             ]
         },
         "runtime": [
-            [50, "__c", [46, "a"],
-                [36, [17, [15, "a"], "value"]]
-            ],
-            [50, "__ccd_auto_redact", [46, "a"],
-                [50, "v", [46, "bk"],
-                    [36, [2, [15, "bk"], "replace", [7, [15, "u"], "\\$1"]]]
-                ],
-                [50, "w", [46, "bk"],
-                    [52, "bl", ["c", [15, "bk"]]],
-                    [52, "bm", [7]],
-                    [65, "bn", [2, [15, "bl"], "split", [7, ""]],
-                        [46, [53, [52, "bo", [7, ["v", [15, "bn"]]]],
-                            [52, "bp", ["d", [15, "bn"]]],
-                            [22, [12, [15, "bp"],
-                                    [45]
-                                ],
-                                [46, [36, ["d", ["v", [15, "bk"]]]]]
-                            ],
-                            [22, [21, [15, "bp"],
-                                    [15, "bn"]
-                                ],
-                                [46, [2, [15, "bo"], "push", [7, [15, "bp"]]],
-                                    [22, [21, [15, "bn"],
-                                            [2, [15, "bn"], "toLowerCase", [7]]
-                                        ],
-                                        [46, [2, [15, "bo"], "push", [7, ["d", [2, [15, "bn"], "toLowerCase", [7]]]]]],
-                                        [46, [22, [21, [15, "bn"],
-                                                [2, [15, "bn"], "toUpperCase", [7]]
-                                            ],
-                                            [46, [2, [15, "bo"], "push", [7, ["d", [2, [15, "bn"], "toUpperCase", [7]]]]]]
-                                        ]]
-                                    ]
-                                ]
-                            ],
-                            [22, [18, [17, [15, "bo"], "length"], 1],
-                                [46, [2, [15, "bm"], "push", [7, [0, [0, "(?:", [2, [15, "bo"], "join", [7, "|"]]], ")"]]]],
-                                [46, [2, [15, "bm"], "push", [7, [16, [15, "bo"], 0]]]]
-                            ]
-                        ]]
-                    ],
-                    [36, [2, [15, "bm"], "join", [7, ""]]]
-                ],
-                [50, "x", [46, "bk", "bl", "bm"],
-                    [52, "bn", ["z", [15, "bk"],
-                        [15, "bm"]
-                    ]],
-                    [22, [28, [15, "bn"]],
-                        [46, [36, [15, "bk"]]]
-                    ],
-                    [22, [28, [17, [15, "bn"], "search"]],
-                        [46, [36, [15, "bk"]]]
-                    ],
-                    [41, "bo"],
-                    [3, "bo", [17, [15, "bn"], "search"]],
-                    [65, "bp", [15, "bl"],
-                        [46, [53, [52, "bq", [7, ["v", [15, "bp"]],
-                                ["w", [15, "bp"]]
-                            ]],
-                            [65, "br", [15, "bq"],
-                                [46, [53, [52, "bs", [30, [16, [15, "t"],
-                                            [15, "br"]
-                                        ],
-                                        [43, [15, "t"],
-                                            [15, "br"],
-                                            ["b", [0, [0, "([?&]", [15, "br"]], "=)([^&]*)"], "gi"]
-                                        ]
-                                    ]],
-                                    [3, "bo", [2, [15, "bo"], "replace", [7, [15, "bs"],
-                                        [0, "$1", [15, "r"]]
-                                    ]]]
-                                ]]
-                            ]
-                        ]]
-                    ],
-                    [22, [20, [15, "bo"],
-                            [17, [15, "bn"], "search"]
-                        ],
-                        [46, [36, [15, "bk"]]]
-                    ],
-                    [22, [20, [16, [15, "bo"], 0], "&"],
-                        [46, [3, "bo", [2, [15, "bo"], "substring", [7, 1]]]]
-                    ],
-                    [22, [21, [16, [15, "bo"], 0], "?"],
-                        [46, [3, "bo", [0, "?", [15, "bo"]]]]
-                    ],
-                    [22, [20, [15, "bo"], "?"],
-                        [46, [3, "bo", ""]]
-                    ],
-                    [43, [15, "bn"], "search", [15, "bo"]],
-                    [36, ["ba", [15, "bn"],
-                        [15, "bm"]
-                    ]]
-                ],
-                [50, "z", [46, "bk", "bl"],
-                    [22, [20, [15, "bl"],
-                            [17, [15, "s"], "PATH"]
-                        ],
-                        [46, [3, "bk", [0, [15, "y"],
-                            [15, "bk"]
-                        ]]]
-                    ],
-                    [36, ["g", [15, "bk"]]]
-                ],
-                [50, "ba", [46, "bk", "bl"],
-                    [41, "bm"],
-                    [3, "bm", ""],
-                    [22, [20, [15, "bl"],
-                            [17, [15, "s"], "URL"]
-                        ],
-                        [46, [53, [41, "bn"],
-                            [3, "bn", ""],
-                            [22, [30, [17, [15, "bk"], "username"],
-                                    [17, [15, "bk"], "password"]
-                                ],
-                                [46, [3, "bn", [0, [15, "bn"],
-                                    [0, [0, [0, [17, [15, "bk"], "username"],
-                                            [39, [17, [15, "bk"], "password"], ":", ""]
-                                        ],
-                                        [17, [15, "bk"], "password"]
-                                    ], "@"]
-                                ]]]
-                            ],
-                            [3, "bm", [0, [0, [0, [17, [15, "bk"], "protocol"], "//"],
-                                    [15, "bn"]
-                                ],
-                                [17, [15, "bk"], "host"]
-                            ]]
-                        ]]
-                    ],
-                    [36, [0, [0, [0, [15, "bm"],
-                                [17, [15, "bk"], "pathname"]
-                            ],
-                            [17, [15, "bk"], "search"]
-                        ],
-                        [17, [15, "bk"], "hash"]
-                    ]]
-                ],
-                [50, "bb", [46, "bk", "bl"],
-                    [41, "bm"],
-                    [3, "bm", [2, [15, "bk"], "replace", [7, [15, "n"],
-                        [15, "r"]
-                    ]]],
-                    [22, [30, [20, [15, "bl"],
-                                [17, [15, "s"], "URL"]
-                            ],
-                            [20, [15, "bl"],
-                                [17, [15, "s"], "PATH"]
-                            ]
-                        ],
-                        [46, [53, [52, "bn", ["z", [15, "bm"],
-                                [15, "bl"]
-                            ]],
-                            [22, [20, [15, "bn"],
-                                    [44]
-                                ],
-                                [46, [36, [15, "bm"]]]
-                            ],
-                            [52, "bo", [17, [15, "bn"], "search"]],
-                            [52, "bp", [2, [15, "bo"], "replace", [7, [15, "o"],
-                                [15, "r"]
-                            ]]],
-                            [22, [20, [15, "bo"],
-                                    [15, "bp"]
-                                ],
-                                [46, [36, [15, "bm"]]]
-                            ],
-                            [43, [15, "bn"], "search", [15, "bp"]],
-                            [3, "bm", ["ba", [15, "bn"],
-                                [15, "bl"]
-                            ]]
-                        ]]
-                    ],
-                    [36, [15, "bm"]]
-                ],
-                [50, "bc", [46, "bk"],
-                    [22, [20, [15, "bk"],
-                            [15, "q"]
-                        ],
-                        [46, [36, [17, [15, "s"], "PATH"]]],
-                        [46, [22, [21, [2, [15, "p"], "indexOf", [7, [15, "bk"]]],
-                                [27, 1]
-                            ],
-                            [46, [36, [17, [15, "s"], "URL"]]],
-                            [46, [36, [17, [15, "s"], "TEXT"]]]
-                        ]]
-                    ]
-                ],
-                [50, "bd", [46, "bk", "bl"],
-                    [41, "bm"],
-                    [3, "bm", false],
-                    [52, "bn", ["f", [15, "bk"]]],
-                    [38, [15, "bn"],
-                        [46, "string", "array", "object"],
-                        [46, [5, [46, [52, "bo", ["bb", [15, "bk"],
-                                    [15, "bl"]
-                                ]],
-                                [22, [21, [15, "bk"],
-                                        [15, "bo"]
-                                    ],
-                                    [46, [36, [15, "bo"]]]
-                                ],
-                                [4]
-                            ]],
-                            [5, [46, [53, [41, "bp"],
-                                    [3, "bp", 0],
-                                    [63, [7, "bp"],
-                                        [23, [15, "bp"],
-                                            [17, [15, "bk"], "length"]
-                                        ],
-                                        [33, [15, "bp"],
-                                            [3, "bp", [0, [15, "bp"], 1]]
-                                        ],
-                                        [46, [53, [52, "bq", ["bd", [16, [15, "bk"],
-                                                    [15, "bp"]
-                                                ],
-                                                [17, [15, "s"], "TEXT"]
-                                            ]],
-                                            [22, [21, [15, "bq"],
-                                                    [44]
-                                                ],
-                                                [46, [43, [15, "bk"],
-                                                        [15, "bp"],
-                                                        [15, "bq"]
-                                                    ],
-                                                    [3, "bm", true]
-                                                ]
-                                            ]
-                                        ]]
-                                    ]
-                                ],
-                                [4]
-                            ]],
-                            [5, [46, [54, "bp", [15, "bk"],
-                                    [46, [53, [52, "bq", ["bd", [16, [15, "bk"],
-                                                [15, "bp"]
-                                            ],
-                                            [17, [15, "s"], "TEXT"]
-                                        ]],
-                                        [22, [21, [15, "bq"],
-                                                [44]
-                                            ],
-                                            [46, [43, [15, "bk"],
-                                                    [15, "bp"],
-                                                    [15, "bq"]
-                                                ],
-                                                [3, "bm", true]
-                                            ]
-                                        ]
-                                    ]]
-                                ],
-                                [4]
-                            ]]
-                        ]
-                    ],
-                    [36, [39, [15, "bm"],
-                        [15, "bk"],
-                        [44]
-                    ]]
-                ],
-                [50, "bj", [46, "bk", "bl"],
-                    [52, "bm", [30, [2, [15, "bk"], "getMetadata", [7, [15, "bi"]]],
-                        [7]
-                    ]],
-                    [22, [20, [2, [15, "bm"], "indexOf", [7, [15, "bl"]]],
-                            [27, 1]
-                        ],
-                        [46, [2, [15, "bm"], "push", [7, [15, "bl"]]]]
-                    ],
-                    [2, [15, "bk"], "setMetadata", [7, [15, "bi"],
-                        [15, "bm"]
-                    ]]
-                ],
-                [52, "b", ["require", "internal.createRegex"]],
-                [52, "c", ["require", "decodeUriComponent"]],
-                [52, "d", ["require", "encodeUriComponent"]],
-                [52, "e", [13, [41, "$0"],
-                    [3, "$0", ["require", "internal.getFlags"]],
+            [50, "__cid", [46, "a"],
+                [36, [17, [13, [41, "$0"],
+                    [3, "$0", ["require", "getContainerVersion"]],
                     ["$0"]
-                ]],
-                [52, "f", ["require", "getType"]],
-                [52, "g", ["require", "parseUrl"]],
-                [52, "h", ["require", "internal.registerCcdCallback"]],
-                [52, "i", [17, [15, "a"], "instanceDestinationId"]],
-                [52, "j", [17, [15, "a"], "redactEmail"]],
-                [52, "k", [17, [15, "a"], "redactQueryParams"]],
-                [52, "l", [39, [15, "k"],
-                    [2, [15, "k"], "split", [7, ","]],
-                    [7]
-                ]],
-                [52, "m", "is_sgtm_prehit"],
-                [22, [1, [28, [17, [15, "l"], "length"]],
-                        [28, [15, "j"]]
-                    ],
-                    [46, [2, [15, "a"], "gtmOnSuccess", [7]],
-                        [36]
-                    ]
-                ],
-                [52, "n", ["b", "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}", "gi"]],
-                [52, "o", ["b", [0, "([A-Z0-9._-]|%25|%2B)+%40[A-Z0-9.-]", "+\\.[A-Z]{2,}"], "gi"]],
-                [52, "p", [7, "page_location", "page_referrer", "page_path", "link_url", "video_url", "form_destination"]],
-                [52, "q", "page_path"],
-                [52, "r", "(redacted)"],
-                [52, "s", [8, "TEXT", 0, "URL", 1, "PATH", 2]],
-                [52, "t", [8]],
-                [52, "u", ["b", "([\\\\^$.|?*+(){}]|\\[|\\[)", "g"]],
-                [52, "y", "http://."],
-                [52, "be", 15],
-                [52, "bf", 16],
-                [52, "bg", 23],
-                [52, "bh", 24],
-                [52, "bi", "event_usage"],
-                ["h", [15, "i"],
-                    [51, "", [7, "bk"],
-                        [22, [15, "j"],
-                            [46, [53, [52, "bl", [2, [15, "bk"], "getHitKeys", [7]]],
-                                [65, "bm", [15, "bl"],
-                                    [46, [53, [22, [20, [15, "bm"], "_sst_parameters"],
-                                            [46, [6]]
-                                        ],
-                                        [52, "bn", [2, [15, "bk"], "getHitData", [7, [15, "bm"]]]],
-                                        [22, [28, [15, "bn"]],
-                                            [46, [6]]
-                                        ],
-                                        [52, "bo", ["bc", [15, "bm"]]],
-                                        [52, "bp", ["bd", [15, "bn"],
-                                            [15, "bo"]
-                                        ]],
-                                        [22, [21, [15, "bp"],
-                                                [44]
-                                            ],
-                                            [46, [2, [15, "bk"], "setHitData", [7, [15, "bm"],
-                                                    [15, "bp"]
-                                                ]],
-                                                ["bj", [15, "bk"],
-                                                    [39, [2, [15, "bk"], "getMetadata", [7, [15, "m"]]],
-                                                        [15, "bg"],
-                                                        [15, "be"]
-                                                    ]
-                                                ]
-                                            ]
-                                        ]
-                                    ]]
-                                ]
-                            ]]
-                        ],
-                        [22, [17, [15, "l"], "length"],
-                            [46, [65, "bl", [15, "p"],
-                                [46, [53, [52, "bm", [2, [15, "bk"], "getHitData", [7, [15, "bl"]]]],
-                                    [22, [28, [15, "bm"]],
-                                        [46, [6]]
-                                    ],
-                                    [52, "bn", [39, [20, [15, "bl"],
-                                            [15, "q"]
-                                        ],
-                                        [17, [15, "s"], "PATH"],
-                                        [17, [15, "s"], "URL"]
-                                    ]],
-                                    [52, "bo", ["x", [15, "bm"],
-                                        [15, "l"],
-                                        [15, "bn"]
-                                    ]],
-                                    [22, [21, [15, "bo"],
-                                            [15, "bm"]
-                                        ],
-                                        [46, [2, [15, "bk"], "setHitData", [7, [15, "bl"],
-                                                [15, "bo"]
-                                            ]],
-                                            ["bj", [15, "bk"],
-                                                [39, [2, [15, "bk"], "getMetadata", [7, [15, "m"]]],
-                                                    [15, "bh"],
-                                                    [15, "bf"]
-                                                ]
-                                            ]
-                                        ]
-                                    ]
-                                ]]
-                            ]]
-                        ]
-                    ]
-                ],
-                [2, [15, "a"], "gtmOnSuccess", [7]]
-            ],
-            [50, "__ccd_conversion_marking", [46, "a"],
-                [22, [30, [28, [17, [15, "a"], "conversionRules"]],
-                        [20, [17, [17, [15, "a"], "conversionRules"], "length"], 0]
-                    ],
-                    [46, [2, [15, "a"], "gtmOnSuccess", [7]],
-                        [36]
-                    ]
-                ],
-                [52, "b", ["require", "internal.copyPreHit"]],
-                [52, "c", ["require", "internal.evaluateBooleanExpression"]],
-                [52, "d", ["require", "internal.registerCcdCallback"]],
-                [52, "e", "is_conversion"],
-                [52, "f", "is_first_visit"],
-                [52, "g", "is_first_visit_conversion"],
-                [52, "h", "is_session_start"],
-                [52, "i", "is_session_start_conversion"],
-                [52, "j", "first_visit"],
-                [52, "k", "session_start"],
-                [41, "l"],
-                [41, "m"],
-                ["d", [17, [15, "a"], "instanceDestinationId"],
-                    [51, "", [7, "n"],
-                        [52, "o", [8, "preHit", [15, "n"]]],
-                        [65, "p", [17, [15, "a"], "conversionRules"],
-                            [46, [22, ["c", [17, [15, "p"], "matchingRules"],
-                                    [15, "o"]
-                                ],
-                                [46, [2, [15, "n"], "setMetadata", [7, [15, "e"], true]],
-                                    [4]
-                                ]
-                            ]]
-                        ],
-                        [22, [2, [15, "n"], "getMetadata", [7, [15, "f"]]],
-                            [46, [22, [28, [15, "l"]],
-                                    [46, [53, [52, "p", ["b", [15, "n"],
-                                            [8, "omitHitData", true, "omitMetadata", true]
-                                        ]],
-                                        [2, [15, "p"], "setEventName", [7, [15, "j"]]],
-                                        [3, "l", [8, "preHit", [15, "p"]]]
-                                    ]]
-                                ],
-                                [65, "p", [17, [15, "a"], "conversionRules"],
-                                    [46, [22, ["c", [17, [15, "p"], "matchingRules"],
-                                            [15, "l"]
-                                        ],
-                                        [46, [2, [15, "n"], "setMetadata", [7, [15, "g"], true]],
-                                            [4]
-                                        ]
-                                    ]]
-                                ]
-                            ]
-                        ],
-                        [22, [2, [15, "n"], "getMetadata", [7, [15, "h"]]],
-                            [46, [22, [28, [15, "m"]],
-                                    [46, [53, [52, "p", ["b", [15, "n"],
-                                            [8, "omitHitData", true, "omitMetadata", true]
-                                        ]],
-                                        [2, [15, "p"], "setEventName", [7, [15, "k"]]],
-                                        [3, "m", [8, "preHit", [15, "p"]]]
-                                    ]]
-                                ],
-                                [65, "p", [17, [15, "a"], "conversionRules"],
-                                    [46, [22, ["c", [17, [15, "p"], "matchingRules"],
-                                            [15, "m"]
-                                        ],
-                                        [46, [2, [15, "n"], "setMetadata", [7, [15, "i"], true]],
-                                            [4]
-                                        ]
-                                    ]]
-                                ]
-                            ]
-                        ]
-                    ]
-                ],
-                [2, [15, "a"], "gtmOnSuccess", [7]],
-                [36]
-            ],
-            [50, "__ccd_ga_first", [46, "a"],
-                [2, [15, "a"], "gtmOnSuccess", [7]]
-            ],
-            [50, "__ccd_ga_last", [46, "a"],
-                [2, [15, "a"], "gtmOnSuccess", [7]]
-            ],
-            [50, "__ccd_ga_regscope", [46, "a"],
-                [52, "b", [15, "__module_ccdGaRegionScopedSettings"]],
-                [52, "c", [2, [15, "b"], "extractRedactedLocations", [7, [15, "a"]]]],
-                [2, [15, "b"], "applyRegionScopedSettings", [7, [15, "a"],
-                    [15, "c"]
-                ]],
-                [2, [15, "a"], "gtmOnSuccess", [7]]
+                ], "containerId"]]
             ],
             [50, "__e", [46, "a"],
                 [36, [13, [41, "$0"],
                     [3, "$0", ["require", "internal.getEventData"]],
                     ["$0", "event"]
                 ]]
-            ],
-            [50, "__ogt_1p_data_v2", [46, "a"],
-                [50, "k", [46, "m", "n", "o"],
-                    [22, [20, [16, [15, "n"], "type"],
-                            [15, "o"]
-                        ],
-                        [46, [22, [28, [15, "m"]],
-                                [46, [3, "m", [8]]]
-                            ],
-                            [22, [28, [16, [15, "m"],
-                                    [15, "o"]
-                                ]],
-                                [46, [43, [15, "m"],
-                                    [15, "o"],
-                                    [16, [15, "n"], "userData"]
-                                ]]
-                            ]
-                        ]
-                    ],
-                    [36, [15, "m"]]
-                ],
-                [50, "l", [46, "m", "n", "o"],
-                    [22, [28, [16, [15, "a"],
-                            [15, "o"]
-                        ]],
-                        [46, [36]]
-                    ],
-                    [43, [15, "m"],
-                        [15, "n"],
-                        [8, "value", [16, [15, "a"],
-                            [15, "o"]
-                        ]]
-                    ]
-                ],
-                [22, [28, [17, [15, "a"], "isEnabled"]],
-                    [46, [2, [15, "a"], "gtmOnSuccess", [7]],
-                        [36]
-                    ]
-                ],
-                [52, "b", [13, [41, "$0"],
-                    [3, "$0", ["require", "internal.getFlags"]],
-                    ["$0"]
-                ]],
-                [52, "c", ["require", "internal.getDestinationIds"]],
-                [52, "d", ["require", "internal.getProductSettingsParameter"]],
-                [52, "e", ["require", "internal.detectUserProvidedData"]],
-                [52, "f", ["require", "queryPermission"]],
-                [52, "g", ["require", "internal.setRemoteConfigParameter"]],
-                [52, "h", ["require", "internal.registerCcdCallback"]],
-                [52, "i", [30, ["c"],
-                    [7]
-                ]],
-                [52, "j", [8, "enable_code", true]],
-                [22, [17, [15, "a"], "isAutoEnabled"],
-                    [46, [53, [52, "m", [7]],
-                        [22, [1, [17, [15, "a"], "autoCollectExclusionSelectors"],
-                                [17, [17, [15, "a"], "autoCollectExclusionSelectors"], "length"]
-                            ],
-                            [46, [53, [41, "p"],
-                                [3, "p", 0],
-                                [63, [7, "p"],
-                                    [23, [15, "p"],
-                                        [17, [17, [15, "a"], "autoCollectExclusionSelectors"], "length"]
-                                    ],
-                                    [33, [15, "p"],
-                                        [3, "p", [0, [15, "p"], 1]]
-                                    ],
-                                    [46, [53, [52, "q", [17, [16, [17, [15, "a"], "autoCollectExclusionSelectors"],
-                                            [15, "p"]
-                                        ], "exclusionSelector"]],
-                                        [22, [15, "q"],
-                                            [46, [2, [15, "m"], "push", [7, [15, "q"]]]]
-                                        ]
-                                    ]]
-                                ]
-                            ]]
-                        ],
-                        [52, "n", [30, [16, [15, "b"], "enableAutoPhoneAndAddressDetection"],
-                            [17, [15, "a"], "isAutoCollectPiiEnabledFlag"]
-                        ]],
-                        [52, "o", [39, [17, [15, "a"], "isAutoCollectPiiEnabledFlag"],
-                            [17, [15, "a"], "autoEmailEnabled"], true
-                        ]],
-                        [43, [15, "j"], "auto_detect", [8, "email", [15, "o"], "phone", [1, [15, "n"],
-                            [17, [15, "a"], "autoPhoneEnabled"]
-                        ], "address", [1, [15, "n"],
-                            [17, [15, "a"], "autoAddressEnabled"]
-                        ], "exclude_element_selectors", [15, "m"]]]
-                    ]]
-                ],
-                [22, [17, [15, "a"], "isManualEnabled"],
-                    [46, [53, [52, "m", [8]],
-                        [22, [17, [15, "a"], "manualEmailEnabled"],
-                            [46, ["l", [15, "m"], "email", "emailValue"]]
-                        ],
-                        [22, [17, [15, "a"], "manualPhoneEnabled"],
-                            [46, ["l", [15, "m"], "phone", "phoneValue"]]
-                        ],
-                        [22, [17, [15, "a"], "manualAddressEnabled"],
-                            [46, [53, [52, "n", [8]],
-                                ["l", [15, "n"], "first_name", "firstNameValue"],
-                                ["l", [15, "n"], "last_name", "lastNameValue"],
-                                ["l", [15, "n"], "street", "streetValue"],
-                                ["l", [15, "n"], "city", "cityValue"],
-                                ["l", [15, "n"], "region", "regionValue"],
-                                ["l", [15, "n"], "country", "countryValue"],
-                                ["l", [15, "n"], "postal_code", "postalCodeValue"],
-                                [43, [15, "m"], "name_and_address", [7, [15, "n"]]]
-                            ]]
-                        ],
-                        [43, [15, "j"], "selectors", [15, "m"]]
-                    ]]
-                ],
-                [65, "m", [15, "i"],
-                    [46, [53, ["g", [15, "m"], "user_data_settings", [15, "j"]],
-                        [52, "n", [16, [15, "j"], "auto_detect"]],
-                        [22, [28, [15, "n"]],
-                            [46, [6]]
-                        ],
-                        [52, "o", [51, "", [7, "p"],
-                            [52, "q", [2, [15, "p"], "getMetadata", [7, "user_data_from_automatic"]]],
-                            [22, [15, "q"],
-                                [46, [36, [15, "q"]]]
-                            ],
-                            [41, "r"],
-                            [22, ["f", "detect_user_provided_data", "auto"],
-                                [46, [3, "r", ["e", [8, "excludeElementSelectors", [16, [15, "n"], "exclude_element_selectors"], "fieldFilters", [8, "email", [16, [15, "n"], "email"], "phone", [16, [15, "n"], "phone"], "address", [16, [15, "n"], "address"]]]]]]
-                            ],
-                            [52, "s", [1, [15, "r"],
-                                [16, [15, "r"], "elements"]
-                            ]],
-                            [52, "t", [8]],
-                            [22, [1, [15, "s"],
-                                    [18, [17, [15, "s"], "length"], 0]
-                                ],
-                                [46, [53, [41, "u"],
-                                    [53, [41, "v"],
-                                        [3, "v", 0],
-                                        [63, [7, "v"],
-                                            [23, [15, "v"],
-                                                [17, [15, "s"], "length"]
-                                            ],
-                                            [33, [15, "v"],
-                                                [3, "v", [0, [15, "v"], 1]]
-                                            ],
-                                            [46, [53, [52, "w", [16, [15, "s"],
-                                                    [15, "v"]
-                                                ]],
-                                                ["k", [15, "t"],
-                                                    [15, "w"], "email"
-                                                ],
-                                                [22, [16, [15, "b"], "enableAutoPiiOnPhoneAndAddress"],
-                                                    [46, ["k", [15, "t"],
-                                                            [15, "w"], "phone_number"
-                                                        ],
-                                                        [3, "u", ["k", [15, "u"],
-                                                            [15, "w"], "first_name"
-                                                        ]],
-                                                        [3, "u", ["k", [15, "u"],
-                                                            [15, "w"], "last_name"
-                                                        ]],
-                                                        [3, "u", ["k", [15, "u"],
-                                                            [15, "w"], "country"
-                                                        ]],
-                                                        [3, "u", ["k", [15, "u"],
-                                                            [15, "w"], "postal_code"
-                                                        ]]
-                                                    ]
-                                                ]
-                                            ]]
-                                        ]
-                                    ],
-                                    [22, [1, [15, "u"],
-                                            [28, [16, [15, "t"], "address"]]
-                                        ],
-                                        [46, [43, [15, "t"], "address", [15, "u"]]]
-                                    ]
-                                ]]
-                            ],
-                            [2, [15, "p"], "setMetadata", [7, "user_data_from_automatic", [15, "t"]]],
-                            [36, [15, "t"]]
-                        ]],
-                        ["h", [15, "m"],
-                            [51, "", [7, "p"],
-                                [2, [15, "p"], "setMetadata", [7, "user_data_from_automatic_getter", [15, "o"]]]
-                            ]
-                        ]
-                    ]]
-                ],
-                [2, [15, "a"], "gtmOnSuccess", [7]]
-            ],
-            [50, "__set_product_settings", [46, "a"],
-                [2, [15, "a"], "gtmOnSuccess", [7]]
-            ],
-            [52, "__module_activities", [13, [41, "$0"],
-                [3, "$0", [51, "", [7],
-                    [50, "a", [46],
-                        [50, "b", [46, "c", "d"],
-                            [36, [39, [15, "d"],
-                                ["d", [15, "c"]],
-                                [15, "c"]
-                            ]]
-                        ],
-                        [36, [8, "withRequestContext", [15, "b"]]]
-                    ],
-                    [36, ["a"]]
-                ]],
-                ["$0"]
-            ]],
-            [52, "__module_ccdGaRegionScopedSettings", [13, [41, "$0"],
-                [3, "$0", [51, "", [7],
-                    [50, "a", [46],
-                        [50, "n", [46, "q", "r", "s"],
-                            [50, "x", [46, "z"],
-                                [52, "ba", [16, [15, "m"],
-                                    [15, "z"]
-                                ]],
-                                [22, [28, [15, "ba"]],
-                                    [46, [36]]
-                                ],
-                                [53, [41, "bb"],
-                                    [3, "bb", 0],
-                                    [63, [7, "bb"],
-                                        [23, [15, "bb"],
-                                            [17, [15, "ba"], "length"]
-                                        ],
-                                        [33, [15, "bb"],
-                                            [3, "bb", [0, [15, "bb"], 1]]
-                                        ],
-                                        [46, [53, [52, "bc", [16, [15, "ba"],
-                                                [15, "bb"]
-                                            ]],
-                                            ["u", [15, "t"],
-                                                [17, [15, "bc"], "name"],
-                                                [17, [15, "bc"], "value"]
-                                            ]
-                                        ]]
-                                    ]
-                                ]
-                            ],
-                            [50, "y", [46, "z"],
-                                [22, [30, [28, [15, "v"]],
-                                        [21, [17, [15, "v"], "length"], 2]
-                                    ],
-                                    [46, [36, false]]
-                                ],
-                                [41, "ba"],
-                                [3, "ba", [16, [15, "z"],
-                                    [15, "w"]
-                                ]],
-                                [22, [20, [15, "ba"],
-                                        [44]
-                                    ],
-                                    [46, [3, "ba", [16, [15, "z"],
-                                        [15, "v"]
-                                    ]]]
-                                ],
-                                [36, [28, [28, [15, "ba"]]]]
-                            ],
-                            [22, [28, [15, "r"]],
-                                [46, [36]]
-                            ],
-                            [52, "t", [30, [17, [15, "q"], "instanceDestinationId"],
-                                [17, ["d"], "containerId"]
-                            ]],
-                            [52, "u", ["i", [15, "g"],
-                                [15, "s"]
-                            ]],
-                            [52, "v", [13, [41, "$0"],
-                                [3, "$0", ["i", [15, "e"],
-                                    [15, "s"]
-                                ]],
-                                ["$0"]
-                            ]],
-                            [52, "w", [13, [41, "$0"],
-                                [3, "$0", ["i", [15, "f"],
-                                    [15, "s"]
-                                ]],
-                                ["$0"]
-                            ]],
-                            [53, [41, "z"],
-                                [3, "z", 0],
-                                [63, [7, "z"],
-                                    [23, [15, "z"],
-                                        [17, [15, "r"], "length"]
-                                    ],
-                                    [33, [15, "z"],
-                                        [3, "z", [0, [15, "z"], 1]]
-                                    ],
-                                    [46, [53, [52, "ba", [16, [15, "r"],
-                                            [15, "z"]
-                                        ]],
-                                        [22, [30, [17, [15, "ba"], "disallowAllRegions"],
-                                                ["y", [17, [15, "ba"], "disallowedRegions"]]
-                                            ],
-                                            [46, ["x", [17, [15, "ba"], "redactFieldGroup"]]]
-                                        ]
-                                    ]]
-                                ]
-                            ]
-                        ],
-                        [50, "o", [46, "q"],
-                            [52, "r", [8]],
-                            [22, [28, [15, "q"]],
-                                [46, [36, [15, "r"]]]
-                            ],
-                            [52, "s", [2, [15, "q"], "split", [7, ","]]],
-                            [53, [41, "t"],
-                                [3, "t", 0],
-                                [63, [7, "t"],
-                                    [23, [15, "t"],
-                                        [17, [15, "s"], "length"]
-                                    ],
-                                    [33, [15, "t"],
-                                        [3, "t", [0, [15, "t"], 1]]
-                                    ],
-                                    [46, [53, [52, "u", [2, [16, [15, "s"],
-                                            [15, "t"]
-                                        ], "trim", [7]]],
-                                        [22, [28, [15, "u"]],
-                                            [46, [6]]
-                                        ],
-                                        [52, "v", [2, [15, "u"], "split", [7, "-"]]],
-                                        [52, "w", [16, [15, "v"], 0]],
-                                        [52, "x", [39, [20, [17, [15, "v"], "length"], 2],
-                                            [15, "u"],
-                                            [44]
-                                        ]],
-                                        [22, [30, [28, [15, "w"]],
-                                                [21, [17, [15, "w"], "length"], 2]
-                                            ],
-                                            [46, [6]]
-                                        ],
-                                        [22, [1, [21, [15, "x"],
-                                                    [44]
-                                                ],
-                                                [30, [23, [17, [15, "x"], "length"], 4],
-                                                    [18, [17, [15, "x"], "length"], 6]
-                                                ]
-                                            ],
-                                            [46, [6]]
-                                        ],
-                                        [43, [15, "r"],
-                                            [15, "u"], true
-                                        ]
-                                    ]]
-                                ]
-                            ],
-                            [36, [15, "r"]]
-                        ],
-                        [50, "p", [46, "q"],
-                            [22, [28, [17, [15, "q"], "settingsTable"]],
-                                [46, [36, [7]]]
-                            ],
-                            [52, "r", [8]],
-                            [53, [41, "s"],
-                                [3, "s", 0],
-                                [63, [7, "s"],
-                                    [23, [15, "s"],
-                                        [17, [17, [15, "q"], "settingsTable"], "length"]
-                                    ],
-                                    [33, [15, "s"],
-                                        [3, "s", [0, [15, "s"], 1]]
-                                    ],
-                                    [46, [53, [52, "t", [16, [17, [15, "q"], "settingsTable"],
-                                            [15, "s"]
-                                        ]],
-                                        [52, "u", [17, [15, "t"], "redactFieldGroup"]],
-                                        [22, [28, [16, [15, "m"],
-                                                [15, "u"]
-                                            ]],
-                                            [46, [6]]
-                                        ],
-                                        [43, [15, "r"],
-                                            [15, "u"],
-                                            [8, "redactFieldGroup", [15, "u"], "disallowAllRegions", false, "disallowedRegions", [8]]
-                                        ],
-                                        [52, "v", [16, [15, "r"],
-                                            [15, "u"]
-                                        ]],
-                                        [22, [17, [15, "t"], "disallowAllRegions"],
-                                            [46, [43, [15, "v"], "disallowAllRegions", true],
-                                                [6]
-                                            ]
-                                        ],
-                                        [43, [15, "v"], "disallowedRegions", ["o", [17, [15, "t"], "disallowedRegions"]]]
-                                    ]]
-                                ]
-                            ],
-                            [36, [2, [15, "b"], "values", [7, [15, "r"]]]]
-                        ],
-                        [52, "b", ["require", "Object"]],
-                        [52, "c", [13, [41, "$0"],
-                            [3, "$0", ["require", "internal.getFlags"]],
-                            ["$0"]
-                        ]],
-                        [52, "d", ["require", "getContainerVersion"]],
-                        [52, "e", ["require", "internal.getCountryCode"]],
-                        [52, "f", ["require", "internal.getRegionCode"]],
-                        [52, "g", ["require", "internal.setRemoteConfigParameter"]],
-                        [52, "h", [15, "__module_activities"]],
-                        [52, "i", [17, [15, "h"], "withRequestContext"]],
-                        [41, "j"],
-                        [41, "k"],
-                        [41, "l"],
-                        [52, "m", [8, "GOOGLE_SIGNALS", [7, [8, "name", "allow_google_signals", "value", false]], "DEVICE_AND_GEO", [7, [8, "name", "geo_granularity", "value", true],
-                            [8, "name", "redact_device_info", "value", true]
-                        ]]],
-                        [36, [8, "applyRegionScopedSettings", [15, "n"], "extractRedactedLocations", [15, "p"]]]
-                    ],
-                    [36, ["a"]]
-                ]],
-                ["$0"]
-            ]]
+            ]
 
         ],
         "entities": {
-            "__c": {
+            "__cid": {
                 "2": true,
-                "4": true
-            },
-            "__ccd_auto_redact": {
-                "2": true,
-                "4": true
-            },
-            "__ccd_conversion_marking": {
-                "2": true,
-                "4": true
-            },
-            "__ccd_ga_first": {
-                "2": true,
-                "4": true
-            },
-            "__ccd_ga_last": {
-                "2": true,
-                "4": true
-            },
-            "__ccd_ga_regscope": {
-                "2": true,
-                "4": true
+                "4": true,
+                "3": true
             },
             "__e": {
-                "2": true,
-                "4": true
-            },
-            "__ogt_1p_data_v2": {
-                "2": true
-            },
-            "__set_product_settings": {
                 "2": true,
                 "4": true
             }
@@ -1047,12 +61,7 @@ console.log("amjanjamla");
             "1": "1"
         },
         "permissions": {
-            "__c": {},
-            "__ccd_auto_redact": {},
-            "__ccd_conversion_marking": {},
-            "__ccd_ga_first": {},
-            "__ccd_ga_last": {},
-            "__ccd_ga_regscope": {
+            "__cid": {
                 "read_container_data": {}
             },
             "__e": {
@@ -1060,16 +69,7 @@ console.log("amjanjamla");
                     "eventDataAccess": "specific",
                     "keyPatterns": ["event"]
                 }
-            },
-            "__ogt_1p_data_v2": {
-                "detect_user_provided_data": {
-                    "limitDataSources": true,
-                    "allowAutoDataSources": true,
-                    "allowManualDataSources": false,
-                    "allowCodeDataSources": false
-                }
-            },
-            "__set_product_settings": {}
+            }
 
 
         }
@@ -1079,15 +79,8 @@ console.log("amjanjamla");
         ,
         "security_groups": {
             "google": [
-                "__c",
-                "__ccd_auto_redact",
-                "__ccd_conversion_marking",
-                "__ccd_ga_first",
-                "__ccd_ga_last",
-                "__ccd_ga_regscope",
-                "__e",
-                "__ogt_1p_data_v2",
-                "__set_product_settings"
+                "__cid",
+                "__e"
 
             ]
 
@@ -4115,10 +3108,6 @@ console.log("amjanjamla");
 
     function Mg(a) {
         var b;
-        K(this.getName(), ["uri:!string"], arguments);
-        try {
-            b = decodeURIComponent(a)
-        } catch (c) {}
         return b
     };
 
@@ -4133,103 +3122,6 @@ console.log("amjanjamla");
             return encodeURIComponent(a)
         } catch (b) {}
     };
-    var Pg = function(a, b) {
-            for (var c = 0; c < b.length; c++) {
-                if (a === void 0) return;
-                a = a[b[c]]
-            }
-            return a
-        },
-        Qg = function(a, b) {
-            var c = b.preHit;
-            if (c) {
-                var d = a[0];
-                switch (d) {
-                    case "hitData":
-                        return a.length < 2 ? void 0 : Pg(c.getHitData(a[1]), a.slice(2));
-                    case "metadata":
-                        return a.length < 2 ? void 0 : Pg(c.getMetadata(a[1]), a.slice(2));
-                    case "eventName":
-                        return c.getEventName();
-                    case "destinationId":
-                        return c.getDestinationId();
-                    default:
-                        throw Error(d + " is not a valid field that can be accessed\n                      from PreHit data.");
-                }
-            }
-        },
-        Sg = function(a, b) {
-            if (a) {
-                if (a.contextValue !== void 0) {
-                    var c;
-                    a: {
-                        var d = a.contextValue,
-                            e = d.keyParts;
-                        if (e && e.length !== 0) {
-                            var f = d.namespaceType;
-                            switch (f) {
-                                case 1:
-                                    c = Qg(e, b);
-                                    break a;
-                                case 2:
-                                    var g = b.macro;
-                                    c = g ? g[e[0]] : void 0;
-                                    break a;
-                                default:
-                                    throw Error("Unknown Namespace Type used: " + f);
-                            }
-                        }
-                        c = void 0
-                    }
-                    return c
-                }
-                if (a.booleanExpressionValue !== void 0) return Rg(a.booleanExpressionValue, b);
-                if (a.booleanValue !== void 0) return !!a.booleanValue;
-                if (a.stringValue !== void 0) return String(a.stringValue);
-                if (a.integerValue !== void 0) return Number(a.integerValue);
-                if (a.doubleValue !== void 0) return Number(a.doubleValue);
-                throw Error("Unknown field used for variable of type ExpressionValue:" + a);
-            }
-        },
-        Rg = function(a, b) {
-            var c = a.args;
-            if (!Array.isArray(c) || c.length === 0) throw Error('Invalid boolean expression format. Expected "args":' + c + " property to\n         be non-empty array.");
-            var d = function(g) {
-                return Sg(g, b)
-            };
-            switch (a.type) {
-                case 1:
-                    for (var e = 0; e < c.length; e++)
-                        if (d(c[e])) return !0;
-                    return !1;
-                case 2:
-                    for (var f = 0; f < c.length; f++)
-                        if (!d(c[f])) return !1;
-                    return c.length > 0;
-                case 3:
-                    return !d(c[0]);
-                case 4:
-                    return mg(d(c[0]), d(c[1]), !1);
-                case 5:
-                    return og(d(c[0]), d(c[1]));
-                case 6:
-                    return tg(d(c[0]), d(c[1]));
-                case 7:
-                    return kg(d(c[0]), d(c[1]));
-                case 8:
-                    return ng(d(c[0]), d(c[1]));
-                case 9:
-                    return sg(d(c[0]), d(c[1]));
-                case 10:
-                    return qg(d(c[0]), d(c[1]));
-                case 11:
-                    return rg(d(c[0]), d(c[1]));
-                case 12:
-                    return pg(d(c[0]), d(c[1]));
-                default:
-                    throw Error('Invalid boolean expression format. Expected "type" property tobe a positive integer which is less than 13.');
-            }
-        };
 
     function Tg(a) {
         K(this.getName(), ["message:?string"], arguments);
@@ -4331,46 +3223,19 @@ console.log("amjanjamla");
         K(this.getName(), ["apiName:!string", "mock:!PixieMap"], arguments);
     };
     var fh = {};
-    var gh = function(a) {
-        var b = new Ka;
-        if (a instanceof Vc)
-            for (var c = a.ka(), d = 0; d < c.length; d++) {
-                var e = c[d];
-                a.has(e) && b.set(e, a.get(e))
-            } else if (a instanceof Xc)
-                for (var f = a.ka(), g = 0; g < f.length; g++) {
-                    var k = f[g];
-                    b.set(k, a.get(k))
-                } else
-                    for (var m = 0; m < a.length; m++) b.set(m, a[m]);
-        return b
-    };
     fh.keys = function(a) {
-        K(this.getName(), ["input:!*"], arguments);
-        if (a instanceof Vc || a instanceof Xc || typeof a === "string") a = gh(a);
-        if (a instanceof Ka || a instanceof dd) return new Vc(a.ka());
         return new Vc
     };
     fh.values = function(a) {
-        K(this.getName(), ["input:!*"], arguments);
-        if (a instanceof Vc || a instanceof Xc || typeof a === "string") a = gh(a);
-        if (a instanceof Ka || a instanceof dd) return new Vc(a.Vb());
         return new Vc
     };
     fh.entries = function(a) {
-        K(this.getName(), ["input:!*"], arguments);
-        if (a instanceof Vc || a instanceof Xc || typeof a === "string") a = gh(a);
-        if (a instanceof Ka || a instanceof dd) return new Vc(a.Cb().map(function(b) {
-            return new Vc(b)
-        }));
         return new Vc
     };
     fh.freeze = function(a) {
-        (a instanceof Ka || a instanceof dd || a instanceof Vc || a instanceof Xc) && a.Ga();
         return a
     };
     fh.delete = function(a, b) {
-        if (a instanceof Ka && !a.sc()) return a.remove(b), !0;
         return !1
     };
 
@@ -4951,7 +3816,6 @@ console.log("amjanjamla");
     P(94);
     P(59);
     P(24);
-    P(125);
     P(108);
     P(97);
     P(22);
@@ -4962,7 +3826,6 @@ console.log("amjanjamla");
     P(107);
     P(110);
     P(73);
-    P(75);
     P(88);
     P(54);
     P(52);
@@ -5220,7 +4083,7 @@ console.log("amjanjamla");
     Gi.th = "4ao0";
     Gi.Be = Number("0") || 0;
     Gi.ob = "dataLayer";
-    Gi.yn = "ChAI8KbyuAYQhfyCuK6OstoJEiUAL1H0CWj0sVPuU78x7zDEok2A7z9ngXDO0qOYG0BzfrDByLb9GgJdsg\x3d\x3d";
+    Gi.yn = "ChAI8Oz8uAYQh8bg1vObxKArEiYAKfYw1S+tiZkuZZPSqRI3tqE6Xl5lBWHQetDXtwEYP3gEurH3/BoCCpo\x3d";
     var Ii = {
             __cl: 1,
             __ecl: 1,
@@ -5242,7 +4105,7 @@ console.log("amjanjamla");
         },
         Ki;
     for (Ki in Ii) Ii.hasOwnProperty(Ki) && (Ji[Ki] = 1);
-    var Li = lb("true"),
+    var Li = lb(""),
         Mi = !1,
         Ni, Oi = !1;
     Oi = !0;
@@ -5263,7 +4126,7 @@ console.log("amjanjamla");
         Hi.sequence = a + 1;
         return a
     }
-    Gi.Ik = "true";
+    Gi.Ik = "";
     var Zi = "";
     Gi.uh = Zi;
     var $i = new function() {
@@ -5657,10 +4520,10 @@ console.log("amjanjamla");
     var ck = {},
         dk = !1,
         Nf = {
-            ctid: "G-10YHVQBD3V",
-            canonicalContainerId: "186633201",
-            jk: "G-10YHVQBD3V|GT-NCTQJL3Q",
-            kk: "G-10YHVQBD3V"
+            ctid: "G-10YHVQBD3V\x22",
+            canonicalContainerId: "",
+            jk: "G-10YHVQBD3V\x22",
+            kk: "G-10YHVQBD3V\x22"
         };
     ck.ye = lb("");
 
@@ -11060,13 +9923,11 @@ console.log("amjanjamla");
             jx(this, a, b)
         },
         lx = function(a, b, c, d) {
-            
             if (Ji.hasOwnProperty(b) || b === "__zone") return -1;
             var e = {};
             Rc(d) && (e = Sc(d, e));
             e.id = c;
             e.status = "timeout";
-            
             return a.eventData.tags.push(e) - 1
         },
         mx = function(a, b, c, d) {
@@ -12721,16 +11582,6 @@ console.log("amjanjamla");
 
     function VB(a, b) {
         var c;
-        K(this.getName(), ["preHit:!PixieMap", "dustOptions:?PixieMap"], arguments);
-        var d = G(b) || {},
-            e = G(a, this.D, 1).Ub(),
-            f = e.m;
-        d.omitEventContext && (f = Am(new pm(e.m.eventId, e.m.priorityId)));
-        var g = new UB(e.target, e.eventName, f);
-        d.omitHitData || Sc(e.j, g.j);
-        d.omitMetadata ? g.metadata = {} : Sc(e.metadata, g.metadata);
-        g.isAborted = e.isAborted;
-        c = ed(Ds(g), this.D, 1);
         return c
     }
     VB.F = "internal.copyPreHit";
@@ -12771,13 +11622,6 @@ console.log("amjanjamla");
 
     function ZB(a, b) {
         var c = null;
-        K(this.getName(), ["pattern:!string", "flags:?string"], arguments);
-        try {
-            var d = (b || "").split("").filter(function(e) {
-                return "ig".indexOf(e) >= 0
-            }).join("");
-            c = new bd(new RegExp(a, d))
-        } catch (e) {}
         return c
     }
     ZB.F = "internal.createRegex";
@@ -12807,35 +11651,8 @@ console.log("amjanjamla");
 
     function eC(a) {
         var b;
-        L(this, "detect_user_provided_data", "auto");
-        var c = G(a) || {},
-            d = mt({
-                Gd: !!c.includeSelector,
-                Hd: !!c.includeVisibility,
-                Le: c.excludeElementSelectors,
-                Bb: c.fieldFilters,
-                pg: !!c.selectMultipleElements
-            });
-        b = new Ka;
-        var e = new Vc;
-        b.set("elements", e);
-        for (var f = d.elements, g = 0; g < f.length; g++) e.push(fC(f[g]));
-        d.hi !== void 0 && b.set("preferredEmailElement", fC(d.hi));
-        b.set("status", d.status);
         return b
     }
-    var fC = function(a) {
-        var b = new Ka;
-        b.set("userData", a.Z);
-        b.set("tagName", a.tagName);
-        a.querySelector !== void 0 && b.set("querySelector", a.querySelector);
-        a.isVisible !== void 0 && b.set("isVisible", a.isVisible);
-        if (Q(28)) {} else switch (a.type) {
-            case kt.vc:
-                b.set("type", "email")
-        }
-        return b
-    };
     eC.F = "internal.detectUserProvidedData";
 
     function iC(a, b) {
@@ -12935,9 +11752,6 @@ console.log("amjanjamla");
         var c = b ? G(b) : {},
             d = a,
             e = !1;
-        var f = JSON.parse(d);
-        if (!f) throw Error("Invalid boolean expression string was given.");
-        e = Rg(f, c);
         return e
     }
     DD.F = "internal.evaluateBooleanExpression";
@@ -12989,7 +11803,7 @@ console.log("amjanjamla");
 
     function oF() {
         var a = new Ka;
-        L(this, "read_container_data"), Q(43) && nF ? a = nF : (a.set("containerId", 'G-10YHVQBD3V'), a.set("version", '1'), a.set("environmentName", ''), a.set("debugMode", Sf), a.set("previewMode", Tf.yk), a.set("environmentMode", Tf.Ql), a.set("firstPartyServing", bj() || Pi), a.set("containerUrl", ic), a.Ga(), Q(43) && (nF = a));
+        L(this, "read_container_data"), Q(43) && nF ? a = nF : (a.set("containerId", 'G-10YHVQBD3V\x22'), a.set("version", '1'), a.set("environmentName", ''), a.set("debugMode", Sf), a.set("previewMode", Tf.yk), a.set("environmentMode", Tf.Ql), a.set("firstPartyServing", bj() || Pi), a.set("containerUrl", ic), a.Ga(), Q(43) && (nF = a));
         return a
     }
     oF.R = "getContainerVersion";
@@ -13008,7 +11822,6 @@ console.log("amjanjamla");
 
     function rF() {
         var a = [];
-        a = hk();
         return ed(a)
     }
     rF.F = "internal.getDestinationIds";
@@ -13151,9 +11964,6 @@ console.log("amjanjamla");
 
     function HF(a, b) {
         var c;
-        K(this.getName(), ["targetId:!string", "name:!string"], arguments);
-        var d = Ns(a) || {};
-        c = ed(d[b], this.D);
         return c
     }
     HF.F = "internal.getProductSettingsParameter";
@@ -13225,7 +12035,6 @@ console.log("amjanjamla");
     }
     SF.F = "internal.getUserAgentClientHints";
     var UF = function(a) {
-            
             var b = a.eventName === O.g.ac && $k() && Ot(a),
                 c = a.metadata.is_sgtm_service_worker,
                 d = a.metadata.batch_on_navigation,
@@ -13379,7 +12188,6 @@ console.log("amjanjamla");
             var b = a.metadata.cookie_options,
                 c = b.prefix + "_ga",
                 d = gp(c, b.domain, b.path, fG, O.g.W);
-
             if (!d) {
                 var e = String(U(a.m, O.g.Ac, ""));
                 e && e !== c && (d = gp(e, b.domain, b.path, fG,
@@ -13706,7 +12514,6 @@ console.log("amjanjamla");
     HG[O.g.rj] = "ur";
     HG[O.g.Aj] = "_uip";
     HG[O.g.md] = "lps";
-    HG[O.g.wf] = "gclgs", HG[O.g.yf] = "gclst", HG[O.g.xf] = "gcllp";
     var IG = {};
     IG[O.g.Vc] = "cc";
     IG[O.g.Wc] = "ci";
@@ -14302,13 +13109,10 @@ console.log("amjanjamla");
             }
         },
         CH = function(a, b, c, d, e) {
-            
             var f = U(a.m, O.g.tb);
-            
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? cG(a, f, 1) : (S(127), a.isAborted = !0);
             else {
                 var g = f ? 1 : 8;
-                
                 a.metadata.is_new_to_site = !1;
                 f || (f = gG(a), g = 3);
                 f || (f = b, g = 5);
@@ -14319,36 +13123,21 @@ console.log("amjanjamla");
                     g = 6
                 }
                 f ? f = "" + f : (f = fp(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
-                
-                
                 cG(a, f, g)
             }
-
-
-
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
                     1E3),
                 p = void 0;
-            
-            
             a.metadata.is_new_to_site || (p = nG(a) || c);
             var q = kb(U(a.m, O.g.sd, 30));
             q = Math.min(475, q);
             q = Math.max(5, q);
-            
-            
-            //p == é o cookie, ex: 1730068773.3.1.1730069635.0.0.0
-            
             var r = kb(U(a.m, O.g.Pf, 1E4)),
                 u = hG(p);
-            
             a.metadata.is_first_visit = !1;
             a.metadata.is_session_start = !1;
             a.metadata.join_timer_sec = 0;
-
-            
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
-            
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
@@ -14358,13 +13147,7 @@ console.log("amjanjamla");
                 Mc: !1,
                 Dd: void 0
             });
-            //n == event timestamp do cookie
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Md = !1, u.Dd = void 0);
-            
-            if(a.eventName == "troca"){
-                v = 1;
-            }
-
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Md = !0;
             console.log("xxxxxxxxxxxxxxxxxxx");
@@ -15083,61 +13866,6 @@ console.log("amjanjamla");
 
     function $I(a) {
         var b = void 0;
-        if (typeof a !== "string") return;
-        a && ub(a, "//") && (a = E.location.protocol + a);
-        if (typeof URL === "function") {
-            var c;
-            a: {
-                var d;
-                try {
-                    d = new URL(a)
-                } catch (w) {
-                    c = void 0;
-                    break a
-                }
-                for (var e = {}, f = Array.from(d.searchParams), g = 0; g < f.length; g++) {
-                    var k = f[g][0],
-                        m = f[g][1];
-                    e.hasOwnProperty(k) ? typeof e[k] === "string" ? e[k] = [e[k], m] : e[k].push(m) : e[k] = m
-                }
-                c = ed({
-                    href: d.href,
-                    origin: d.origin,
-                    protocol: d.protocol,
-                    username: d.username,
-                    password: d.password,
-                    host: d.host,
-                    hostname: d.hostname,
-                    port: d.port,
-                    pathname: d.pathname,
-                    search: d.search,
-                    searchParams: e,
-                    hash: d.hash
-                })
-            }
-            return c
-        }
-        var n;
-        try {
-            n = Aj(a)
-        } catch (w) {
-            return
-        }
-        if (!n.protocol || !n.host) return;
-        var p = {};
-        if (n.search)
-            for (var q = n.search.replace("?", "").split("&"), r = 0; r < q.length; r++) {
-                var u = q[r].split("="),
-                    v = u[0],
-                    t = decodeURIComponent(u.splice(1).join("=")).replace(/\+/g, " ");
-                p.hasOwnProperty(v) ? typeof p[v] === "string" ? p[v] = [p[v], t] : p[v].push(t) : p[v] = t
-            }
-        n.searchParams = p;
-        n.origin = n.protocol + "//" + n.host;
-        n.username = "";
-        n.password =
-            "";
-        b = ed(n);
         return b
     }
     $I.R = "parseUrl";
@@ -15153,14 +13881,6 @@ console.log("amjanjamla");
 
     function cJ(a) {
         var b = !1;
-        K(this.getName(), ["permission:!string"], [a]);
-        for (var c = Array.prototype.slice.call(arguments, 0), d = 0; d < c.length; ++d) c[d] = G(c[d], this.D, 1);
-        c.unshift(this);
-        try {
-            L.apply(null, c), b = !0
-        } catch (e) {
-            return !1
-        }
         return b
     }
     cJ.R = "queryPermission";
@@ -15184,9 +13904,6 @@ console.log("amjanjamla");
 
     function gJ(a, b) {
         var c = this;
-        K(this.getName(), ["destinationId:!string", "callback:!Fn"], arguments), Gs(a, function(d) {
-            b.invoke(c.D, ed(d, c.D, 1))
-        });
     }
     gJ.F = "internal.registerCcdCallback";
 
@@ -15266,15 +13983,7 @@ console.log("amjanjamla");
     function BJ(a, b, c) {}
     BJ.F = "internal.setProductSettingsParameter";
 
-    function CJ(a, b, c) {
-        K(this.getName(), ["targetId:!string", "name:!string", "value:!*"], arguments);
-        for (var d = b.split("."), e = Ym(a), f = 0; f < d.length - 1; f++) {
-            if (e[d[f]] === void 0) e[d[f]] = {};
-            else if (!Rc(e[d[f]])) throw Error("setRemoteConfigParameter failed, path contains a non-object type: " + d[f]);
-            e = e[d[f]]
-        }
-        e[d[f]] = G(c, this.D, 1);
-    }
+    function CJ(a, b, c) {}
     CJ.F = "internal.setRemoteConfigParameter";
 
     function DJ(a, b, c, d) {
@@ -15687,36 +14396,6 @@ console.log("amjanjamla");
         }
     }, Y.__read_container_data.o = "read_container_data", Y.__read_container_data.isVendorTemplate = !0, Y.__read_container_data.priorityOverride = 0, Y.__read_container_data.isInfrastructure = !1, Y.__read_container_data.runInSiloedMode = !1;
 
-    Y.securityGroups.detect_user_provided_data = ["google"],
-        function() {
-            function a(b, c) {
-                return {
-                    dataSource: c
-                }
-            }(function(b) {
-                Y.__detect_user_provided_data = b;
-                Y.__detect_user_provided_data.o = "detect_user_provided_data";
-                Y.__detect_user_provided_data.isVendorTemplate = !0;
-                Y.__detect_user_provided_data.priorityOverride = 0;
-                Y.__detect_user_provided_data.isInfrastructure = !1;
-                Y.__detect_user_provided_data.runInSiloedMode = !1
-            })(function(b) {
-                var c = b.vtp_createPermissionError;
-                return {
-                    assert: function(d, e) {
-                        if (e !== "auto" && e !== "manual" &&
-                            e !== "code") throw c(d, {}, "Unknown user provided data source.");
-                        if (b.vtp_limitDataSources)
-                            if (e !== "auto" || b.vtp_allowAutoDataSources) {
-                                if (e === "manual" && !b.vtp_allowManualDataSources) throw c(d, {}, "Detection of user provided data via manually specified CSS selectors is not allowed.");
-                                if (e === "code" && !b.vtp_allowCodeDataSources) throw c(d, {}, "Detection of user provided data from an in-page variable is not allowed.");
-                            } else throw c(d, {}, "Automatic detection of user provided data is not allowed.");
-                    },
-                    M: a
-                }
-            })
-        }();
-
 
 
 
@@ -15920,7 +14599,7 @@ console.log("amjanjamla");
                     Mw().removeExternalRestrictions(lk());
                 } else {
                     zu();
-                    $i.j = "101533422~101823848~101925629";
+                    $i.j = "101533421~101823848";
                     $i.K = "";
                     $i.Ua = "ad_storage|analytics_storage|ad_user_data|ad_personalization";
                     $i.aa = "ad_storage|analytics_storage|ad_user_data";
