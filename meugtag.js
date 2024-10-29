@@ -6938,9 +6938,6 @@
         };
     bn.prototype.register = function(a, b, c) {
         console.log("register");
-        console.log("a",a);
-        console.log("b",b);
-        console.log("c",c);
         var d = Ym(this, a);
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
     };
@@ -6950,13 +6947,13 @@
         console.log("b",b);
         console.log("c",c);
         console.log("d",d);
+        console.log("---------------------");
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
     };
     bn.prototype.flush = function(a) {
         console.log("flush");
-        console.log("a",a);
         
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
@@ -6992,8 +6989,12 @@
                         delete e.Jc[O.g.nc];
                         var n = g.destinationId === g.id;
                         m || (n ? k.K = {} : k.P[g.id] = {});
-                        console.log("ooooooooooooooo");
-                        console.log("this, O.g.ba, e.Jc, f",this, O.g.ba, e.Jc, f);
+                        console.log("CONFIG");
+                        console.log("this",this);
+                        console.log("O.g.ba",O.g.ba);
+                        console.log("e.Jc",c);
+                        console.log("f",f);
+                        console.log("---------------------");
                         k.H && m || cn(this, O.g.ba, e.Jc, f);
                         k.H = !0;
                         n ? Sc(e.Jc, k.K) : (Sc(e.Jc, k.P[g.id]), S(70));
@@ -7006,8 +7007,12 @@
                                 Sc(xb(u, v), r.Kh)
                             }
                         }(e));
-                        console.log("ppppppppppppppppppppppp");
-                        console.log("this, f.args[1], e.Kh, f",this, f.args[1], e.Kh, f);
+                        console.log("EVENT");
+                        console.log("this",this);
+                        console.log("f.args[1]",f.args[1]);
+                        console.log("e.Kh",e.Kh);
+                        console.log("f",f);
+                        console.log("---------------------");
                         cn(this, f.args[1], e.Kh, f);
                         break;
                     case "get":
