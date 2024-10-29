@@ -3409,7 +3409,6 @@
 
     function uf(a, b, c) {
         try {
-            console.log("cccccccccccccc");
             return mf(vf(a, b, c))
         } catch (d) {
             JSON.stringify(a)
@@ -3426,10 +3425,7 @@
             c = c || [];
             var d = {},
                 e;
-            console.log("vf");
-            console.log("a",a);
-            console.log("b",b);
-            console.log("c",c);
+            
             for (e in a) a.hasOwnProperty(e) && (d[e] = xf(a[e], b, c));
             return d
         },
@@ -3452,7 +3448,6 @@
                         c[f] = !0;
                         var k = String(g[Ie.rh]);
                         try {
-                            console.log("aaaaaaaaa");
                             var m = vf(g, b, c);
                             m.vtp_gtmEventId = b.id;
                             b.priorityId && (m.vtp_gtmPriorityId = b.priorityId);
@@ -6943,17 +6938,26 @@
         };
     bn.prototype.register = function(a, b, c) {
         console.log("register");
+        console.log("a",a);
+        console.log("b",b);
+        console.log("c",c);
         var d = Ym(this, a);
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
     };
     bn.prototype.push = function(a, b, c, d) {
         console.log("push");
+        console.log("a",a);
+        console.log("b",b);
+        console.log("c",c);
+        console.log("d",d);
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
     };
     bn.prototype.flush = function(a) {
         console.log("flush");
+        console.log("a",a);
+        
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
                 Kh: void 0
@@ -6988,6 +6992,8 @@
                         delete e.Jc[O.g.nc];
                         var n = g.destinationId === g.id;
                         m || (n ? k.K = {} : k.P[g.id] = {});
+                        console.log("ooooooooooooooo");
+                        console.log("this, O.g.ba, e.Jc, f",this, O.g.ba, e.Jc, f);
                         k.H && m || cn(this, O.g.ba, e.Jc, f);
                         k.H = !0;
                         n ? Sc(e.Jc, k.K) : (Sc(e.Jc, k.P[g.id]), S(70));
@@ -7000,11 +7006,15 @@
                                 Sc(xb(u, v), r.Kh)
                             }
                         }(e));
+                        console.log("ppppppppppppppppppppppp");
+                        console.log("this, f.args[1], e.Kh, f",this, f.args[1], e.Kh, f);
                         cn(this, f.args[1], e.Kh, f);
                         break;
                     case "get":
                         var p = {},
                             q = (p[O.g.xb] = f.args[0], p[O.g.Mb] = f.args[1], p);
+                        console.log("----------------------------");
+                        console.log("this, O.g.Ya, q, f",this, O.g.Ya, q, f);
                         cn(this, O.g.Ya, q, f)
                 }
                 this.commands.shift();
@@ -11252,7 +11262,6 @@
             }
             if (f[Ie.ol]) k();
             else {
-                console.log("bbbbbbbbbbbb");
                 var x = vf(f, c, []),
                     y = x[Ie.Hk];
                 if (y != null)
