@@ -6888,12 +6888,8 @@
             return a.destinations[c] = a.destinations[c] || new $m
         },
         cn = function(a, b, c, d) {
-            console.log("zzzzzzzzzzzzzzzzz");
-            console.log("a",a);
-            onsole.log("b",b);
-            onsole.log("c",c);
-            onsole.log("d",d);
-            console.log("zzzzzzzzzzzzzzzzz");
+            console.log("aaaaaaaaaaaaaaaaaa");
+            
             if (d.j) {
                 var e = Ym(a, d.j),
                     f = e.aa;
@@ -6948,6 +6944,7 @@
         d.deferrable || this.flush()
     };
     bn.prototype.flush = function(a) {
+        console.log("bbbbbbbbbbbbbbbbbbbbbbbbbb");
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
                 Kh: void 0
@@ -6956,7 +6953,6 @@
                 g = f.j;
             if (f.messageContext.deferrable) !g || Ym(this, g).H ? (f.messageContext.deferrable = !1, this.commands.push(f)) : c.push(f), this.commands.shift();
             else {
-                console.log("aaaaaaaaaaaaaaaaaaaaaaa");
                 
                 switch (f.type) {
                     case "require":
