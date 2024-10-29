@@ -6888,7 +6888,6 @@
             return a.destinations[c] = a.destinations[c] || new $m
         },
         cn = function(a, b, c, d) {
-            console.log("aaaaaaaaaaaaaaaaaa");
             
             if (d.j) {
                 var e = Ym(a, d.j),
@@ -6935,16 +6934,18 @@
             }
         };
     bn.prototype.register = function(a, b, c) {
+        console.log("register");
         var d = Ym(this, a);
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
     };
     bn.prototype.push = function(a, b, c, d) {
+        console.log("push");
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
     };
     bn.prototype.flush = function(a) {
-        console.log("bbbbbbbbbbbbbbbbbbbbbbbbbb");
+        console.log("flush");
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
                 Kh: void 0
