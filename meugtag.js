@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("xaxa");
+
 (function() {
 
     var data = {
@@ -6546,11 +6546,7 @@ console.log("xaxa");
     }
 
     function fm(a, b, c) {
-        console.log("bbbbbbbbbbbbb");
-        console.log("a",a);
-        console.log("b",b);
-        console.log("c",c);
-        console.log("bbbbbbbbbbbbb");
+        
         if (Pj && a === "config") {
             var d, e = (d = Sl(b)) == null ? void 0 : d.ids;
             if (!(e && e.length > 1)) {
@@ -6892,6 +6888,12 @@ console.log("xaxa");
             return a.destinations[c] = a.destinations[c] || new $m
         },
         cn = function(a, b, c, d) {
+            console.log("zzzzzzzzzzzzzzzzz");
+            console.log("a",a);
+            onsole.log("b",b);
+            onsole.log("c",c);
+            onsole.log("d",d);
+            console.log("zzzzzzzzzzzzzzzzz");
             if (d.j) {
                 var e = Ym(a, d.j),
                     f = e.aa;
