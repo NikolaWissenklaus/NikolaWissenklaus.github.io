@@ -3425,14 +3425,13 @@
             c = c || [];
             var d = {},
                 e;
+            console.log("hhhh");
             for (e in a) a.hasOwnProperty(e) && (d[e] = xf(a[e], b, c));
             return d
         },
         xf = function(a, b, c) {
             console.log("xf");
-            console.log("a",a);
-            console.log("b",b);
-            console.log("c",c);
+            
             if (Array.isArray(a)) {
                 var d;
                 switch (a[0]) {
@@ -3440,6 +3439,7 @@
                         return a[1];
                     case "list":
                         d = [];
+                        console.log("aaaaa");
                         for (var e = 1; e < a.length; e++) d.push(xf(a[e], b, c));
                         return d;
                     case "macro":
@@ -3467,10 +3467,12 @@
                         return d;
                     case "map":
                         d = {};
+                        console.log("bbbbbb");
                         for (var n = 1; n < a.length; n += 2) d[xf(a[n], b, c)] = xf(a[n + 1], b, c);
                         return d;
                     case "template":
                         d = [];
+                        console.log("cccccc");
                         for (var p = !1, q = 1; q < a.length; q++) {
                             var r = xf(a[q], b, c);
                             nf && (p = p || nf.zm(r));
@@ -3478,6 +3480,7 @@
                         }
                         return nf && p ? nf.Ml(d) : d.join("");
                     case "escape":
+                        console.log("ddddd");
                         d = xf(a[1], b, c);
                         if (nf && Array.isArray(a[1]) && a[1][0] === "macro" && nf.Am(a)) return nf.Tm(d);
                         d = String(d);
@@ -6461,6 +6464,8 @@
 
     function Sl(a, b) {
         console.log("Sl");
+        console.log("a",a);
+        console.log("b",b);
         if (z(a)) {
             a = nb(a);
             var c = a.indexOf("-");
@@ -11225,6 +11230,7 @@
         var e = jf[a],
             f = Qx(a, b, c, d);
         if (!f) return null;
+        console.log("eeee");
         var g = xf(e[Ie.Oj], c, []);
         if (g && g.length) {
             var k = g[0];
@@ -11302,6 +11308,7 @@
             k = b.onFailure,
             m = b.terminate;
         if (c.isBlocked(f)) return null;
+        console.log("fffffff");
         var n = xf(f[Ie.Tj], c, []);
         if (n && n.length) {
             var p = n[0],
@@ -11409,10 +11416,12 @@
     function Vx(a, b) {
         if (Oj) {
             var c = function(d) {
+                console.log("gggggg");
                 var e = b.isBlocked(jf[d]) ? "3" : "4",
                     f = xf(jf[d][Ie.Oj], b, []);
                 f && f.length && c(f[0].index);
                 Nx(b.id, jf[d], e);
+                console.log("hhhhhhhhh");
                 var g = xf(jf[d][Ie.Tj], b, []);
                 g && g.length && c(g[0].index)
             };
