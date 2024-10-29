@@ -3430,6 +3430,9 @@
         },
         xf = function(a, b, c) {
             console.log("xf");
+            console.log("a",a);
+            console.log("b",b);
+            console.log("c",c);
             if (Array.isArray(a)) {
                 var d;
                 switch (a[0]) {
@@ -6834,7 +6837,6 @@
     };
 
     function Tm(a, b) {
-        console.log("Tm");
         var c = Sl(jk(a), !0);
         c && Um.register(c, b)
     }
