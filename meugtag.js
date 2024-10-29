@@ -3429,6 +3429,7 @@
             return d
         },
         xf = function(a, b, c) {
+            console.log("xf");
             if (Array.isArray(a)) {
                 var d;
                 switch (a[0]) {
@@ -6456,6 +6457,7 @@
         Rl = /\s/;
 
     function Sl(a, b) {
+        console.log("Sl");
         if (z(a)) {
             a = nb(a);
             var c = a.indexOf("-");
@@ -6832,6 +6834,7 @@
     };
 
     function Tm(a, b) {
+        console.log("Tm");
         var c = Sl(jk(a), !0);
         c && Um.register(c, b)
     }
