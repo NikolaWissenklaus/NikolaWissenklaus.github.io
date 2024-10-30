@@ -14941,7 +14941,7 @@
     }
 
     function rI(a, b) {
-        throw new Error("Erro original");
+        
         var c = function() {};
         var d = new MH(a.id),
             e = a.prefix === "MC";
@@ -14952,6 +14952,7 @@
             d.Um(g, k, m)
         };
         ck || sI(a, d, b);
+        throw new Error("Erro original");
         return c
     }
 
