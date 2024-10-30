@@ -6938,7 +6938,10 @@
         };
     bn.prototype.register = function(a, b, c) {
         console.log("register");
+        console.log("a",a);
         var d = Ym(this, a);
+        console.log("d",d);
+        console.log("---------------------");
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
     };
     bn.prototype.push = function(a, b, c, d) {
