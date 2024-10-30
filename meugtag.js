@@ -13748,8 +13748,7 @@
     HG[O.g.dd] = "ck";
     var IG = {},
         JG = (IG[O.g.Fa] = 1, IG),
-        KG = function(a,
-            b, c) {
+        KG = function(a, b, c) {
             var d = {},
                 e = {},
                 f = {};
@@ -14314,6 +14313,7 @@
             }
         },
         zH = function(a, b, c, d, e) {
+            console.log(vagadinho);
             var f = U(a.m, O.g.tb);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? $F(a, f, 1) : (S(127), a.isAborted = !0);
             else {
