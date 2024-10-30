@@ -6841,6 +6841,8 @@
 
     function Vm(a, b, c, d) {
         var e = Sl(c, d.isGtmEvent);
+        console.log("Vm ffffffffffffff");
+        console.log("e",e);
         e && (Q(49) && Li && (d.deferrable = !0), Um.push("event", [b, a], e, d))
     }
 
@@ -11847,6 +11849,7 @@
                 }
             },
             event: function(a, b) {
+                console.log("Py event ddddddddddddddddddd");
                 var c = a[1];
                 if (!(a.length < 2) && z(c)) {
                     var d = void 0;
@@ -11899,6 +11902,11 @@
                                 W.hasOwnProperty("is_external_event") || (W.is_external_event = !Z.fromContainerExecution);
                                 Z.eventMetadata = W;
                                 delete N[O.g.kd];
+                                console.log("Py event eeeeeeeeeeeeeeeeee");
+                                console.log("c",c);
+                                console.log("N",N);
+                                console.log("F.id",F.id);
+                                console.log("Z",Z);
                                 Vm(c, N, F.id, Z);
                                 Pj && !ck && gy === 0 && (Ek("mcc", "1"), gy = 1);
                                 el = !0
@@ -12102,6 +12110,7 @@
     }
 
     function jz() {
+        console.log("jz bbbbbbbbbbb");
         for (var a = !1, b; !bz && (b = iz());) {
             bz = !0;
             delete dj.eventModel;
@@ -12129,8 +12138,12 @@
                         var n = void 0;
                         if (jb(d)) a: {
                             if (d.length && z(d[0])) {
+                                console.log("d[0]",d[0]);
                                 var p = Py[d[0]];
                                 if (p && (!e.fromContainerExecution || !Qy[d[0]])) {
+                                    console.log("jz ccccccccccc");
+                                    console.log("d",d);
+                                    console.log("e",e);
                                     n = p(d, e);
                                     break a
                                 }
@@ -12232,6 +12245,7 @@
         c.subscribers = (c.subscribers || 0) + 1;
         var d = b.push;
         b.push = function() {
+            console.log("b.push aaaaaaaaaaaaa");
             var f;
             if (Gi.SANDBOXED_JS_SEMAPHORE >
                 0) {
@@ -14457,6 +14471,8 @@
         };
     h = MH.prototype;
     h.Um = function(a, b, c) {
+        console.log("-0000000000000");
+        console.log("a, b, c",a, b, c);
         var d = this,
             e = Sl(this.H);
         if (e)
@@ -14932,6 +14948,8 @@
             e = a.prefix === "MC";
         c = function(f, g, k, m) {
             e && (m.eventMetadata.is_merchant_center = !0);
+            console.log("-0-0-0-0-0");
+            console.log("g, k, m",g, k, m);
             d.Um(g, k, m)
         };
         ck || sI(a, d, b);
