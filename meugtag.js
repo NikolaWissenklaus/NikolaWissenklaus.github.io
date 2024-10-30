@@ -14312,7 +14312,7 @@
             }
         },
         zH = function(a, b, c, d, e) {
-            throw new Error("Te achei vagabundo");
+            
             var f = U(a.m, O.g.tb);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? $F(a, f, 1) : (S(127), a.isAborted = !0);
             else {
@@ -14508,6 +14508,7 @@
         }
     };
     h.Vm = function(a) {
+        
         var b = this;
         this.j = a;
         try {
@@ -14540,6 +14541,9 @@
             XH(a);
             e && !a.isAborted && this.Ic++ > 0 && UF(17);
             YH(a);
+            if(a.eventName == "aaa"){
+                throw new Error("Erro original");
+            }
             zH(a, this.clientId, this.Wa, this.C, !this.Ua);
             ZH(a);
             $H(a);
