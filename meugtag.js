@@ -14312,7 +14312,7 @@
             }
         },
         zH = function(a, b, c, d, e) {
-            
+            throw new Error("Te achei vagabundo");
             var f = U(a.m, O.g.tb);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? $F(a, f, 1) : (S(127), a.isAborted = !0);
             else {
@@ -14510,7 +14510,6 @@
     h.Vm = function(a) {
         var b = this;
         this.j = a;
-        vagadinho()
         try {
             OH(a);
             PH(a);
