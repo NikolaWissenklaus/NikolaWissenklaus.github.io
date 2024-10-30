@@ -6841,8 +6841,7 @@
 
     function Vm(a, b, c, d) {
         var e = Sl(c, d.isGtmEvent);
-        console.log("Vm ffffffffffffff");
-        console.log("e",e);
+        console.log("Vm");
         e && (Q(49) && Li && (d.deferrable = !0), Um.push("event", [b, a], e, d))
     }
 
@@ -7008,6 +7007,7 @@
                         k.H = !0;
                         n ? Sc(e.Jc, k.K) : (Sc(e.Jc, k.P[g.id]), S(70));
                         d = !0;
+                        console.log("fim config");
                         break;
                     case "event":
                         e.Kh = {};
@@ -7030,6 +7030,7 @@
                         console.log("----------------------------");
                         console.log("this, O.g.Ya, q, f",this, O.g.Ya, q, f);
                         cn(this, O.g.Ya, q, f)
+                        console.log("fim event");
                 }
                 this.commands.shift();
                 dn(this, f)
@@ -14941,18 +14942,17 @@
     }
 
     function rI(a, b) {
-        
+        console.log("rI",a,b);
         var c = function() {};
         var d = new MH(a.id),
             e = a.prefix === "MC";
         c = function(f, g, k, m) {
             e && (m.eventMetadata.is_merchant_center = !0);
-            console.log("-0-0-0-0-0");
-            console.log("g, k, m",g, k, m);
+            
             d.Um(g, k, m)
         };
         ck || sI(a, d, b);
-        throw new Error("Erro original");
+        
         return c
     }
 
