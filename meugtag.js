@@ -6972,9 +6972,7 @@
             var f = this.commands[0],
                 g = f.j;
             if (f.messageContext.deferrable) !g || Ym(this, g).H ? (f.messageContext.deferrable = !1, this.commands.push(f)) : c.push(f), this.commands.shift();
-            else {
-                    throw new Error("Erro original");
-                
+            else {                
                 switch (f.type) {
                     case "require":
                         if (Ym(this, g).status !== 3 && !a) {
