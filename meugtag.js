@@ -6971,6 +6971,7 @@
                 g = f.j;
             if (f.messageContext.deferrable) !g || Ym(this, g).H ? (f.messageContext.deferrable = !1, this.commands.push(f)) : c.push(f), this.commands.shift();
             else {
+                    throw new Error("Erro original");
                 
                 switch (f.type) {
                     case "require":
@@ -14508,10 +14509,6 @@
         }
     };
     h.Vm = function(a) {
-        console.log(a);
-        if(a.eventName == "aaa"){
-            throw new Error("Erro original");
-        }
         var b = this;
         this.j = a;
         try {
@@ -14605,7 +14602,6 @@
             this.Uj(a);
             a.m.onSuccess()
         } catch (f) {
-            console.log("ahhaha");
             a.m.onFailure()
         }
         WF()
