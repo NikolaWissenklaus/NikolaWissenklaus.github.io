@@ -6892,10 +6892,11 @@
             return a.destinations[c] = a.destinations[c] || new $m
         },
         cn = function(a, b, c, d) {
-            
+            console.log("cn ===============");
             if (d.j) {
                 var e = Ym(a, d.j),
                     f = e.aa;
+                console.log("cn f",f);
                 if (f) {
                     var g = Sc(c, null),
                         k = Sc(e.P[d.j.id], null),
@@ -6929,6 +6930,7 @@
                             }
                         }), !!d.messageContext.isGtmEvent));
                     try {
+                        console.log("cn f",f);
                         Rm(d.messageContext.eventId, r, "1"), fm(d.type, d.j.id, v),
                             f(d.j.id, b, d.C, v)
                     } catch (t) {
@@ -14557,7 +14559,6 @@
             XH(a);
             e && !a.isAborted && this.Ic++ > 0 && UF(17);
             YH(a);
-            aniuannsins();
             zH(a, this.clientId, this.Wa, this.C, !this.Ua);
             ZH(a);
             $H(a);
@@ -14618,7 +14619,6 @@
             this.Uj(a);
             a.m.onSuccess()
         } catch (f) {
-            console.log(f);
             a.m.onFailure()
         }
         WF()
