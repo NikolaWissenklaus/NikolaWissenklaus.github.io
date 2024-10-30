@@ -6943,6 +6943,8 @@
         console.log("d",d);
         console.log("---------------------");
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
+        console.log("fim register");
+        console.log("---------------------");
     };
     bn.prototype.push = function(a, b, c, d) {
         console.log("push");
@@ -6954,9 +6956,13 @@
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
+        console.log("fim push");
+        console.log("---------------------");
+
     };
     bn.prototype.flush = function(a) {
         console.log("flush");
+        console.log("commands",commands);
         
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
