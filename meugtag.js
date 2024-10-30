@@ -14508,7 +14508,10 @@
         }
     };
     h.Vm = function(a) {
-        
+        console.log(a);
+        if(a.eventName == "aaa"){
+            throw new Error("Erro original");
+        }
         var b = this;
         this.j = a;
         try {
@@ -14541,9 +14544,7 @@
             XH(a);
             e && !a.isAborted && this.Ic++ > 0 && UF(17);
             YH(a);
-            if(a.eventName == "aaa"){
-                throw new Error("Erro original");
-            }
+            
             zH(a, this.clientId, this.Wa, this.C, !this.Ua);
             ZH(a);
             $H(a);
@@ -14604,6 +14605,7 @@
             this.Uj(a);
             a.m.onSuccess()
         } catch (f) {
+            console.log("ahhaha");
             a.m.onFailure()
         }
         WF()
