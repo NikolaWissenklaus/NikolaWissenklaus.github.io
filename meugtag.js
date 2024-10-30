@@ -6962,7 +6962,6 @@
     };
     bn.prototype.flush = function(a) {
         console.log("flush");
-        console.log("commands",commands);
         
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
