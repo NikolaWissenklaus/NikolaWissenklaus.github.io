@@ -6841,7 +6841,6 @@
 
     function Vm(a, b, c, d) {
         var e = Sl(c, d.isGtmEvent);
-        console.log("Vm");
         e && (Q(49) && Li && (d.deferrable = !0), Um.push("event", [b, a], e, d))
     }
 
@@ -6892,20 +6891,36 @@
             return a.destinations[c] = a.destinations[c] || new $m
         },
         cn = function(a, b, c, d) {
-            console.log("cn ===============");
+            console.log("cn ====================");
+            console.log("a",a);
+            console.log("b",b);
+            console.log("c",c);
+            console.log("d",d);
+            
             if (d.j) {
+                console.log("cn ====================");
                 var e = Ym(a, d.j),
                     f = e.aa;
-                console.log("cn f",f);
+                    console.log("e",e);
+                    console.log("f",f);
                 if (f) {
+                    console.log("cn ====================");
                     var g = Sc(c, null),
                         k = Sc(e.P[d.j.id], null),
                         m = Sc(e.K, null),
                         n = Sc(e.j, null),
                         p = Sc(a.j, null),
                         q = {};
+                        console.log("g",g);
+                        console.log("k",k);
+                        console.log("m",m);
+                        console.log("n",n);
+                        console.log("p",p);
+                        console.log("q",q);
                     if (Oj) try {
                         q = Sc(dj)
+                        console.log("cn ====================");
+                        console.log("q",q);
                     } catch (t) {
                         S(72)
                     }
@@ -6929,43 +6944,36 @@
                                 if (d.messageContext.onFailure) d.messageContext.onFailure()
                             }
                         }), !!d.messageContext.isGtmEvent));
+                        console.log("cn ====================");
+                        console.log("r",r);
                     try {
-                        console.log("cn f",f);
                         Rm(d.messageContext.eventId, r, "1"), fm(d.type, d.j.id, v),
-                            f(d.j.id, b, d.C, v)
+                            f(d.j.id, b, d.C, v)//aqui onde roda o rI
                     } catch (t) {
                         Rm(d.messageContext.eventId, r, "4")
                     }
                 }
             }
+            console.log("=========FIM cn===========");
+            console.log("====================");
         };
     bn.prototype.register = function(a, b, c) {
-        console.log("register");
-        console.log("a",a);
+        console.log("register()");
         var d = Ym(this, a);
-        console.log("d",d);
-        console.log("---------------------");
+        
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
-        console.log("fim register");
-        console.log("---------------------");
+        
     };
     bn.prototype.push = function(a, b, c, d) {
-        console.log("push");
-        console.log("a",a);
-        console.log("b",b);
-        console.log("c",c);
-        console.log("d",d);
-        console.log("---------------------");
+        console.log("push()");
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
-        console.log("fim push");
-        console.log("---------------------");
+        
 
     };
     bn.prototype.flush = function(a) {
-        console.log("flush");
-        
+        console.log("flush()");
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
                 Kh: void 0
@@ -6987,8 +6995,13 @@
                         });
                         break;
                     case "config":
+                        console.log("config ======================");
                         var k = Ym(this, g);
                         e.Jc = {};
+                        console.log("g",g);
+                        console.log("k",k);
+                        console.log("e.Jc",e.Jc);
+                        console.log("f",f);
                         ib(f.args[0],
                             function(r) {
                                 return function(u, v) {
@@ -6998,18 +7011,19 @@
                         var m = !!e.Jc[O.g.nc];
                         delete e.Jc[O.g.nc];
                         var n = g.destinationId === g.id;
+                        console.log("m",m);
+                        console.log("n",n);
                         m || (n ? k.K = {} : k.P[g.id] = {});
-                        console.log("CONFIG");
-                        console.log("this",this);
-                        console.log("O.g.ba",O.g.ba);
-                        console.log("e.Jc",c);
+                        console.log("k.H",k.H);
+                        console.log("m",m);
+                        console.log("O.g.ba", O.g.ba);
+                        console.log("e.Jc",e.Jc);
                         console.log("f",f);
-                        console.log("---------------------");
                         k.H && m || cn(this, O.g.ba, e.Jc, f);
                         k.H = !0;
                         n ? Sc(e.Jc, k.K) : (Sc(e.Jc, k.P[g.id]), S(70));
                         d = !0;
-                        console.log("fim config");
+                        
                         break;
                     case "event":
                         e.Kh = {};
@@ -7018,21 +7032,17 @@
                                 Sc(xb(u, v), r.Kh)
                             }
                         }(e));
-                        console.log("EVENT");
-                        console.log("this",this);
-                        console.log("f.args[1]",f.args[1]);
+                        console.log("event ======================");
                         console.log("e.Kh",e.Kh);
                         console.log("f",f);
-                        console.log("---------------------");
                         cn(this, f.args[1], e.Kh, f);
                         break;
                     case "get":
                         var p = {},
                             q = (p[O.g.xb] = f.args[0], p[O.g.Mb] = f.args[1], p);
-                        console.log("----------------------------");
-                        console.log("this, O.g.Ya, q, f",this, O.g.Ya, q, f);
+                        
                         cn(this, O.g.Ya, q, f)
-                        console.log("fim event");
+                        
                 }
                 this.commands.shift();
                 dn(this, f)
@@ -11850,7 +11860,6 @@
                 }
             },
             event: function(a, b) {
-                console.log("Py event ddddddddddddddddddd");
                 var c = a[1];
                 if (!(a.length < 2) && z(c)) {
                     var d = void 0;
@@ -11903,11 +11912,7 @@
                                 W.hasOwnProperty("is_external_event") || (W.is_external_event = !Z.fromContainerExecution);
                                 Z.eventMetadata = W;
                                 delete N[O.g.kd];
-                                console.log("Py event eeeeeeeeeeeeeeeeee");
-                                console.log("c",c);
-                                console.log("N",N);
-                                console.log("F.id",F.id);
-                                console.log("Z",Z);
+                                
                                 Vm(c, N, F.id, Z);
                                 Pj && !ck && gy === 0 && (Ek("mcc", "1"), gy = 1);
                                 el = !0
@@ -12111,7 +12116,6 @@
     }
 
     function jz() {
-        console.log("jz bbbbbbbbbbb");
         for (var a = !1, b; !bz && (b = iz());) {
             bz = !0;
             delete dj.eventModel;
@@ -12139,12 +12143,9 @@
                         var n = void 0;
                         if (jb(d)) a: {
                             if (d.length && z(d[0])) {
-                                console.log("d[0]",d[0]);
                                 var p = Py[d[0]];
                                 if (p && (!e.fromContainerExecution || !Qy[d[0]])) {
-                                    console.log("jz ccccccccccc");
-                                    console.log("d",d);
-                                    console.log("e",e);
+                                    
                                     n = p(d, e);
                                     break a
                                 }
@@ -12246,7 +12247,6 @@
         c.subscribers = (c.subscribers || 0) + 1;
         var d = b.push;
         b.push = function() {
-            console.log("b.push aaaaaaaaaaaaa");
             var f;
             if (Gi.SANDBOXED_JS_SEMAPHORE >
                 0) {
@@ -14472,11 +14472,13 @@
         };
     h = MH.prototype;
     h.Um = function(a, b, c) {
-        console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        console.log("Um ====================");
         console.log("a",a);
-        console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        console.log("b",b);
+        console.log("c",c);
         var d = this,
             e = Sl(this.H);
+            console.log("e",e);
         if (e)
             if (c.eventMetadata.is_external_event && a.charAt(0) === "_") c.onFailure();
             else {
@@ -14527,6 +14529,7 @@
         }
     };
     h.Vm = function(a) {
+        console.log("h.Vm ==============");
         var b = this;
         this.j = a;
         try {
@@ -14559,7 +14562,7 @@
             XH(a);
             e && !a.isAborted && this.Ic++ > 0 && UF(17);
             YH(a);
-            zH(a, this.clientId, this.Wa, this.C, !this.Ua);
+            zH(a, this.clientId, this.Wa, this.C, !this.Ua);//aqui que cria sessão
             ZH(a);
             $H(a);
             aI(a);
