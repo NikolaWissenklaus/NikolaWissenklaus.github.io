@@ -14328,8 +14328,14 @@
             }
         },
         zH = function(a, b, c, d, e) {
-            
+            console.log("zH =======================");
+            console.log("a",a);
+            console.log("b",b);
+            console.log("c",c);
+            console.log("d",d);
+            console.log("e",e);
             var f = U(a.m, O.g.tb);
+            console.log("f",f);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? $F(a, f, 1) : (S(127), a.isAborted = !0);
             else {
                 var g = f ? 1 : 8;
@@ -14368,6 +14374,8 @@
                 Dd: void 0
             });
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
+
+            console.log("v",v);
             if (v) a.metadata.is_session_start = !0, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Nd = !0;
             a.metadata.euid_mode_enabled ? U(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !Q(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
