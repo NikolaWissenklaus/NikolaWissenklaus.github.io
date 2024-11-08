@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("v1");
+console.log("v2");
 (function() {
 
     var data = {
@@ -6835,8 +6835,13 @@ console.log("v1");
     };
 
     function Tm(a, b) {
+        console.log("===Tm START===");
+        console.log("a",a);
+        console.log("b",b);
         var c = Sl(jk(a), !0);
+        console.log("c",c);
         c && Um.register(c, b)
+        console.log("===Tm END===");
     }
 
     function Vm(a, b, c, d) {
@@ -6943,19 +6948,27 @@ console.log("v1");
             
         };
     bn.prototype.register = function(a, b, c) {
+        console.log("===bn.prototype.register START===");
+        console.log("a",a);
+        console.log("b",b);
+        console.log("c",c);
         var d = Ym(this, a);
+        console.log("d",d);
         
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
+        console.log("===bn.prototype.register END===");
         
     };
     bn.prototype.push = function(a, b, c, d) {
+        console.log("===bn.prototype.push START===");
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
-        
+        console.log("===bn.prototype.push END===");
 
     };
     bn.prototype.flush = function(a) {
+        console.log("===bn.prototype.flush START===");
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
                 Kh: void 0
@@ -7022,6 +7035,7 @@ console.log("v1");
         this.commands.push.apply(this.commands,
             c);
         d && this.flush()
+        console.log("===bn.prototype.flush END===");
     };
     var dn = function(a, b) {
             if (b.type !== "require")
@@ -14903,13 +14917,19 @@ console.log("v1");
         };
 
     function qI(a, b) {
+        console.log("===qI START===");
+        console.log("a",a);
+        console.log("b",b);
         pI(function() {
             var c = Sl(a);
+            console.log("c",c);
             if (c) {
                 var d = rI(c, b);
+                console.log("d",d);
                 Tm(a, d)
             }
         });
+        console.log("===qI END===");
     }
 
     function rI(a, b) {
