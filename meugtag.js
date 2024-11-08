@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("v2");
+console.log("v3");
 (function() {
 
     var data = {
@@ -14313,6 +14313,7 @@ console.log("v2");
             }
         },
         zH = function(a, b, c, d, e) {
+            console.log("===zH START===");
             var f = U(a.m, O.g.tb);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? $F(a, f, 1) : (S(127), a.isAborted = !0);
             else {
@@ -14370,6 +14371,7 @@ console.log("v2");
             e ? (a.copyToHitData(O.g.zb, u.sessionId), a.copyToHitData(O.g.te, u.Qc), a.copyToHitData(O.g.se, u.Nd ? 1 : 0)) : (a.j[O.g.zb] =
                 u.sessionId, a.j[O.g.te] = u.Qc, a.j[O.g.se] = u.Nd ? 1 : 0);
             a.metadata[O.g.Hf] = u.Mc ? 1 : 0
+            console.log("===zH END===");
         };
     var AH = window,
         BH = document,
@@ -14457,7 +14459,7 @@ console.log("v2");
         };
     h = MH.prototype;
     h.Um = function(a, b, c) {
-        
+        console.log("===h.Um STAR===");
         var d = this,
             e = Sl(this.H);
         if (e)
@@ -14478,6 +14480,7 @@ console.log("v2");
                     c, f)
             }
         else c.onFailure()
+        console.log("===h.Um END===");
     };
     h.Sm = function(a, b, c) {
         var d = Sl(this.H);
@@ -14510,6 +14513,8 @@ console.log("v2");
         }
     };
     h.Vm = function(a) {
+        console.log("===h.Vm START===");
+        console.log("a",a);
         var b = this;
         this.j = a;
         try {
@@ -14605,6 +14610,7 @@ console.log("v2");
             a.m.onFailure()
         }
         WF()
+        console.log("===h.Vm END===");
     };
     h.Uj = function(a) {
         this.aa.add(a)
@@ -14933,6 +14939,7 @@ console.log("v2");
     }
 
     function rI(a, b) {
+        console.log("===rI START===");
         var c = function() {};
         var d = new MH(a.id),
             e = a.prefix === "MC";
@@ -14942,7 +14949,7 @@ console.log("v2");
             d.Um(g, k, m)
         };
         ck || sI(a, d, b);
-        
+        console.log("===rI END===");
         return c
     }
 
