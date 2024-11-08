@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-
+console.log("v1");
 (function() {
 
     var data = {
@@ -6891,36 +6891,23 @@
             return a.destinations[c] = a.destinations[c] || new $m
         },
         cn = function(a, b, c, d) {
-            console.log("cn ====================");
-            console.log("a",a);
-            console.log("b",b);
-            console.log("c",c);
-            console.log("d",d);
+            
             
             if (d.j) {
-                console.log("cn ====================");
                 var e = Ym(a, d.j),
                     f = e.aa;
-                    console.log("e",e);
-                    console.log("f",f);
+                    
                 if (f) {
-                    console.log("cn ====================");
                     var g = Sc(c, null),
                         k = Sc(e.P[d.j.id], null),
                         m = Sc(e.K, null),
                         n = Sc(e.j, null),
                         p = Sc(a.j, null),
                         q = {};
-                        console.log("g",g);
-                        console.log("k",k);
-                        console.log("m",m);
-                        console.log("n",n);
-                        console.log("p",p);
-                        console.log("q",q);
+                        
                     if (Oj) try {
                         q = Sc(dj)
-                        console.log("cn ====================");
-                        console.log("q",q);
+                        
                     } catch (t) {
                         S(72)
                     }
@@ -6944,8 +6931,7 @@
                                 if (d.messageContext.onFailure) d.messageContext.onFailure()
                             }
                         }), !!d.messageContext.isGtmEvent));
-                        console.log("cn ====================");
-                        console.log("r",r);
+                        
                     try {
                         Rm(d.messageContext.eventId, r, "1"), fm(d.type, d.j.id, v),
                             f(d.j.id, b, d.C, v)//aqui onde roda o rI
@@ -6954,18 +6940,15 @@
                     }
                 }
             }
-            console.log("=========FIM cn===========");
-            console.log("====================");
+            
         };
     bn.prototype.register = function(a, b, c) {
-        console.log("register()");
         var d = Ym(this, a);
         
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
         
     };
     bn.prototype.push = function(a, b, c, d) {
-        console.log("push()");
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
@@ -6973,7 +6956,6 @@
 
     };
     bn.prototype.flush = function(a) {
-        console.log("flush()");
         for (var b = this, c = [], d = !1, e = {}; this.commands.length; e = {
                 Jc: void 0,
                 Kh: void 0
@@ -6995,13 +6977,9 @@
                         });
                         break;
                     case "config":
-                        console.log("config ======================");
                         var k = Ym(this, g);
                         e.Jc = {};
-                        console.log("g",g);
-                        console.log("k",k);
-                        console.log("e.Jc",e.Jc);
-                        console.log("f",f);
+                        
                         ib(f.args[0],
                             function(r) {
                                 return function(u, v) {
@@ -7011,14 +6989,9 @@
                         var m = !!e.Jc[O.g.nc];
                         delete e.Jc[O.g.nc];
                         var n = g.destinationId === g.id;
-                        console.log("m",m);
-                        console.log("n",n);
+                        
                         m || (n ? k.K = {} : k.P[g.id] = {});
-                        console.log("k.H",k.H);
-                        console.log("m",m);
-                        console.log("O.g.ba", O.g.ba);
-                        console.log("e.Jc",e.Jc);
-                        console.log("f",f);
+                        
                         k.H && m || cn(this, O.g.ba, e.Jc, f);
                         k.H = !0;
                         n ? Sc(e.Jc, k.K) : (Sc(e.Jc, k.P[g.id]), S(70));
@@ -7032,9 +7005,7 @@
                                 Sc(xb(u, v), r.Kh)
                             }
                         }(e));
-                        console.log("event ======================");
-                        console.log("e.Kh",e.Kh);
-                        console.log("f",f);
+                        
                         cn(this, f.args[1], e.Kh, f);
                         break;
                     case "get":
@@ -14328,14 +14299,7 @@
             }
         },
         zH = function(a, b, c, d, e) {
-            console.log("zH =======================");
-            console.log("a",a);
-            console.log("b",b);
-            console.log("c",c);
-            console.log("d",d);
-            console.log("e",e);
             var f = U(a.m, O.g.tb);
-            console.log("f",f);
             if (U(a.m, O.g.Ob) && U(a.m, O.g.jc)) f ? $F(a, f, 1) : (S(127), a.isAborted = !0);
             else {
                 var g = f ? 1 : 8;
@@ -14364,7 +14328,7 @@
             a.metadata.is_session_start = !1;
             a.metadata.join_timer_sec = 0;
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
-            var v = !1;
+            var is_session_start = false;
             u || (v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
                 Qc: 1,
@@ -14373,10 +14337,9 @@
                 Mc: !1,
                 Dd: void 0
             });
-            n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
+            n > u.cf + q * 60 && (is_session_start = true, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
 
-            console.log("v",v);
-            if (v) a.metadata.is_session_start = !0, d.km(a);
+            if (is_session_start) a.metadata.is_session_start = true, d.km(a);
             else if (d.am() > r || a.eventName === O.g.ac) u.Nd = !0;
             a.metadata.euid_mode_enabled ? U(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !Q(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
             var t = u.Dd;
@@ -14480,13 +14443,9 @@
         };
     h = MH.prototype;
     h.Um = function(a, b, c) {
-        console.log("Um ====================");
-        console.log("a",a);
-        console.log("b",b);
-        console.log("c",c);
+        
         var d = this,
             e = Sl(this.H);
-            console.log("e",e);
         if (e)
             if (c.eventMetadata.is_external_event && a.charAt(0) === "_") c.onFailure();
             else {
@@ -14537,7 +14496,6 @@
         }
     };
     h.Vm = function(a) {
-        console.log("h.Vm ==============");
         var b = this;
         this.j = a;
         try {
