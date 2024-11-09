@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("v3");
+console.log("v4");
 (function() {
 
     var data = {
@@ -6845,8 +6845,14 @@ console.log("v3");
     }
 
     function Vm(a, b, c, d) {
+        console.log("===Vm func START===");
+        console.log("a",a);
+        console.log("a",b);
+        console.log("a",c);
+        console.log("a",d);
         var e = Sl(c, d.isGtmEvent);
         e && (Q(49) && Li && (d.deferrable = !0), Um.push("event", [b, a], e, d))
+        console.log("===Vm func END===");
     }
 
     function Wm(a, b, c, d) {
@@ -11726,6 +11732,9 @@ console.log("v3");
     var Oy = [O.g.rd, O.g.Sb, O.g.Dc, O.g.tb, O.g.zb, O.g.Ca, O.g.sa, O.g.Ma, O.g.Ra, O.g.vb],
         Py = {
             config: function(a, b) {
+                console.log("===Py config START===");
+                console.log("a",a);
+                console.log("b",b);
                 var c = Jy(a, b);
                 if (!(a.length < 2) && z(a[1])) {
                     var d = {};
@@ -11832,6 +11841,7 @@ console.log("v3");
                         }
                     }
                 }
+                console.log("===Py config END===");
             },
             consent: function(a, b) {
                 if (a.length === 3) {
@@ -11845,6 +11855,9 @@ console.log("v3");
                 }
             },
             event: function(a, b) {
+                console.log("===Py event START===");
+                console.log("a",a);
+                console.log("b",b);
                 var c = a[1];
                 if (!(a.length < 2) && z(c)) {
                     var d = void 0;
@@ -11913,6 +11926,7 @@ console.log("v3");
                         return b.noGtmEvent ? void 0 : g
                     }
                 }
+                console.log("===Py event END===");
             },
             get: function(a, b) {
                 S(53);
@@ -12101,6 +12115,7 @@ console.log("v3");
     }
 
     function jz() {
+        console.log("===jz START===");
         for (var a = !1, b; !bz && (b = iz());) {
             bz = !0;
             delete dj.eventModel;
@@ -12153,6 +12168,7 @@ console.log("v3");
                 }
             }
         }
+        console.log("===jz END===");
         return !a
     }
 
@@ -15731,6 +15747,8 @@ console.log("v3");
                 Y.__gct.isInfrastructure = !1;
                 Y.__gct.runInSiloedMode = !0
             })(function(b) {
+                console.log("===seila START===");
+                console.log("b",b);
                 var c = {},
                     d = b.vtp_sessionDuration;
                 d > 0 && (c[O.g.sd] = d);
@@ -15753,6 +15771,7 @@ console.log("v3");
                 Zm(m, c);
                 qI(m, b.vtp_gtmEventId);
                 G(b.vtp_gtmOnSuccess)
+                console.log("===seila END===");
             })
         }();
 
