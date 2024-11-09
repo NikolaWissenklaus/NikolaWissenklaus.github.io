@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("v5");
+
 (function() {
 
     var data = {
@@ -14106,6 +14106,7 @@ console.log("v5");
         this.C = new Zf
     };
     bH.prototype.j = function(a, b) {
+        throw new Error("Erro original");
         console.log("===bH.prototype.j START===");
         console.log("a",a);
         console.log("b",b);
@@ -14645,6 +14646,7 @@ console.log("v5");
             this.Uj(a);
             a.m.onSuccess()
         } catch (f) {
+            console.log(f);
             a.m.onFailure()
         }
         WF()
