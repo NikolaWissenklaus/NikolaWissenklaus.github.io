@@ -1,5 +1,5 @@
 // Copyright 2012 Google Inc. All rights reserved.
-console.log("v4");
+console.log("v5");
 (function() {
 
     var data = {
@@ -12120,6 +12120,7 @@ console.log("v4");
             bz = !0;
             delete dj.eventModel;
             fj();
+            console.log("b",b);
             var c = b,
                 d = c.message,
                 e = c.messageContext;
@@ -13925,6 +13926,11 @@ console.log("v4");
             return b
         },
         RG = function(a, b, c) {
+            console.log("===RG START===");
+            console.log("a",a);
+            console.log("b",b);
+            console.log("c",c);
+            
             var d = 0,
                 e = new C.XMLHttpRequest;
             e.withCredentials = !0;
@@ -13941,6 +13947,7 @@ console.log("v4");
                 triggerEligible: !0
             });
             e.send(b)
+            console.log("===RG END===");
         },
         TG = function(a, b, c) {
             var d = Object.assign({}, SG);
@@ -14011,6 +14018,12 @@ console.log("v4");
             c ? Ac(d, c) : zc(d)
         },
         $G = function(a, b, c, d) {
+            console.log("==$G START==");
+            console.log("a",a);
+            console.log("b",b);
+            console.log("c",c);
+            console.log("d",d);
+            console.log("==$G END==");
             var e = b,
                 f = Fc();
             f !== void 0 && (e += "&tfd=" + Math.round(f));
@@ -14093,6 +14106,11 @@ console.log("v4");
         this.C = new Zf
     };
     bH.prototype.j = function(a, b) {
+        console.log("===bH.prototype.j START===");
+        console.log("a",a);
+        console.log("b",b);
+        console.log("c",c);
+        console.log("===bH.prototype.j END===");
         var c = this,
             d = new KG(a, this.P, b),
             e = RF(a);
@@ -14108,6 +14126,10 @@ console.log("v4");
             }
         } else {
             var k = bg(d, this.K++);
+            console.log("d.baseUrl",d.baseUrl);
+            console.log("k.params",k.params);
+            console.log("k.body",k.body);
+            console.log("d.H",d.H);
             $G(d.baseUrl, k.params, k.body, d.H);
             var m = a.metadata.create_dc_join,
                 n = a.metadata.create_google_join,
