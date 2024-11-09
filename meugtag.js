@@ -12177,6 +12177,7 @@
         if (Q(79)) {
             var a = mz();
         }
+        console.log("==lz==");
         var b = jz();
         if (Q(79)) {}
         try {
@@ -12198,11 +12199,13 @@
     }
 
     function py(a) {
+        console.log("==py==");
         if (Xy < a.notBeforeEventId) {
             var b = String(a.notBeforeEventId);
             Yy[b] = Yy[b] || [];
             Yy[b].push(a)
         } else $y.push(kz(a)), $y.sort(cz), G(function() {
+            console.log("==py else==");
             bz || jz()
         })
     }
@@ -12249,6 +12252,7 @@
         c.subscribers = (c.subscribers || 0) + 1;
         var d = b.push;
         b.push = function() {
+            console.log("==b.push==");
             var f;
             if (Gi.SANDBOXED_JS_SEMAPHORE >
                 0) {
@@ -12264,6 +12268,7 @@
             if (this.length > n)
                 for (S(4), c.pruned = !0; this.length > n;) this.shift();
             var p = typeof m !== "boolean" || m;
+            console.log("==b.push return==");
             return jz() && p
         };
         var e = b.slice(0).map(function(f) {
@@ -14106,7 +14111,6 @@
         this.C = new Zf
     };
     bH.prototype.j = function(a, b) {
-        throw new Error("Erro original");
         console.log("===bH.prototype.j START===");
         console.log("a",a);
         console.log("b",b);
