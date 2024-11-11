@@ -6836,10 +6836,10 @@
 
     function Tm(a, b) {
         console.log("===Tm START===");
-        console.log("a",a);
-        console.log("b",b);
+        console.log("Tm > a",a);
+        console.log("Tm > b",b);
         var c = Sl(jk(a), !0);
-        console.log("c",c);
+        console.log("Tm > c",c);
         c && Um.register(c, b)
         console.log("===Tm END===");
     }
@@ -6955,11 +6955,11 @@
         };
     bn.prototype.register = function(a, b, c) {
         console.log("===bn.prototype.register START===");
-        console.log("a",a);
-        console.log("b",b);
-        console.log("c",c);
+        console.log("register > a",a);
+        console.log("register > b",b);
+        console.log("register > c",c);
         var d = Ym(this, a);
-        console.log("d",d);
+        console.log("register > d",d);
         
         d.status !== 3 && (d.aa = b, d.status = 3, c && (Sc(d.j, c), d.j = c), this.flush())
         console.log("===bn.prototype.register END===");
@@ -6967,6 +6967,10 @@
     };
     bn.prototype.push = function(a, b, c, d) {
         console.log("===bn.prototype.push START===");
+        console.log("push > a",a);
+        console.log("push > b",b);
+        console.log("push > c",c);
+        console.log("push > d",d);
         c !== void 0 && (Ym(this, c).status === 1 && (Ym(this, c).status = 2, this.push("require", [{}], c, {})), Ym(this, c).H && (d.deferrable = !1));
         this.commands.push(new an(a, c, b, d));
         d.deferrable || this.flush()
@@ -12198,6 +12202,7 @@
                     } e && (d.end(), d.end = null)
             }
         } catch (g) {}
+        console.log("==lz END==");
         return b
     }
 
@@ -14027,10 +14032,10 @@
         },
         $G = function(a, b, c, d) {
             console.log("==$G START==");
-            console.log("a",a);
-            console.log("b",b);
-            console.log("c",c);
-            console.log("d",d);
+            console.log("$G > a",a);
+            console.log("$G > b",b);
+            console.log("$G > c",c);
+            console.log("$G > d",d);
             console.log("==$G END==");
             var e = b,
                 f = Fc();
@@ -14506,14 +14511,20 @@
     h = MH.prototype;
     h.Um = function(a, b, c) {
         console.log("===h.Um STAR===");
+        console.log("h.Um > a",a);
+        console.log("h.Um > b",b);
+        console.log("h.Um > c",c);
         var d = this,
             e = Sl(this.H);
+            console.log("h.Um > this.H",this.H);
+            console.log("h.Um > e",e);
         if (e)
             if (c.eventMetadata.is_external_event && a.charAt(0) === "_") c.onFailure();
             else {
                 a !== O.g.ba && a !== O.g.Ya && EH(a) && S(58);
                 NH(c.j);
                 var f = new RB(e, a, c);
+                console.log("h.Um > f",f);
                 f.metadata.event_start_timestamp_ms = b;
                 var g = [O.g.U];
                 if (Jt(f, O.g.Gc, U(f.m, O.g.Gc)) || Mt(f)) g.push(O.g.O), g.push(O.g.N);
@@ -14560,7 +14571,7 @@
     };
     h.Vm = function(a) {
         console.log("===h.Vm START===");
-        console.log("a",a);
+        console.log("h.Vm > a",a);
         var b = this;
         this.j = a;
         try {
@@ -14593,6 +14604,7 @@
             XH(a);
             e && !a.isAborted && this.Ic++ > 0 && UF(17);
             YH(a);
+            console.log("h.Vm > a2",a);
             zH(a, this.clientId, this.Wa, this.C, !this.Ua);//aqui que cria sessão
             ZH(a);
             $H(a);
@@ -14971,14 +14983,14 @@
 
     function qI(a, b) {
         console.log("===qI START===");
-        console.log("a",a);
-        console.log("b",b);
+        console.log("qI > a",a);
+        console.log("qI > b",b);
         pI(function() {
             var c = Sl(a);
-            console.log("c",c);
+            console.log("qI > c",c);
             if (c) {
                 var d = rI(c, b);
-                console.log("d",d);
+                console.log("qI > d",d);
                 Tm(a, d)
             }
         });
@@ -15779,7 +15791,7 @@
                 Y.__gct.runInSiloedMode = !0
             })(function(b) {
                 console.log("===seila START===");
-                console.log("b",b);
+                console.log("seila > b",b);
                 var c = {},
                     d = b.vtp_sessionDuration;
                 d > 0 && (c[O.g.sd] = d);
@@ -15800,6 +15812,8 @@
                 c[g] = k;
                 var m = ok(b.vtp_trackingId);
                 Zm(m, c);
+                console.log("seila > m",m);
+                console.log("seila > b",b);
                 qI(m, b.vtp_gtmEventId);
                 G(b.vtp_gtmOnSuccess)
                 console.log("===seila END===");
