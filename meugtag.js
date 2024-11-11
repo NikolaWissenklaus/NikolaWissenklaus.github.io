@@ -12120,7 +12120,7 @@
             bz = !0;
             delete dj.eventModel;
             fj();
-            console.log("b",b);
+            console.log("jz > b",b);
             var c = b,
                 d = c.message,
                 e = c.messageContext;
@@ -12177,12 +12177,15 @@
         if (Q(79)) {
             var a = mz();
         }
-        console.log("==lz==");
+        console.log("==lz START==");
         var b = jz();
+        console.log("lz > b",b);
         if (Q(79)) {}
         try {
             var c = ik(),
                 d = C[Fi.ob].hide;
+                console.log("lz > c",c);
+                console.log("lz > d",d);
             if (d && d[c] !== void 0 && d.end) {
                 d[c] = !1;
                 var e = !0,
