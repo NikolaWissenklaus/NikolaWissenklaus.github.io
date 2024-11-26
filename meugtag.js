@@ -14349,7 +14349,6 @@
             }
         },
         GH = function(a, b, c, d, e) {
-            console.log("aaaaaaaaa");
             var f = V(a.m, O.g.tb);
             if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1) : (U(127), a.isAborted = !0);
             else {
@@ -14366,7 +14365,6 @@
                 f ? f = "" + f : (f = hp(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
                 gG(a, f, g)
             }
-            console.log("bbbbbbb");
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
                     1E3),
                 p = void 0;
@@ -14379,9 +14377,7 @@
             a.metadata.is_first_visit = !1;
             a.metadata.is_session_start = !1;
             a.metadata.join_timer_sec = 0;
-            console.log("ccccccccccccc");
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
-            console.log("dddddddddd");
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
@@ -14391,7 +14387,7 @@
                 Mc: !1,
                 Dd: void 0
             });
-            console.log("eeeeeeeeee");
+            console.log("aaa", a);
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
             if (v) a.metadata.is_session_start = !0, d.qm(a);
             else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
