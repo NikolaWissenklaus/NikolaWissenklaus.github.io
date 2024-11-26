@@ -13354,7 +13354,6 @@
     };
     h.wn = function(a) {
         var b = this.ig();
-        console.log("b",b);
         b > 0 && (a.j[O.g.de] = b)
     };
     h.qm = function(a) {
@@ -13370,7 +13369,6 @@
         return this.C + this.ig()
     };
     h.ig = function() {
-        console.log("j", this.j);
         return this.j && this.j.get() || 0
     };
     h.dn = function(a) {
@@ -14371,7 +14369,7 @@
                     1E3),
                 p = void 0;
 
-            console.log("ets", n);
+            
             a.metadata.is_new_to_site || (p = rG(a) || c);
             var q = lb(V(a.m, O.g.sd, 30));
             q = Math.min(475, q);
@@ -14381,7 +14379,6 @@
             a.metadata.is_first_visit = !1;
             a.metadata.is_session_start = !1;
             a.metadata.join_timer_sec = 0;
-            console.log();
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
@@ -14392,7 +14389,6 @@
                 Mc: !1,
                 Dd: void 0
             });
-            console.log("aaa", a);
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
             if (v) a.metadata.is_session_start = !0, d.qm(a);
             else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
@@ -14498,7 +14494,6 @@
         };
     h = TH.prototype;
     h.Ym = function(a, b, c) {
-        console.log("Ym", a,b,c);
         var d = this,
             e = Vl(this.H);
         if (e)
@@ -14507,7 +14502,6 @@
                 a !== O.g.ba && a !== O.g.Ya && LH(a) && U(58);
                 UH(c.j);
                 var f = new YB(e, a, c);
-                console.lof("f", f)
                 f.metadata.event_start_timestamp_ms = b;
                 var g = [O.g.U],
                     k = Qt(f);
@@ -14523,7 +14517,6 @@
         else c.onFailure()
     };
     h.Wm = function(a, b, c) {
-        console.log("Wm", a,b,c);
         var d = Vl(this.H);
         if (S(70) && a === O.g.ba && Nt(c, "ga4_ads_linked", !1)) {
             var e = function() {
@@ -14558,24 +14551,18 @@
         var b = this;
         this.j = a;
         try {
-            console.log("VH");
-            console.log(">>", a);
+            
             VH(a);
-            console.log("WH");
-            console.log(">>", a);
+            
             WH(a);
-            console.log("XH");
-            console.log(">>", a);
+            
             XH(a);
-            console.log("YH");
-            console.log(">>", a);
+            
             YH(a);
-            console.log("hs");
-            console.log(">>", a);
+            
             S(112) && (a.isAborted = !0);
             hs(a);
-            console.log("EG");
-            console.log(">>", a);
+            
             var c = {};
             EG(a, c);
             
@@ -14587,34 +14574,27 @@
             var d = c.Ll;
             c.Rl === 0 && aG(25);
             d === 0 && aG(26);
-            console.log("ZH");
-            console.log(">>", a);
+            
             ZH(a);
-            console.log("$H");
-            console.log(">>", a);
+            
             $H(a);
             
             this.sl(a);
             this.C.wn(a);
-            console.log("aI");
-            console.log(">>", a);
+            
             aI(a);
-            console.log("bI");
-            console.log(">>", a);
+            
             bI(a);
-            console.log("cI");
-            console.log(">>", a);
+            
             cI(a);
             this.vk(OH(a));
             var e = a.eventName === O.g.ba;
             e && (this.K = !0);
-            console.log("dI");
-            console.log(">>", a);
+            
             dI(a);
             e && !a.isAborted &&
                 this.Ic++ > 0 && aG(17);
-                console.log("eI");
-                console.log(">>", a);
+                
             eI(a);
             GH(a, this.clientId, this.Wa, this.C, !this.Ua);
             fI(a);
