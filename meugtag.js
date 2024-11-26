@@ -13354,6 +13354,7 @@
     };
     h.wn = function(a) {
         var b = this.ig();
+        console.log("b",b);
         b > 0 && (a.j[O.g.de] = b)
     };
     h.qm = function(a) {
@@ -13369,6 +13370,7 @@
         return this.C + this.ig()
     };
     h.ig = function() {
+        console.log("j", this.j);
         return this.j && this.j.get() || 0
     };
     h.dn = function(a) {
@@ -14379,6 +14381,7 @@
             a.metadata.is_first_visit = !1;
             a.metadata.is_session_start = !1;
             a.metadata.join_timer_sec = 0;
+            console.log();
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
@@ -14495,6 +14498,7 @@
         };
     h = TH.prototype;
     h.Ym = function(a, b, c) {
+        console.log("Ym", a,b,c);
         var d = this,
             e = Vl(this.H);
         if (e)
@@ -14503,6 +14507,7 @@
                 a !== O.g.ba && a !== O.g.Ya && LH(a) && U(58);
                 UH(c.j);
                 var f = new YB(e, a, c);
+                console.lof("f", f)
                 f.metadata.event_start_timestamp_ms = b;
                 var g = [O.g.U],
                     k = Qt(f);
@@ -14518,6 +14523,7 @@
         else c.onFailure()
     };
     h.Wm = function(a, b, c) {
+        console.log("Wm", a,b,c);
         var d = Vl(this.H);
         if (S(70) && a === O.g.ba && Nt(c, "ga4_ads_linked", !1)) {
             var e = function() {
