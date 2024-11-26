@@ -14349,6 +14349,7 @@
             }
         },
         GH = function(a, b, c, d, e) {
+            console.log("aaaaaaaaa");
             var f = V(a.m, O.g.tb);
             if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1) : (U(127), a.isAborted = !0);
             else {
@@ -14378,8 +14379,7 @@
             a.metadata.is_session_start = !1;
             a.metadata.join_timer_sec = 0;
             console.log("et >>>", u.Xh);
-            console.log("et >>>", Math.max(0, n - u.cf));
-            console.log("et >>>", Math.max(0, u.Xh - Math.max(0, n - u.cf)));
+            
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
             var v = !1;
             u || (v = a.metadata.is_first_visit = !0, u = {
