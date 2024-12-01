@@ -13308,14 +13308,16 @@
                     b = qb()
                 },
                 stop: function() {
+                    console.log("stop--");
                     c = this.get()
+                    console.log("stop**");
                 },
                 get: function() {
+                    console.log("get--");
                     var d = 0;
-                    console.log("bbb", b);
                     a.Th() && (d = qb() - b);
-                    console.log("ddd", d);
-                    console.log("ccc", c);
+                    console.log("d + c", d + c);
+                    console.log("get**");
                     return d + c
                 }
             }
@@ -13372,6 +13374,7 @@
     };
     h.wn = function(a) {
         var b = this.ig();
+        console.log("wn", b);
         b > 0 && (a.j[O.g.de] = b)
     };
     h.qm = function(a) {
