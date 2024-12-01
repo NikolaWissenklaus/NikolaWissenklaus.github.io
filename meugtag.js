@@ -14410,7 +14410,7 @@
                 Dd: void 0
             });
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
-            
+            console.log("evento");
             if (v) a.metadata.is_session_start = !0, d.qm(a), console.log("chico_session_start");
             else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
             a.metadata.euid_mode_enabled ? V(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !S(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
