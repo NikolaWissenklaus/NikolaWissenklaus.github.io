@@ -8008,10 +8008,11 @@
     }
 
     function jp(a, b, c, d) {
-        var chicoedkcnke = [b, fp(c, d), a].join(".")
-        console.log("edkcnke", chicoedkcnke);
+        console.log("chico_cookie", a, b, c, d);
+        var chico_cookie = [b, fp(c, d), a].join(".")
+        console.log("chico_cookie", chicoedkcnke);
         //return [b, fp(c, d), a].join(".")
-        return chicoedkcnke
+        return chico_cookie
     };
 
     function kp(a, b, c, d) {
