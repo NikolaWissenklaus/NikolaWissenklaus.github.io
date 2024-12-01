@@ -8008,8 +8008,18 @@
     }
 
     function jp(a, b, c, d) {
-        console.log("chico_cookie", a, b, c, d)
+        /*
+            a = valor do cookie
+            b = GS1 ou GA1
+            c = auto
+            d = /
+        */
         var chico_cookie = [b, fp(c, d), a].join(".");
+        /*
+            GS1.1.1733023458.1.0.1733023480.0.0.0
+            ou
+            GA1.1.795306973.1733023458
+        */
         console.log("chico_cookie", chico_cookie)
         //return [b, fp(c, d), a].join(".")
         return chico_cookie
@@ -8463,6 +8473,7 @@
     }
 
     function Vp(a, b, c, d) {
+        console.log("Vp");
         var e = jp(b, "1", c.domain, c.path),
             f = kp(c, d);
         f.Hb = Wp();
@@ -8514,6 +8525,7 @@
                     Va("TAGGING", 16);
                     var f = kp(a, e);
                     f.Hb = Wp();
+                    console.log("Yp");
                     var g = jp(d, "1", a.domain, a.path);
                     ap(c, g, f)
                 }
@@ -13445,6 +13457,7 @@
                 f = kp(d, void 0, void 0, O.g.U);
             if (V(b.m, O.g.hc) === !1 && kG(b) === a) c = !0;
             else {
+                console.log("hG");
                 var g = jp(a, jG[0], d.domain, d.path);
                 c = ap(e, g, f) !== 1
             }
@@ -13464,6 +13477,7 @@
             return (k = mG(g.sessionId, g.Qc, g.Nd, g.cf, g.Xh, g.Mc, g.Dd)) != null ? k : b
         },
         qG = function(a, b) {
+            console.log("qG");
             var c = b.metadata.cookie_options,
                 d = oG(b, c),
                 e = jp(a, pG[0], c.domain, c.path),
