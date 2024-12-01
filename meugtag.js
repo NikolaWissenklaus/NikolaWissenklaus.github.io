@@ -13308,16 +13308,11 @@
                     b = qb()
                 },
                 stop: function() {
-                    console.log("stop--");
                     c = this.get()
-                    console.log("stop**");
                 },
                 get: function() {
-                    console.log("get--");
                     var d = 0;
                     a.Th() && (d = qb() - b);
-                    console.log("d + c", d + c);
-                    console.log("get**");
                     return d + c
                 }
             }
@@ -13374,7 +13369,7 @@
     };
     h.wn = function(a) {
         var b = this.ig();
-        console.log("wn", b);
+        console.log("chico_engagement_time", b);
         b > 0 && (a.j[O.g.de] = b)
     };
     h.qm = function(a) {
@@ -14405,7 +14400,7 @@
             a.metadata.join_timer_sec = 0;
             u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
             var v = !1;
-            u || (v = a.metadata.is_first_visit = !0, u = {
+            u || (console.log("chico_first_visit"), v = a.metadata.is_first_visit = !0, u = {
                 sessionId: String(n),
                 Qc: 1,
                 Nd: !1,
@@ -14414,7 +14409,8 @@
                 Dd: void 0
             });
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
-            if (v) a.metadata.is_session_start = !0, d.qm(a);
+            
+            if (v) a.metadata.is_session_start = !0, d.qm(a), console.log("chico_session_start");
             else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
             a.metadata.euid_mode_enabled ? V(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !S(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
             var t = u.Dd;
