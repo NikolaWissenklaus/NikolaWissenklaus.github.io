@@ -13312,7 +13312,10 @@
                 },
                 get: function() {
                     var d = 0;
+                    console.log("bbb", b);
                     a.Th() && (d = qb() - b);
+                    console.log("ddd", d);
+                    console.log("ccc", c);
                     return d + c
                 }
             }
