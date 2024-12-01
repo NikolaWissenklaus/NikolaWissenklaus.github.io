@@ -13313,12 +13313,7 @@
                 },
                 get: function() {
                     var d = 0;
-                    console.log("chico_et_get",qb());
-                    console.log("chico_et_get",b);
-                    console.log("chico_et_get",qb() - b);
                     a.Th() && (d = qb() - b);
-                    console.log("chico_et_get",c);
-                    console.log("chico_et_get",d + c);
                     return d + c
                 }
             }
