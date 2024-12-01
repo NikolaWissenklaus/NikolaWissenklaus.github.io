@@ -8008,9 +8008,8 @@
     }
 
     function jp(a, b, c, d) {
-        console.log("chico_cookie", a, b, c, d);
-        var chico_cookie = [b, fp(c, d), a].join(".")
-        console.log("chico_cookie", chicoedkcnke);
+        var chico_cookie = [b, fp(c, d), a].join(".");
+        console.log("chico_cookie", chico_cookie);
         //return [b, fp(c, d), a].join(".")
         return chico_cookie
     };
@@ -13466,7 +13465,6 @@
         qG = function(a, b) {
             var c = b.metadata.cookie_options,
                 d = oG(b, c),
-                
                 e = jp(a, pG[0], c.domain, c.path),
                 f = {
                     Hb: O.g.U,
