@@ -8024,6 +8024,7 @@
         //return [b, fp(c, d), a].join(".")
         return chico_cookie
     };
+    
 
     function kp(a, b, c, d) {
         var e, f = Number(a.Fb != null ? a.Fb : void 0);
@@ -8473,7 +8474,6 @@
     }
 
     function Vp(a, b, c, d) {
-        console.log("Vp");
         var e = jp(b, "1", c.domain, c.path),
             f = kp(c, d);
         f.Hb = Wp();
@@ -8525,7 +8525,6 @@
                     Va("TAGGING", 16);
                     var f = kp(a, e);
                     f.Hb = Wp();
-                    console.log("Yp");
                     var g = jp(d, "1", a.domain, a.path);
                     ap(c, g, f)
                 }
@@ -13385,7 +13384,6 @@
         return this.C + this.ig()
     };
     h.ig = function() {
-        console.log("chico_et",this.j.get());
         return this.j && this.j.get() || 0
     };
     h.dn = function(a) {
@@ -13477,6 +13475,7 @@
             var k;
             return (k = mG(g.sessionId, g.Qc, g.Nd, g.cf, g.Xh, g.Mc, g.Dd)) != null ? k : b
         },
+        
         qG = function(a, b) {
             //valor do cookie session
             var c = b.metadata.cookie_options,
