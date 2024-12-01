@@ -15,6 +15,14 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TR5E2D5Y8N');
+
+function evento(){
+    gtag('event', 'teste', {
+    'aaa': 'myAppName',
+    'bbbb': 'xxxxx'
+  });
+}
+  
 </script>
 </head>
 <body>
@@ -29,7 +37,7 @@
             <h2>Seção 1</h2>
             <p>Este é um parágrafo na primeira seção.</p>
         </section>
-        
+        <button onclick="evento()">disparar</button>
         <section>
             <h2>Seção 2</h2>
             <p>Este é um parágrafo na segunda seção.</p>
