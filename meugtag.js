@@ -13313,7 +13313,12 @@
                 },
                 get: function() {
                     var d = 0;
+                    console.log("chico_et_get",qb());
+                    console.log("chico_et_get",b);
+                    console.log("chico_et_get",qb() - b);
                     a.Th() && (d = qb() - b);
+                    console.log("chico_et_get",c);
+                    console.log("chico_et_get",d + c);
                     return d + c
                 }
             }
@@ -13385,6 +13390,7 @@
         return this.C + this.ig()
     };
     h.ig = function() {
+        console.log("chico_et",this.j.get());
         return this.j && this.j.get() || 0
     };
     h.dn = function(a) {
@@ -13451,13 +13457,13 @@
             return d
         },
         hG = function(a, b) {
+            //valor do cookie de usuario
             var c;
             var d = b.metadata.cookie_options,
                 e = d.prefix + "_ga",
                 f = kp(d, void 0, void 0, O.g.U);
             if (V(b.m, O.g.hc) === !1 && kG(b) === a) c = !0;
             else {
-                console.log("hG");
                 var g = jp(a, jG[0], d.domain, d.path);
                 c = ap(e, g, f) !== 1
             }
@@ -13477,7 +13483,7 @@
             return (k = mG(g.sessionId, g.Qc, g.Nd, g.cf, g.Xh, g.Mc, g.Dd)) != null ? k : b
         },
         qG = function(a, b) {
-            console.log("qG");
+            //valor do cookie session
             var c = b.metadata.cookie_options,
                 d = oG(b, c),
                 e = jp(a, pG[0], c.domain, c.path),
