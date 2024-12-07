@@ -7850,7 +7850,8 @@
         }
     }
 
-    function Wo(a, b, c, d) {
+    function Wo(a, b, c, d, onde) {
+        console.log("onde",onde);
         var e = So(),
             f = window;
         console.log("final?",a);
@@ -7896,7 +7897,7 @@
                     continue
                 }
                 r = !0;
-                if (!$o(v, c.path) && Wo(t, a, b, c.Hb)) return 0
+                if (!$o(v, c.path) && Wo(t, a, b, c.Hb, "aa")) return 0
             }
             if (q && !r) throw q;
             return 1
@@ -7904,7 +7905,7 @@
         n && n.toLowerCase() !== "none" && (g = e(g, "domain", n));
         g = f(g, c.flags);
         d && d(a, k);
-        return $o(n, c.path) ? 1 : Wo(g, a, b, c.Hb) ? 0 : 1
+        return $o(n, c.path) ? 1 : Wo(g, a, b, c.Hb, "bb") ? 0 : 1
     }
 
     function ap(a, b, c) {
@@ -8008,7 +8009,7 @@
         return To(a, f, ep(c), d, e)
     }
 
-    function jp(a, b, c, d) {
+    function concatenaDadosCookie(a, b, c, d) {
         /*
             a = valor do cookie
             b = GS1 ou GA1
@@ -8475,7 +8476,7 @@
     }
 
     function Vp(a, b, c, d) {
-        var e = jp(b, "1", c.domain, c.path),
+        var e = concatenaDadosCookie(b, "1", c.domain, c.path),
             f = kp(c, d);
         f.Hb = Wp();
         ap(a, e, f)
@@ -8526,7 +8527,7 @@
                     Va("TAGGING", 16);
                     var f = kp(a, e);
                     f.Hb = Wp();
-                    var g = jp(d, "1", a.domain, a.path);
+                    var g = concatenaDadosCookie(d, "1", a.domain, a.path);
                     ap(c, g, f)
                 }
             }
@@ -13453,13 +13454,18 @@
         },
         hG = function(a, b) {
             //valor do cookie de usuario
+            console.log("valor do cookie de usuario");
+            console.log("a",a);
+            console.log("b",b);
             var c;
             var d = b.metadata.cookie_options,
                 e = d.prefix + "_ga",
                 f = kp(d, void 0, void 0, O.g.U);
+                console.log("f",f);
+                console.log("O.g.hc",O.g.hc);
             if (V(b.m, O.g.hc) === !1 && kG(b) === a) c = !0;
             else {
-                var g = jp(a, jG[0], d.domain, d.path);
+                var g = concatenaDadosCookie(a, jG[0], d.domain, d.path);
                 c = ap(e, g, f) !== 1
             }
             return c
@@ -13482,7 +13488,7 @@
             //valor do cookie session
             var c = b.metadata.cookie_options,
                 d = oG(b, c),
-                e = jp(a, pG[0], c.domain, c.path),
+                e = concatenaDadosCookie(a, pG[0], c.domain, c.path),
                 f = {
                     Hb: O.g.U,
                     domain: c.domain,
