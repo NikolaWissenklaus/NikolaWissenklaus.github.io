@@ -7850,8 +7850,7 @@
         }
     }
 
-    function Wo(a, b, c, d, onde) {
-        console.log("onde",onde);
+    function Wo(a, b, c, d) {
         var e = So(),
             f = window;
         console.log("final?",a);
@@ -7897,7 +7896,7 @@
                     continue
                 }
                 r = !0;
-                if (!$o(v, c.path) && Wo(t, a, b, c.Hb, "aa")) return 0
+                if (!$o(v, c.path) && Wo(t, a, b, c.Hb)) return 0
             }
             if (q && !r) throw q;
             return 1
@@ -7905,7 +7904,12 @@
         n && n.toLowerCase() !== "none" && (g = e(g, "domain", n));
         g = f(g, c.flags);
         d && d(a, k);
-        return $o(n, c.path) ? 1 : Wo(g, a, b, c.Hb, "bb") ? 0 : 1
+        var seila = $o(n, c.path);
+        console.log("xoxo n", n);
+        console.log("xoxo c.path", c.path);
+        console.log("xoxo seila", seila);
+        //return $o(n, c.path) ? 1 : Wo(g, a, b, c.Hb) ? 0 : 1
+        return seila ? 1 : Wo(g, a, b, c.Hb) ? 0 : 1
     }
 
     function ap(a, b, c) {
