@@ -7882,18 +7882,14 @@
         g = e(g, "max-age", c.Lm);
         g = e(g, "samesite", c.ln);
         c.secure &&
-            (g = f(g, "secure"));
+            (g = f(g, "secure"));''
         var n = c.domain;
         if (n && n.toLowerCase() === "auto") {
             for (var p = Zo(), q = void 0, r = !1, u = 0; u < p.length; ++u) {
+                //v = dominio atual
                 var v = p[u] !== "none" ? p[u] : void 0,
                     t = e(g, "domain", v);
-                    console.log("-- g",g);
-                    console.log("-- v",v);
-                    console.log("-- ta",t);
-                    
                 t = f(t, c.flags);
-                console.log("-- tb",t);
                 try {
                     d && d(a, k)
                 } catch (w) {
@@ -14574,6 +14570,8 @@
         }
     };
     h.Zm = function(a) {
+        console.log("principal", a);
+        console.log("==========================");
         var b = this;
         this.j = a;
         try {
