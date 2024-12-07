@@ -7853,7 +7853,7 @@
     function Wo(a, b, c, d) {
         var e = So(),
             f = window;
-        console.log("final?",a);
+        //console.log("final?",a);
         Po(f) && (f.document.cookie = a);
         var g = So();
         return e !== g || c !== void 0 && Qo(b, g, !1, d).indexOf(c) >= 0
@@ -7888,7 +7888,12 @@
             for (var p = Zo(), q = void 0, r = !1, u = 0; u < p.length; ++u) {
                 var v = p[u] !== "none" ? p[u] : void 0,
                     t = e(g, "domain", v);
+                    console.log("-- g",g);
+                    console.log("-- v",v);
+                    console.log("-- ta",t);
+                    
                 t = f(t, c.flags);
+                console.log("-- tb",t);
                 try {
                     d && d(a, k)
                 } catch (w) {
@@ -7904,12 +7909,7 @@
         n && n.toLowerCase() !== "none" && (g = e(g, "domain", n));
         g = f(g, c.flags);
         d && d(a, k);
-        var seila = $o(n, c.path);
-        console.log("xoxo n", n);
-        console.log("xoxo c.path", c.path);
-        console.log("xoxo seila", seila);
-        //return $o(n, c.path) ? 1 : Wo(g, a, b, c.Hb) ? 0 : 1
-        return seila ? 1 : Wo(g, a, b, c.Hb) ? 0 : 1
+        return $o(n, c.path) ? 1 : Wo(g, a, b, c.Hb) ? 0 : 1
     }
 
     function ap(a, b, c) {
@@ -7957,10 +7957,10 @@
         return a !== void 0 && (cp.test(window.document.location.hostname) || b === "/" && bp.test(a))
     }
 
-    function dp(a) {
-        if (!a) return 1;
-        var b = a;
-        $a(9) && a === "none" && (b = window.document.location.hostname);
+    function dp(cookie_domain) {
+        if (!cookie_domain) return 1;
+        var b = cookie_domain;
+        $a(9) && cookie_domain === "none" && (b = window.document.location.hostname);
         b = b.indexOf(".") === 0 ? b.substring(1) : b;
         return b.split(".").length
     }
@@ -7972,9 +7972,9 @@
         return a.split("/").length - 1
     }
 
-    function fp(a, b) {
-        var c = "" + dp(a),
-            d = ep(b);
+    function getDomainLevel(cookie_domain, cookie_path) {
+        var c = "" + dp(cookie_domain),
+            d = ep(cookie_path);
         d > 1 && (c += "-" + d);
         return c
     }
@@ -8012,23 +8012,23 @@
         var f = dp(b);
         return To(a, f, ep(c), d, e)
     }
-
-    function concatenaDadosCookie(a, b, c, d) {
+    
+    function concatenaDadosCookie(valor_cookie, versao_cookie, cookie_domain, cookie_path) {
+        //jp(a,b,c,d)
         /*
-            a = valor do cookie
-            b = GS1 ou GA1
-            c = auto
-            d = /
+            valor_cookie = valor do cookie
+            versao_cookie = GS1 ou GA1
+            cookie_domain = auto
+            cookie_path = / - Specifies the subpath used to store the analytics cookie.
         */
-        var chico_cookie = [b, fp(c, d), a].join(".");
+        var cookie_concatenado = [versao_cookie, getDomainLevel(cookie_domain, cookie_path), valor_cookie].join(".");
         /*
             GS1.1.1733023458.1.0.1733023480.0.0.0
             ou
             GA1.1.795306973.1733023458
         */
-        console.log("chico_cookie", chico_cookie)
-        //return [b, fp(c, d), a].join(".")
-        return chico_cookie
+        //return [b, getDomainLevel(c, d), a].join(".")
+        return cookie_concatenado
     };
     
 
@@ -8653,7 +8653,7 @@
 
     function lq(a, b, c, d) {
         c = c || {};
-        var e = fp(c.domain, c.path),
+        var e = getDomainLevel(c.domain, c.path),
             f = hq(b, e);
         if (f) {
             var g = kp(c, d, void 0, iq.get(5));
@@ -13375,7 +13375,6 @@
     };
     h.wn = function(a) {
         var b = this.ig();
-        console.log("chico_engagement_time", b);
         b > 0 && (a.j[O.g.de] = b)
     };
     h.qm = function(a) {
@@ -13458,15 +13457,12 @@
         },
         hG = function(a, b) {
             //valor do cookie de usuario
-            console.log("valor do cookie de usuario");
-            console.log("a",a);
-            console.log("b",b);
+            
             var c;
             var d = b.metadata.cookie_options,
                 e = d.prefix + "_ga",
                 f = kp(d, void 0, void 0, O.g.U);
-                console.log("f",f);
-                console.log("O.g.hc",O.g.hc);
+                
             if (V(b.m, O.g.hc) === !1 && kG(b) === a) c = !0;
             else {
                 var g = concatenaDadosCookie(a, jG[0], d.domain, d.path);
@@ -13650,7 +13646,7 @@
             var b = V(a.m, O.g.hc);
             ms(a, "cu", b === !0 ? 1 : b === !1 ? 0 : void 0);
             ms(a, "cf", V(a.m, O.g.ab));
-            ms(a, "cd", fp(V(a.m, O.g.Ra), V(a.m, O.g.vb)))
+            ms(a, "cd", getDomainLevel(V(a.m, O.g.Ra), V(a.m, O.g.vb)))
         }
     };
     var EG = function(a, b) {
@@ -14420,7 +14416,6 @@
                 Dd: void 0
             });
             n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
-            console.log("evento");
             if (v) a.metadata.is_session_start = !0, d.qm(a), console.log("chico_session_start");
             else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
             a.metadata.euid_mode_enabled ? V(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !S(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
