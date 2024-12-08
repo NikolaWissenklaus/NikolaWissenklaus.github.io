@@ -14371,9 +14371,7 @@
             }
         },
         GH = function(a, b, c, d, e) {
-            console.log("cookinho 1 a",a);
             var f = V(a.m, O.g.tb);
-            console.log("cookinho 1 f",f);
             if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1) : (U(127), a.isAborted = !0);
             else {
                 var g = f ? 1 : 8;
@@ -14518,6 +14516,8 @@
         };
     h = TH.prototype;
     h.Ym = function(a, b, c) {
+        console.log("==========================");
+        console.log("Ym", a, b, c);
         var d = this,
             e = Vl(this.H);
         if (e)
@@ -14572,9 +14572,9 @@
         }
     };
     h.Zm = function(a) {
-        console.log("principal", a);
-        throw new Error("Erro original");
         console.log("==========================");
+        console.log("Zm", a);
+        
         var b = this;
         this.j = a;
         try {
@@ -15001,6 +15001,8 @@
         };
 
     function xI(a, b) {
+        console.log("==========================");
+        console.log("xI", a, b);
         wI(function() {
             var c = Vl(a);
             if (c) {
@@ -15011,6 +15013,8 @@
     }
 
     function yI(a, b) {
+        console.log("==========================");
+        console.log("yI", a, b);
         var c = function() {};
         var d = new TH(a.id),
             e = a.prefix === "MC";
