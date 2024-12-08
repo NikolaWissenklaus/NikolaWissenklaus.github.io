@@ -8001,7 +8001,12 @@
     }
 
     function hp(a) {
-        return [gp(a), Math.round(qb() / 1E3)].join(".")
+        console.log(a);
+        var id_qualquer = gp(a);
+        var id_seila = Math.round(qb() / 1E3);
+        console.log(id_qualquer);
+        console.log(id_seila);
+        return [id_qualquer, id_seila].join(".")
     }
 
     function ip(a, b, c, d, e) {
@@ -14374,7 +14379,6 @@
         },
         GH = function(a, b, c, d, e) {
             var f = V(a.m, O.g.tb);
-            console.log("GH f", f);
             if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1, "GH") : (U(127), a.isAborted = !0);
             else {
                 var g = f ? 1 : 8;
