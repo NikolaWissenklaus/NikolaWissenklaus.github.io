@@ -14393,66 +14393,80 @@
                 Wa: e
             }
         },
-        GH = function(a, b, c, d, e) {
-            var f = V(a.m, O.g.tb);
-            if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1, "GH") : (U(127), a.isAborted = !0);
-            else {
-                var g = f ? 1 : 8;
-                a.metadata.is_new_to_site = !1;
-                f || (f = kG(a), g = 3);
-                f || (f = b, g = 5);
-                if (!f) {
-                    var k = X(O.g.U),
-                        m = dG();
-                    f = !m.from_cookie || k ? m.vid : void 0;
-                    g = 6
-                }
-                f ? f = "" + f : (f = generateClientID(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
-                gG(a, f, g, "GH2")
+        
+    GH = function(a, b, c, d, e) {
+        var f = V(a.m, O.g.tb);
+        if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1, "GH") : (U(127), a.isAborted = !0);
+        else {
+            var g = f ? 1 : 8;
+            a.metadata.is_new_to_site = !1;
+            f || (f = kG(a), g = 3);
+            f || (f = b, g = 5);
+            if (!f) {
+                var k = X(O.g.U),
+                    m = dG();
+                f = !m.from_cookie || k ? m.vid : void 0;
+                g = 6
             }
-            var n = Math.floor(a.metadata.event_start_timestamp_ms /
-                    1E3),
-                p = void 0;
+            f ? f = "" + f : (f = generateClientID(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
+            gG(a, f, g, "GH2")
+        }
+        console.log("a", a);
+        console.log("=============================");
 
-            
-            a.metadata.is_new_to_site || (p = rG(a) || c);
-            var q = lb(V(a.m, O.g.sd, 30));
-            q = Math.min(475, q);
-            q = Math.max(5, q);
-            var r = lb(V(a.m, O.g.Pf, 1E4)),
-                u = lG(p);
-            a.metadata.is_first_visit = !1;
-            a.metadata.is_session_start = !1;
-            a.metadata.join_timer_sec = 0;
-            u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, n - u.cf)));
-            var v = !1;
-            u || (console.log("chico_first_visit"), v = a.metadata.is_first_visit = !0, u = {
-                sessionId: String(n),
-                Qc: 1,
-                Nd: !1,
-                cf: n,
-                Mc: !1,
-                Dd: void 0
-            });
-            n > u.cf + q * 60 && (v = !0, u.sessionId = String(n), u.Qc++, u.Nd = !1, u.Dd = void 0);
-            if (v) a.metadata.is_session_start = !0, d.qm(a), console.log("chico_session_start");
-            else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
-            a.metadata.euid_mode_enabled ? V(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !S(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
-            var t = u.Dd;
-            if (a.metadata.euid_mode_enabled || Qt(a)) {
-                var w = V(a.m, O.g.ee),
-                    x = w ? 1 : 8;
-                w || (w = t, x = 4);
-                w || (w = gp(), x = 7);
-                var y = w.toString(),
-                    A = x,
-                    B = a.metadata.enhanced_client_id_source;
-                if (B === void 0 || A <= B) a.j[O.g.ee] = y, a.metadata.enhanced_client_id_source = A
-            }
-            e ? (a.copyToHitData(O.g.zb, u.sessionId), a.copyToHitData(O.g.te, u.Qc), a.copyToHitData(O.g.se, u.Nd ? 1 : 0)) : (a.j[O.g.zb] =
-                u.sessionId, a.j[O.g.te] = u.Qc, a.j[O.g.se] = u.Nd ? 1 : 0);
-            a.metadata[O.g.Hf] = u.Mc ? 1 : 0
-        };
+        var current_event_timestamp = Math.floor(a.metadata.event_start_timestamp_ms / 1E3),
+
+            p = void 0;
+
+        
+        a.metadata.is_new_to_site || (p = rG(a) || c);
+
+        var q = lb(V(a.m, O.g.sd, 30));
+        console.log("q1", q);
+        q = Math.min(475, q);
+        console.log("q2", q);
+        q = Math.max(5, q);
+        console.log("q3", q);
+
+        var r = lb(V(a.m, O.g.Pf, 1E4)),
+            u = lG(p);
+        
+        console.log("r", r);
+        console.log("u", u);
+
+        a.metadata.is_first_visit = !1;
+        a.metadata.is_session_start = !1;
+        a.metadata.join_timer_sec = 0;
+        u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, current_event_timestamp - u.cf)));
+        var v = !1;
+        u || (console.log("chico_first_visit"), v = a.metadata.is_first_visit = !0, u = {
+            sessionId: String(current_event_timestamp),
+            Qc: 1,
+            Nd: !1,
+            cf: current_event_timestamp,
+            Mc: !1,
+            Dd: void 0
+        });
+        current_event_timestamp > u.cf + q * 60 && (v = !0, u.sessionId = String(current_event_timestamp), u.Qc++, u.Nd = !1, u.Dd = void 0);
+        if (v) a.metadata.is_session_start = !0, d.qm(a), console.log("chico_session_start");
+        else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
+        a.metadata.euid_mode_enabled ? V(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !S(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
+        var t = u.Dd;
+        if (a.metadata.euid_mode_enabled || Qt(a)) {
+            var w = V(a.m, O.g.ee),
+                x = w ? 1 : 8;
+            w || (w = t, x = 4);
+            w || (w = gp(), x = 7);
+            var y = w.toString(),
+                A = x,
+                B = a.metadata.enhanced_client_id_source;
+            if (B === void 0 || A <= B) a.j[O.g.ee] = y, a.metadata.enhanced_client_id_source = A
+        }
+        e ? (a.copyToHitData(O.g.zb, u.sessionId), a.copyToHitData(O.g.te, u.Qc), a.copyToHitData(O.g.se, u.Nd ? 1 : 0)) : (a.j[O.g.zb] =
+            u.sessionId, a.j[O.g.te] = u.Qc, a.j[O.g.se] = u.Nd ? 1 : 0);
+        a.metadata[O.g.Hf] = u.Mc ? 1 : 0
+    };
+    
     var HH = window,
         IH = document,
         JH = function(a) {
