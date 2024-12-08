@@ -13572,6 +13572,7 @@
         vG = function(a, b, c) {
             var d = Dp(!0),
                 e = d[b];
+            console.log("vG e", e);
             e && (gG(a, e, 2, "vG"), hG(e, a));
             var f = d[c];
             f && qG(f, a);
@@ -14387,6 +14388,7 @@
                     g = 6
                 }
                 f ? f = "" + f : (f = hp(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
+                console.log("GH2 f", f);
                 gG(a, f, g, "GH2")
             }
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
