@@ -12786,6 +12786,8 @@
     };
 
     function ZB(a, b) {
+        console.log("==========================");
+        console.log("ZB", a, b);
         var c;
         K(this.getName(), ["preHit:!PixieMap", "dustOptions:?PixieMap"], arguments);
         var d = G(b) || {},
@@ -14543,6 +14545,8 @@
         else c.onFailure()
     };
     h.Wm = function(a, b, c) {
+        console.log("==========================");
+        console.log("Wm", a, b, c);
         var d = Vl(this.H);
         if (S(70) && a === O.g.ba && Nt(c, "ga4_ads_linked", !1)) {
             var e = function() {
