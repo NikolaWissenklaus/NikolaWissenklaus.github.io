@@ -13495,8 +13495,8 @@
             return (k = mG(g.sessionId, g.Qc, g.Nd, g.cf, g.Xh, g.Mc, g.Dd)) != null ? k : b
         },
         
-        qG = function(valor_do_cookie, onde) {
-            console.log("onde", onde, valor_do_cookie);
+        qG = function(valor_do_cookie, b, onde) {
+            console.log("onde",onde);
             //valor do cookie session
             var cookie_options = b.metadata.cookie_options,
                 d = oG(b, cookie_options),
@@ -13596,7 +13596,7 @@
                 e = d[b];
             e && (gG(a, e, 2, "vG"), hG(e, a));
             var f = d[c];
-            f && qG(f, a,"vG");
+            f && qG(f, a, "vG");
             return {
                 clientId: e,
                 Wa: f
@@ -14378,7 +14378,6 @@
             a: {
                 var d = sG(a);
                 if (d) {
-                    
                     if (qG(d, a, "FH")) {
                         c = d;
                         break a
