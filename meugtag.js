@@ -6681,14 +6681,9 @@
             return c
         },
         V = function(a, b, c, d) {
-            console.log("V a", a);
-            console.log("V b", b);
-            console.log("V c", c);
-            console.log("V d", d);
-            console.log("V ??", l(nm(a, d === void 0 ? 3 : d)));
+            
             for (var e = l(nm(a, d === void 0 ? 3 : d)), f = e.next(); !f.done; f = e.next()) {
                 var g = f.value;
-                console.log("V g", g);
                 if (g[b] !== void 0) return g[b]
             }
             return c
