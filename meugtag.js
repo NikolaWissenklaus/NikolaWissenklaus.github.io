@@ -13569,7 +13569,6 @@
             }
         },
         vG = function(a, b, c) {
-            console.log("ordem vG");
             var d = Dp(!0),
                 e = d[b];
             e && (gG(a, e, 2), hG(e, a));
@@ -14372,8 +14371,9 @@
             }
         },
         GH = function(a, b, c, d, e) {
-            console.log("ordem GH");
+            console.log("cookinho 1 a",a);
             var f = V(a.m, O.g.tb);
+            console.log("cookinho 1 f",f);
             if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1) : (U(127), a.isAborted = !0);
             else {
                 var g = f ? 1 : 8;
@@ -14386,7 +14386,6 @@
                     f = !m.from_cookie || k ? m.vid : void 0;
                     g = 6
                 }
-                console.log("ordem GH2");
                 f ? f = "" + f : (f = hp(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
                 gG(a, f, g)
             }
