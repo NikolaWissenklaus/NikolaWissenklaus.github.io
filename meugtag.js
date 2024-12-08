@@ -1558,12 +1558,12 @@
         return a ? a.replace(/^\s+|\s+$/g, "") : ""
     }
 
-    function pb() {
+    function getCurrentDate() {
         return new Date(Date.now())
     }
 
-    function qb() {
-        return pb().getTime()
+    function getCurrentTimestamp() {
+        return getCurrentDate().getTime()
     }
     var ib = function() {
         this.prefix = "gtm.";
@@ -3575,12 +3575,12 @@
             var v, t, w;
             if (f && uf.indexOf(c) === -1) {
                 uf.push(c);
-                var x = qb();
+                var x = getCurrentTimestamp();
                 v = e(g);
-                var y = qb() - x,
-                    A = qb();
+                var y = getCurrentTimestamp() - x,
+                    A = getCurrentTimestamp();
                 t = gf(c, k, b);
-                w = y - (qb() - A)
+                w = y - (getCurrentTimestamp() - A)
             } else if (e && (v = e(g)), !e || f) t = gf(c, k, b);
             f && d && (d.reportMacroDiscrepancy(d.id, c, void 0, !0), Wc(v) ? (Array.isArray(v) ? Array.isArray(t) : Uc(v) ? Uc(t) : typeof v === "function" ? typeof t === "function" : v === t) || d.reportMacroDiscrepancy(d.id, c) : v !== t && d.reportMacroDiscrepancy(d.id, c), w !== void 0 && d.reportMacroDiscrepancy(d.id, c, w));
             return e ? v : t
@@ -6822,11 +6822,11 @@
         Jm && (C.clearTimeout(Jm), Jm = void 0);
         if (Hm !== void 0 && Om) {
             var a;
-            (a = Im[Hm]) || (a = Km.j < Km.C ? !1 : qb() - Km.H[Km.j % Km.C] < 1E3);
+            (a = Im[Hm]) || (a = Km.j < Km.C ? !1 : getCurrentTimestamp() - Km.H[Km.j % Km.C] < 1E3);
             if (a || Lm-- <= 0) U(1), Im[Hm] = !0;
             else {
                 var b = Km.j++ % Km.C;
-                Km.H[b] = qb();
+                Km.H[b] = getCurrentTimestamp();
                 var c = Mm(!0);
                 sc(c);
                 Om = !1
@@ -6908,7 +6908,7 @@
             this.status = 1
         },
         dn = function(a, b, c, d) {
-            this.C = qb();
+            this.C = getCurrentTimestamp();
             this.j = b;
             this.args = c;
             this.messageContext = d;
@@ -7954,7 +7954,9 @@
     }
 
     function dp(cookie_domain) {
-        if (!cookie_domain) return 1;
+        if (!cookie_domain){
+            return 1;
+        }
         var b = cookie_domain;
         $a(9) && cookie_domain === "none" && (b = window.document.location.hostname);
         b = b.indexOf(".") === 0 ? b.substring(1) : b;
@@ -7995,18 +7997,20 @@
             return a
         };
 
-    function gp(a) {
-        var b = Math.round(Math.random() * 2147483647);
-        return a ? String(b ^ Oo(a) & 2147483647) : String(b)
+    function getBSDRandomNumberLike(a) {
+        //2147483647 é o máximo do BSD Random Number 
+        var numero_aleatorio = Math.round(Math.random() * 2147483647);
+        if(a){
+            return String(b ^ Oo(a) & 2147483647)
+        }else{
+            return String(numero_aleatorio)
+        }
     }
 
-    function hp(a) {
-        console.log(a);
-        var id_qualquer = gp(a);
-        var id_seila = Math.round(qb() / 1E3);
-        console.log(id_qualquer);
-        console.log(id_seila);
-        return [id_qualquer, id_seila].join(".")
+    function generateClientID(a) {
+        var numero_aleatorio = getBSDRandomNumberLike(a);
+        var timestamp_atual = Math.round(getCurrentTimestamp() / 1E3);
+        return [numero_aleatorio, timestamp_atual].join(".")
     }
 
     function ip(a, b, c, d, e) {
@@ -8014,28 +8018,28 @@
         return To(a, f, ep(c), d, e)
     }
     
-    function concatenaDadosCookie(valor_cookie, versao_cookie, cookie_domain, cookie_path) {
-        //jp(a,b,c,d)
+    function concatCookieData(valor_cookie, versao_cookie, cookie_domain, cookie_path) {
         /*
-            valor_cookie = valor do cookie
+            valor_cookie  = 795306973.1733023458  ou  1733023458.1.0.1733023480.0.0.0
             versao_cookie = GS1 ou GA1
-            cookie_domain = auto
-            cookie_path = / - Specifies the subpath used to store the analytics cookie.
+            cookie_domain = auto - Specifies the domain used to store the analytics cookie.
+            cookie_path   = / - Specifies the subpath used to store the analytics cookie.
         */
-        var cookie_concatenado = [versao_cookie, getDomainLevel(cookie_domain, cookie_path), valor_cookie].join(".");
+        var domain_level = getDomainLevel(cookie_domain, cookie_path);
+
+        var cookie_concatenado = [versao_cookie, domain_level, valor_cookie].join(".");
         /*
             GS1.1.1733023458.1.0.1733023480.0.0.0
             ou
             GA1.1.795306973.1733023458
         */
-        //return [b, getDomainLevel(c, d), a].join(".")
         return cookie_concatenado
     };
     
 
     function kp(a, b, c, d) {
         var e, f = Number(a.Fb != null ? a.Fb : void 0);
-        f !== 0 && (e = new Date((b || qb()) + 1E3 * (f || 7776E3)));
+        f !== 0 && (e = new Date((b || getCurrentTimestamp()) + 1E3 * (f || 7776E3)));
         return {
             path: a.path,
             domain: a.domain,
@@ -8140,7 +8144,7 @@
     }
 
     function yp(a, b) {
-        var c = [gc.userAgent, (new Date).getTimezoneOffset(), gc.userLanguage || gc.language, Math.floor(qb() / 60 / 1E3) - (b === void 0 ? 0 : b), a].join("*"),
+        var c = [gc.userAgent, (new Date).getTimezoneOffset(), gc.userLanguage || gc.language, Math.floor(getCurrentTimestamp() / 60 / 1E3) - (b === void 0 ? 0 : b), a].join("*"),
             d;
         if (!(d = lp)) {
             for (var e = Array(256), f = 0; f < 256; f++) {
@@ -8457,7 +8461,7 @@
                 if (e) Va("TAGGING", 17), Pp[c] = e;
                 else if (b) {
                     var f = Sp(a.prefix),
-                        g = hp();
+                        g = generateClientID();
                     Vp(f, g, a);
                     Tp(c, a.path, a.domain)
                 }
@@ -8473,7 +8477,7 @@
                 var g = Number(f[1]) || 0;
                 if (g) {
                     var k = e;
-                    b && (k = e + "." + b + "." + (c ? c : Math.floor(qb() / 1E3)));
+                    b && (k = e + "." + b + "." + (c ? c : Math.floor(getCurrentTimestamp() / 1E3)));
                     Vp(d, k, a, g * 1E3)
                 }
             }
@@ -8481,7 +8485,7 @@
     }
 
     function Vp(a, b, c, d) {
-        var e = concatenaDadosCookie(b, "1", c.domain, c.path),
+        var e = concatCookieData(b, "1", c.domain, c.path),
             f = kp(c, d);
         f.Hb = Wp();
         ap(a, e, f)
@@ -8532,7 +8536,7 @@
                     Va("TAGGING", 16);
                     var f = kp(a, e);
                     f.Hb = Wp();
-                    var g = concatenaDadosCookie(d, "1", a.domain, a.path);
+                    var g = concatCookieData(d, "1", a.domain, a.path);
                     ap(c, g, f)
                 }
             }
@@ -9066,7 +9070,7 @@
         if (b.length) {
             var c = b[0];
             a = a || {};
-            var d = qb(),
+            var d = getCurrentTimestamp(),
                 e = kp(a, d, !0),
                 f = xq(),
                 g = function() {
@@ -9105,7 +9109,7 @@
         c = c || {};
         e = e || [];
         var f = Eq(c.prefix),
-            g = d || qb(),
+            g = d || getCurrentTimestamp(),
             k = Math.round(g / 1E3),
             m = xq(),
             n = !1,
@@ -9162,7 +9166,7 @@
             var f = a.gad_source,
                 g = Fq("gs", b);
             if (g) {
-                var k = Math.round((qb() - (Hc() || 0)) / 1E3),
+                var k = Math.round((getCurrentTimestamp() - (Hc() || 0)) / 1E3),
                     m;
                 if ($a(11)) {
                     var n, p = String,
@@ -9196,7 +9200,7 @@
                     var g = Fq(f, d),
                         k = c[g];
                     if (k) {
-                        var m = Math.min(Zq(k), qb()),
+                        var m = Math.min(Zq(k), getCurrentTimestamp()),
                             n;
                         b: {
                             for (var p = m, q = Qo(g, E.cookie, void 0, xq()), r = 0; r < q.length; ++r)
@@ -9230,7 +9234,7 @@
                         var k = gq(g);
                         if (k) {
                             var m = Jq(k);
-                            m || (m = qb());
+                            m || (m = getCurrentTimestamp());
                             var n;
                             a: {
                                 for (var p = m, q = jq(f), r = 0; r < q.length; ++r)
@@ -9576,7 +9580,7 @@
                             var D =
                                 wr();
                             t.push("url=" + encodeURIComponent(D));
-                            t.push("tft=" + qb());
+                            t.push("tft=" + getCurrentTimestamp());
                             var I = Hc();
                             I !== void 0 && t.push("tfd=" + Math.round(I));
                             var J = Mn(!0);
@@ -9695,7 +9699,7 @@
         zr = /^gad_source[_=](\d+)$/;
 
     function Er() {
-        Ii.dedupe_gclid || (Ii.dedupe_gclid = hp());
+        Ii.dedupe_gclid || (Ii.dedupe_gclid = generateClientID());
         return Ii.dedupe_gclid
     };
     var Fr = /^(www\.)?google(\.com?)?(\.[a-z]{2}t?)?$/,
@@ -9767,7 +9771,7 @@
         Lr.test(E.location.host) && (d = Qr("gclgs"), e = Qr("gclst"), b && (f = Qr("gcllp")));
         if (d && e && (!b || f)) c.Mh = d, c.Oh = e, c.Nh = f;
         else {
-            var g = qb(),
+            var g = getCurrentTimestamp(),
                 k = Gq((a || "_gcl") + "_gs"),
                 m = k.map(function(q) {
                     return q.W
@@ -10199,7 +10203,7 @@
             };
             var b = bt(a),
                 c = ct[b];
-            if (c && qb() - c.timestamp < 200) return c.result;
+            if (c && getCurrentTimestamp() - c.timestamp < 200) return c.result;
             var d = dt(),
                 e = d.status,
                 f = [],
@@ -10221,7 +10225,7 @@
                 status: e
             };
             ct[b] = {
-                timestamp: qb(),
+                timestamp: getCurrentTimestamp(),
                 result: D
             };
             return D
@@ -10577,7 +10581,7 @@
             }
         },
         Cu = function() {
-            if (vu(C) && (Bu = qb(), !uu())) {
+            if (vu(C) && (Bu = getCurrentTimestamp(), !uu())) {
                 var a = wu();
                 a && (a.then(function() {
                     U(95)
@@ -10622,7 +10626,7 @@
             n;
         if (n = e.length >= 1) {
             var p = Number(e[e.length - 1].dataset.loadTime);
-            p !== void 0 && qb() - p < (Za[1] === void 0 ? 6E4 : Za[1]) ? (Va("TAGGING",
+            p !== void 0 && getCurrentTimestamp() - p < (Za[1] === void 0 ? 6E4 : Za[1]) ? (Va("TAGGING",
                 9), n = !0) : n = !1
         }
         if (!n) {
@@ -10639,7 +10643,7 @@
                 allow: "join-ad-interest-group"
             }, {
                 taggingId: b,
-                loadTime: qb()
+                loadTime: getCurrentTimestamp()
             })
         }
     }
@@ -10694,7 +10698,7 @@
             Wn(mo()) && d("tcfd", Jo());
             aj.j && d("tag_exp", aj.j);
             if (a.metadata.add_tag_timing) {
-                d("tft", qb());
+                d("tft", getCurrentTimestamp());
                 var e = Hc();
                 e !== void 0 &&
                     d("tfd", Math.round(e))
@@ -11328,7 +11332,7 @@
         function e() {
             function w() {
                 ll(3);
-                var J = qb() - I;
+                var J = getCurrentTimestamp() - I;
                 Sx(c.id, f, "7");
                 px(c.qc, B, "exception", J);
                 S(80) && uw(c, f, Dv.J.Vj);
@@ -11348,7 +11352,7 @@
                 x.vtp_gtmOnSuccess = function() {
                     if (!D) {
                         D = !0;
-                        var J = qb() - I;
+                        var J = getCurrentTimestamp() - I;
                         Sx(c.id, lf[a], "5");
                         px(c.qc, B, "success", J);
                         S(80) && uw(c, f, Dv.J.Xj);
@@ -11358,7 +11362,7 @@
                 x.vtp_gtmOnFailure = function() {
                     if (!D) {
                         D = !0;
-                        var J = qb() -
+                        var J = getCurrentTimestamp() -
                             I;
                         Sx(c.id, lf[a], "6");
                         px(c.qc, B, "failure", J);
@@ -11371,7 +11375,7 @@
                 c.priorityId && (x.vtp_gtmPriorityId = c.priorityId);
                 Sx(c.id, f, "1");
                 S(80) && tw(c, f);
-                var I = qb();
+                var I = getCurrentTimestamp();
                 try {
                     Af(x, {
                         event: c,
@@ -12326,7 +12330,7 @@
     function vz(a) {
         if (a == null || a.length === 0) return !1;
         var b = Number(a),
-            c = qb();
+            c = getCurrentTimestamp();
         return b < c + 3E5 && b > c - 9E5
     }
 
@@ -12971,7 +12975,7 @@
             if (a.limit && a.ai >= a.limit) a.lg && C.clearInterval(a.lg);
             else {
                 a.ai++;
-                var b = qb();
+                var b = getCurrentTimestamp();
                 lz({
                     event: a.eventName,
                     "gtm.timerId": a.lg,
@@ -13312,14 +13316,14 @@
                 c = 0;
             return {
                 start: function() {
-                    b = qb()
+                    b = getCurrentTimestamp()
                 },
                 stop: function() {
                     c = this.get()
                 },
                 get: function() {
                     var d = 0;
-                    a.Th() && (d = qb() - b);
+                    a.Th() && (d = getCurrentTimestamp() - b);
                     return d + c
                 }
             }
@@ -13427,10 +13431,9 @@
         var c = dG();
         if (c.vid === void 0 || b && !c.from_cookie) c.vid = a, c.from_cookie = b
     };
-    var gG = function(a, b, c, onde) {
-        console.log("gG", onde);
+    var gG = function(a, client_id_gerado, c, onde) {
             var d = a.metadata.client_id_source;
-            if (d === void 0 || c <= d) a.j[O.g.tb] = b, a.metadata.client_id_source = c
+            if (d === void 0 || c <= d) a.j[O.g.tb] = client_id_gerado, a.metadata.client_id_source = c
         },
         iG = function(a, b) {
             var c = a.j[O.g.tb];
@@ -13445,30 +13448,36 @@
             a.isAborted = !0;
             return ""
         },
-        jG = ["GA1"],
+
+        ga4_cookie_version = ["GA1"],
+        
         kG = function(a) {
             var b = a.metadata.cookie_options,
                 c = b.prefix + "_ga",
-                d = ip(c, b.domain, b.path, jG, O.g.U);
+                d = ip(c, b.domain, b.path, ga4_cookie_version, O.g.U);
             if (!d) {
                 var e = String(V(a.m, O.g.Ac, ""));
-                e && e !== c && (d = ip(e, b.domain, b.path, jG,
+                e && e !== c && (d = ip(e, b.domain, b.path, ga4_cookie_version,
                     O.g.U))
             }
             return d
         },
-        hG = function(a, b) {
+        hG = function(valor_do_cookie, b) {
             //valor do cookie de usuario
-            
             var c;
-            var d = b.metadata.cookie_options,
-                e = d.prefix + "_ga",
-                f = kp(d, void 0, void 0, O.g.U);
+            var cookie_options = b.metadata.cookie_options,
+                e = cookie_options.prefix + "_ga",
+                f = kp(cookie_options, void 0, void 0, O.g.U);
                 
-            if (V(b.m, O.g.hc) === !1 && kG(b) === a) c = !0;
+            if (V(b.m, O.g.hc) === !1 && kG(b) === valor_do_cookie) c = !0;
             else {
-                var g = concatenaDadosCookie(a, jG[0], d.domain, d.path);
-                c = ap(e, g, f) !== 1
+                var cookie_concatenado = concatCookieData(
+                    valor_do_cookie, 
+                    ga4_cookie_version[0], 
+                    cookie_options.domain, 
+                    cookie_options.path
+                );
+                c = ap(e, cookie_concatenado, f) !== 1
             }
             return c
         };
@@ -13486,25 +13495,31 @@
             return (k = mG(g.sessionId, g.Qc, g.Nd, g.cf, g.Xh, g.Mc, g.Dd)) != null ? k : b
         },
         
-        qG = function(a, b) {
+        qG = function(valor_do_cookie, onde) {
+            console.log("onde", onde, valor_do_cookie);
             //valor do cookie session
-            var c = b.metadata.cookie_options,
-                d = oG(b, c),
-                e = concatenaDadosCookie(a, pG[0], c.domain, c.path),
+            var cookie_options = b.metadata.cookie_options,
+                d = oG(b, cookie_options),
+                cookie_concatenado = concatCookieData(
+                    valor_do_cookie, 
+                    ga4_stream_version[0], 
+                    cookie_options.domain, 
+                    cookie_options.path
+                ),
                 f = {
                     Hb: O.g.U,
-                    domain: c.domain,
-                    path: c.path,
-                    expires: c.Fb ? new Date(qb() + Number(c.Fb) * 1E3) : void 0,
-                    flags: c.flags
+                    domain: cookie_options.domain,
+                    path: cookie_options.path,
+                    expires: cookie_options.Fb ? new Date(getCurrentTimestamp() + Number(cookie_options.Fb) * 1E3) : void 0,
+                    flags: cookie_options.flags
                 };
             ap(d, void 0, f);
-            return ap(d, e, f) !== 1
+            return ap(d, cookie_concatenado, f) !== 1
         },
         rG = function(a) {
             var b = a.metadata.cookie_options,
                 c = oG(a, b),
-                d = ip(c, b.domain, b.path, pG, O.g.U);
+                d = ip(c, b.domain, b.path, ga4_stream_version, O.g.U);
             if (!d) return d;
             var e = Qo(c, void 0, void 0, O.g.U);
             if (d && e.length > 1) {
@@ -13535,7 +13550,9 @@
         oG = function(a, b) {
             return b.prefix + "_ga_" + a.target.ids[Yl[0]]
         },
-        pG = ["GS1"],
+
+        ga4_stream_version = ["GS1"],
+
         lG = function(a) {
             if (a) {
                 var b = a.split(".");
@@ -13577,10 +13594,9 @@
         vG = function(a, b, c) {
             var d = Dp(!0),
                 e = d[b];
-            console.log("vG e", e);
             e && (gG(a, e, 2, "vG"), hG(e, a));
             var f = d[c];
-            f && qG(f, a);
+            f && qG(f, a,"vG");
             return {
                 clientId: e,
                 Wa: f
@@ -13658,12 +13674,12 @@
             c(b) || (U(35), a.isAborted = !0)
         },
         DG = function() {
-            var a = qb(),
+            var a = getCurrentTimestamp(),
                 b = a + 864E5,
                 c = 20,
                 d = 5E3;
             return function(e) {
-                var f = qb();
+                var f = getCurrentTimestamp();
                 f >= b && (b = f + 864E5, d = 5E3);
                 c = Math.min(c + (f - a) / 1E3 * 5, 20);
                 a = f;
@@ -14362,7 +14378,8 @@
             a: {
                 var d = sG(a);
                 if (d) {
-                    if (qG(d, a)) {
+                    
+                    if (qG(d, a, "FH")) {
                         c = d;
                         break a
                     }
@@ -14391,8 +14408,7 @@
                     f = !m.from_cookie || k ? m.vid : void 0;
                     g = 6
                 }
-                f ? f = "" + f : (f = hp(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
-                console.log("GH2 f", f);
+                f ? f = "" + f : (f = generateClientID(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
                 gG(a, f, g, "GH2")
             }
             var n = Math.floor(a.metadata.event_start_timestamp_ms /
@@ -14524,8 +14540,7 @@
         };
     h = TH.prototype;
     h.Ym = function(a, b, c) {
-        console.log("==========================");
-        console.log("Ym", a, b, c);
+        
         var d = this,
             e = Vl(this.H);
         if (e)
@@ -14730,7 +14745,7 @@
                             u && (b.Wa = nG(u, b.Wa,
                                 b.j))
                         } else hG(b.clientId, b.j), fG(b.clientId, !0);
-                        qG(b.Wa, b.j);
+                        qG(b.Wa, b.j, "sn");
                         g = !0;
                         k[O.g.Tg] = n;
                         S(63) && p && (k[O.g.jl] = p)
@@ -16148,7 +16163,7 @@
                     Rz();
                     ll(1);
                     vB();
-                    Wi = qb();
+                    Wi = getCurrentTimestamp();
                     uK.bootstrap = Wi;
                     if (S(80)) {}
                     S(108) && (typeof C.name === "string" && vb(C.name, "web-pixel-sandbox-CUSTOM") && Kc() ? YJ("dMDg0Yz") : C.Shopify && Kc() && YJ("dNTU0Yz"))
