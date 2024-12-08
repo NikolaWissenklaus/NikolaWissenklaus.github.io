@@ -1539,7 +1539,8 @@
         return !!a && (Object.prototype.toString.call(a) === "[object Arguments]" || Object.prototype.hasOwnProperty.call(a, "callee"))
     }
 
-    function lb(a) {
+    function math_round(a) {
+        //retorna ou o numero arredondado ou zero
         return Math.round(Number(a)) || 0
     }
 
@@ -4303,7 +4304,7 @@
     };
 
     function ah(a) {
-        return lb(G(a, this.D))
+        return math_round(G(a, this.D))
     };
 
     function bh(a) {
@@ -13486,7 +13487,7 @@
             if (!a) return b;
             var d = lG(a);
             if (!d) return b;
-            var e, f = lb((e = V(c.m, O.g.sd)) != null ? e : 30);
+            var e, f = math_round((e = V(c.m, O.g.sd)) != null ? e : 30);
             if (!(Math.floor(c.metadata.event_start_timestamp_ms / 1E3) > d.cf + f * 60)) return a;
             var g = lG(b);
             if (!g) return a;
@@ -13541,7 +13542,7 @@
         },
         mG = function(a, b, c, d, e, f, g) {
             if (a && b) {
-                var k = [a, b, lb(c), d, e];
+                var k = [a, b, math_round(c), d, e];
                 k.push(f ? "1" : "0");
                 k.push(g || "0");
                 return k.join(".")
@@ -14394,79 +14395,112 @@
             }
         },
         
-    GH = function(a, b, c, d, e) {
-        var f = V(a.m, O.g.tb);
-        if (V(a.m, O.g.Ob) && V(a.m, O.g.jc)) f ? gG(a, f, 1, "GH") : (U(127), a.isAborted = !0);
-        else {
-            var g = f ? 1 : 8;
-            a.metadata.is_new_to_site = !1;
-            f || (f = kG(a), g = 3);
-            f || (f = b, g = 5);
-            if (!f) {
-                var k = X(O.g.U),
-                    m = dG();
-                f = !m.from_cookie || k ? m.vid : void 0;
-                g = 6
+        GH = function(event_obj_data, b, c, d, e) {
+            var f = V(event_obj_data.m, O.g.tb);
+            if (V(event_obj_data.m, O.g.Ob) && V(event_obj_data.m, O.g.jc)) f ? gG(event_obj_data, f, 1, "GH") : (U(127), event_obj_data.isAborted = true);
+            else {
+                var g = f ? 1 : 8;
+                event_obj_data.metadata.is_new_to_site = false;
+                f || (f = kG(event_obj_data), g = 3);
+                f || (f = b, g = 5);
+                if (!f) {
+                    var k = X(O.g.U),
+                        m = dG();
+                    f = !m.from_cookie || k ? m.vid : void 0;
+                    g = 6
+                }
+                f ? f = "" + f : (f = generateClientID(), g = 7, event_obj_data.metadata.is_first_visit = event_obj_data.metadata.is_new_to_site = true);
+                gG(event_obj_data, f, g, "GH2")
             }
-            f ? f = "" + f : (f = generateClientID(), g = 7, a.metadata.is_first_visit = a.metadata.is_new_to_site = !0);
-            gG(a, f, g, "GH2")
-        }
-        console.log("a", a);
-        console.log("=============================");
-
-        var current_event_timestamp = Math.floor(a.metadata.event_start_timestamp_ms / 1E3),
-
+        
+            //ex: event_start_timestamp_ms = 1733682816603
+            //ex: current_event_timestamp = 1733682816
+            var current_event_timestamp = Math.floor(event_obj_data.metadata.event_start_timestamp_ms / 1E3),
+        
             p = void 0;
-
+            event_obj_data.metadata.is_new_to_site || (p = rG(event_obj_data) || c);
         
-        a.metadata.is_new_to_site || (p = rG(a) || c);
-
-        var q = lb(V(a.m, O.g.sd, 30));
-        console.log("q1", q);
-        q = Math.min(475, q);
-        console.log("q2", q);
-        q = Math.max(5, q);
-        console.log("q3", q);
-
-        var r = lb(V(a.m, O.g.Pf, 1E4)),
-            u = lG(p);
+            //Ex: 30
+            //O.g.sd -> "session_duration"
+            var session_duration = math_round(V(event_obj_data.m, O.g.sd, 30));
+            session_duration = Math.min(475, session_duration);
+            session_duration = Math.max(5, session_duration);
         
-        console.log("r", r);
-        console.log("u", u);
+            //ex 10000
+            //O.g.Pf -> "session_engaged_time"
+            var session_engaged_time = math_round(V(event_obj_data.m, O.g.Pf, 1E4)),
+                session_cookie_obj = lG(p);
+        
+            event_obj_data.metadata.is_first_visit = false;
+            event_obj_data.metadata.is_session_start = false;
+            event_obj_data.metadata.join_timer_sec = 0;
+        
+            if(session_cookie_obj){
+                if(session_cookie_obj.Xh){
+                    var max_diff_events_ts = Math.max(0, current_event_timestamp - session_cookie_obj.cf);
+                    var outra_diff = session_cookie_obj.Xh - max_diff_events_ts;
+                    event_obj_data.metadata.join_timer_sec = Math.max(0,outra_diff);
+                }
+            }
+            
+            var its_session_start = false;
+        
+            if(!session_cookie_obj){
+                its_session_start = true;
+                event_obj_data.metadata.is_first_visit = true;
+        
+                session_cookie_obj = {
+                    sessionId: String(current_event_timestamp),//session_id
+                    Qc: 1,//session_number
+                    Nd: false,
+                    cf: current_event_timestamp,//cookie event_timestamp
+                    Mc: false,//is_user_provided_data_on
+                    Dd: void 0
+                }
+            }
+        
+            //Ex: 30 * 60 = 1800
+            var session_duration_in_secs = session_duration * 60;
+        
+            //Ex: 1733682816 + 1800 = 1733684616
+            var session_end_timestamp = session_cookie_obj.cf + session_duration_in_secs
+            
+            //Ex: 1733700000 > 1733684616
+            if(current_event_timestamp > session_end_timestamp){
+                its_session_start = true;
+                session_cookie_obj.sessionId = String(current_event_timestamp);
+                session_cookie_obj.Qc++;
+                session_cookie_obj.Nd = false;
+                session_cookie_obj.Dd = void 0;
+            }
+        
+            var seila = d.gm();
+            console.log("seila", seila);
+            console.log("session_engaged_time", session_engaged_time);
+            console.log("O.g.ac", O.g.ac);
+            if(its_session_start){
+                event_obj_data.metadata.is_session_start = true;
+                d.qm(event_obj_data);
+                console.log("chico_session_start");
+            }
+            else if (d.gm() > session_engaged_time || event_obj_data.eventName === O.g.ac) session_cookie_obj.Nd = true;
+            event_obj_data.metadata.euid_mode_enabled ? V(event_obj_data.m, O.g.Ca) ? session_cookie_obj.Mc = true : (session_cookie_obj.Mc && !S(13) && (session_cookie_obj.Dd = void 0), session_cookie_obj.Mc = false) : session_cookie_obj.Mc = false;
+            var t = session_cookie_obj.Dd;
+            if (event_obj_data.metadata.euid_mode_enabled || Qt(event_obj_data)) {
+                var w = V(event_obj_data.m, O.g.ee),
+                    x = w ? 1 : 8;
+                w || (w = t, x = 4);
+                w || (w = gp(), x = 7);
+                var y = w.toString(),
+                    A = x,
+                    B = event_obj_data.metadata.enhanced_client_id_source;
+                if (B === void 0 || A <= B) event_obj_data.j[O.g.ee] = y, event_obj_data.metadata.enhanced_client_id_source = A
+            }
+            e ? (event_obj_data.copyToHitData(O.g.zb, session_cookie_obj.sessionId), event_obj_data.copyToHitData(O.g.te, session_cookie_obj.Qc), event_obj_data.copyToHitData(O.g.se, session_cookie_obj.Nd ? 1 : 0)) : (event_obj_data.j[O.g.zb] =
+                session_cookie_obj.sessionId, event_obj_data.j[O.g.te] = session_cookie_obj.Qc, event_obj_data.j[O.g.se] = session_cookie_obj.Nd ? 1 : 0);
+            event_obj_data.metadata[O.g.Hf] = session_cookie_obj.Mc ? 1 : 0
+        };
 
-        a.metadata.is_first_visit = !1;
-        a.metadata.is_session_start = !1;
-        a.metadata.join_timer_sec = 0;
-        u && u.Xh && (a.metadata.join_timer_sec = Math.max(0, u.Xh - Math.max(0, current_event_timestamp - u.cf)));
-        var v = !1;
-        u || (console.log("chico_first_visit"), v = a.metadata.is_first_visit = !0, u = {
-            sessionId: String(current_event_timestamp),
-            Qc: 1,
-            Nd: !1,
-            cf: current_event_timestamp,
-            Mc: !1,
-            Dd: void 0
-        });
-        current_event_timestamp > u.cf + q * 60 && (v = !0, u.sessionId = String(current_event_timestamp), u.Qc++, u.Nd = !1, u.Dd = void 0);
-        if (v) a.metadata.is_session_start = !0, d.qm(a), console.log("chico_session_start");
-        else if (d.gm() > r || a.eventName === O.g.ac) u.Nd = !0;
-        a.metadata.euid_mode_enabled ? V(a.m, O.g.Ca) ? u.Mc = !0 : (u.Mc && !S(13) && (u.Dd = void 0), u.Mc = !1) : u.Mc = !1;
-        var t = u.Dd;
-        if (a.metadata.euid_mode_enabled || Qt(a)) {
-            var w = V(a.m, O.g.ee),
-                x = w ? 1 : 8;
-            w || (w = t, x = 4);
-            w || (w = gp(), x = 7);
-            var y = w.toString(),
-                A = x,
-                B = a.metadata.enhanced_client_id_source;
-            if (B === void 0 || A <= B) a.j[O.g.ee] = y, a.metadata.enhanced_client_id_source = A
-        }
-        e ? (a.copyToHitData(O.g.zb, u.sessionId), a.copyToHitData(O.g.te, u.Qc), a.copyToHitData(O.g.se, u.Nd ? 1 : 0)) : (a.j[O.g.zb] =
-            u.sessionId, a.j[O.g.te] = u.Qc, a.j[O.g.se] = u.Nd ? 1 : 0);
-        a.metadata[O.g.Hf] = u.Mc ? 1 : 0
-    };
-    
     var HH = window,
         IH = document,
         JH = function(a) {
