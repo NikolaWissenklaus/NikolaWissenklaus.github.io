@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .menu ul li {
+    margin-right: 20px;
+  }
+  
+  .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .search-form {
+    display: flex;
+  }
+  
+  .search-form input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .search-form button {
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .banner {
+    text-align: center;
+  }
+  
+  .banner img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-list {
+    margin-top: 20px;
+  }
+  
+  .product-list ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product-list li {
+    margin: 20px;
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid #ccc; /* Adicionando a borda */
+    padding: 10px; /* Espaçamento interno */
+  }
+  
+  .product-list img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Altera o estilo do cursor ao passar o mouse sobre o link */
+  .product-list li a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .menu ul li {
+    margin-right: 20px;
+  }
+  
+  .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .search-form {
+    display: flex;
+  }
+  
+  .search-form input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .search-form button {
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .product-details {
+    display: flex;
+    margin: 20px;
+  }
+  
+  .product-image {
+    flex: 1;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-info {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .product-info h2 {
+    margin-top: 0;
+  }
+  
+  .favorite-button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .shipping-calculation {
+    margin-top: 20px;
+  }
+  
+  .shipping-calculation label,
+  .coupon-input label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .shipping-calculation input,
+  .coupon-input input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .options {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adicionando espaçamento abaixo do grupo de botões de rádio */
+  }
+  
+  .add-to-cart {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Torna o botão um bloco para ocupar a largura total do container */
+    margin-top: 20px; /* Adicionando espaçamento acima do botão "Add to Cart" */
+  }
+ 
+  
+  
+  
