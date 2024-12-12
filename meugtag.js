@@ -14404,6 +14404,7 @@
                     só preenche depois do primeiro evento
                     - EX: 1734023336.1.1.1734025490.0.0.0
             */
+            console.log("event_obj_data",event_obj_data);
             console.log("d",d);
             console.log("e",e);
             //O.g.tb = client_id
@@ -14449,7 +14450,7 @@
         
                 if (!f) {
                     console.log("I - ENTROU IF");
-                    console.log("O.g.U");
+                    console.log("O.g.U",O.g.U);
                     var k = X(O.g.U);
                     console.log("k",k);
                     var m = dG();
