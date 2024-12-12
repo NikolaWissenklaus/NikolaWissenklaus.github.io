@@ -14394,20 +14394,24 @@
             }
         },
         
-        GH = function(event_obj_data, b, c, d, e) {
-            console.log("--------------------------------");
-            console.log("event_obj_data",event_obj_data);
-            console.log("b",b);
-            console.log("c",c);
+        GH = function(event_obj_data, cookie_user_value, cookie_session_value, d, e) {
+            /* 
+                event_obj_data
+                cookie_user_value: 
+                    só preenche depois do primeiro evento
+                    - Ex: 1265697330.1734023336
+                cookie_session_value:
+                    só preenche depois do primeiro evento
+                    - EX: 1734023336.1.1.1734025490.0.0.0
+            */
             console.log("d",d);
             console.log("e",e);
-            console.log("O.g.tb",O.g.tb);
+            //O.g.tb = client_id
             var f = V(event_obj_data.m, O.g.tb);
             console.log("f",f);
             console.log("--------------------------------");
-            console.log("O.g.Ob",O.g.Ob);
-            console.log("O.g.jc",O.g.jc);
-            console.log("--------------------------------");
+            //O.g.Ob = is_legacy_loaded
+            //O.g.jc = is_legacy_converted
             if (V(event_obj_data.m, O.g.Ob) && V(event_obj_data.m, O.g.jc)){ 
                 console.log("A - ENTROU IF");
                 if(f){
@@ -14418,49 +14422,59 @@
                     U(127);
                     event_obj_data.isAborted = true;
                 }
-            }
-            else {
+            } else {
                 console.log("D - ENTROU IF");
                 if(f){
                     console.log("E - ENTROU IF");
                     g = 1;
                 }else{
                     console.log("F - ENTROU ELSE");
-                    g = 8
+                    g = 8;
                 }
                 
                 event_obj_data.metadata.is_new_to_site = false;
                 if (!f) {
                     console.log("G - ENTROU IF");
                     f = kG(event_obj_data);
+                    console.log("f",f);
                     g = 3;
                 }
-
+        
                 if (!f) {
                     console.log("H - ENTROU IF");
-                    f = b;
+                    f = cookie_user_value;
+                    console.log("f",f);
                     g = 5;
                 }
-
+        
                 if (!f) {
                     console.log("I - ENTROU IF");
+                    console.log("O.g.U");
                     var k = X(O.g.U);
                     console.log("k",k);
                     var m = dG();
                     console.log("m",m);
-                    f = !m.from_cookie || k ? m.vid : void 0;
+                    if (!m.from_cookie || k) {
+                        console.log("J - ENTROU IF");
+                        f = m.vid;
+                        console.log("f",f)
+                    } else {
+                       console.log("K - ENTROU ELSE");
+                       f = void 0;
+                       console.log("f",f)
+                    }              
                     g = 6
                 }
                 console.log("--------------------------------");
-                console.log("f",f);
-                
-                f ? f = "" + f : (f = generateClientID(), g = 7, event_obj_data.metadata.is_first_visit = event_obj_data.metadata.is_new_to_site = true);
+                console.log("f",f);        
                 if (f) {
-                    console.log("J - ENTROU IF");
+                    console.log("L - ENTROU IF");
                     f = "" + f;
+                    console.log("f",f)
                 } else {
-                    console.log("K - ENTROU ELSE");
+                    console.log("M - ENTROU ELSE");
                     f = generateClientID();
+                    console.log("f",f)
                     g = 7;
                     event_obj_data.metadata.is_first_visit = true;
                     event_obj_data.metadata.is_new_to_site = true;
@@ -14473,7 +14487,7 @@
             var current_event_timestamp = Math.floor(event_obj_data.metadata.event_start_timestamp_ms / 1E3),
         
             p = void 0;
-            event_obj_data.metadata.is_new_to_site || (p = rG(event_obj_data) || c);
+            event_obj_data.metadata.is_new_to_site || (p = rG(event_obj_data) || cookie_session_value);
         
             //Ex: 30
             //O.g.sd -> "session_duration"
@@ -14515,7 +14529,7 @@
                     Dd: void 0
                 }
             }
-
+        
             
             //Ex: 30 * 60 = 1800
             var session_duration_in_secs = session_duration * 60;
@@ -14531,7 +14545,7 @@
                 session_cookie_obj.Nd = false;
                 session_cookie_obj.Dd = void 0;
             }
-
+        
             
             
             if(its_session_start){
