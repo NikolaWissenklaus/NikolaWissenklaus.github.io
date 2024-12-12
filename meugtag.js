@@ -8002,7 +8002,7 @@
         //2147483647 é o máximo do BSD Random Number 
         var numero_aleatorio = Math.round(Math.random() * 2147483647);
         if(a){
-            return String(b ^ Oo(a) & 2147483647)
+            return String(numero_aleatorio ^ Oo(a) & 2147483647)
         }else{
             return String(numero_aleatorio)
         }
@@ -13497,7 +13497,6 @@
         },
         
         qG = function(valor_do_cookie, b, onde) {
-            console.log("onde",onde);
             //valor do cookie session
             var cookie_options = b.metadata.cookie_options,
                 d = oG(b, cookie_options),
@@ -14396,25 +14395,81 @@
         },
         
         GH = function(event_obj_data, b, c, d, e) {
+            console.log("--------------------------------");
+            console.log("event_obj_data",event_obj_data);
+            console.log("b",b);
+            console.log("c",c);
+            console.log("d",d);
+            console.log("e",e);
+            console.log("O.g.tb",O.g.tb);
             var f = V(event_obj_data.m, O.g.tb);
-            if (V(event_obj_data.m, O.g.Ob) && V(event_obj_data.m, O.g.jc)) f ? gG(event_obj_data, f, 1, "GH") : (U(127), event_obj_data.isAborted = true);
+            console.log("f",f);
+            console.log("--------------------------------");
+            console.log("O.g.Ob",O.g.Ob);
+            console.log("O.g.jc",O.g.jc);
+            console.log("--------------------------------");
+            if (V(event_obj_data.m, O.g.Ob) && V(event_obj_data.m, O.g.jc)){ 
+                console.log("A - ENTROU IF");
+                if(f){
+                    console.log("B - ENTROU IF");
+                    gG(event_obj_data, f, 1, "GH");
+                }else{
+                    console.log("C - ENTROU ELSE");
+                    U(127);
+                    event_obj_data.isAborted = true;
+                }
+            }
             else {
-                var g = f ? 1 : 8;
+                console.log("D - ENTROU IF");
+                if(f){
+                    console.log("E - ENTROU IF");
+                    g = 1;
+                }else{
+                    console.log("F - ENTROU ELSE");
+                    g = 8
+                }
+                
                 event_obj_data.metadata.is_new_to_site = false;
-                f || (f = kG(event_obj_data), g = 3);
-                f || (f = b, g = 5);
                 if (!f) {
-                    var k = X(O.g.U),
-                        m = dG();
+                    console.log("G - ENTROU IF");
+                    f = kG(event_obj_data);
+                    g = 3;
+                }
+
+                if (!f) {
+                    console.log("H - ENTROU IF");
+                    f = b;
+                    g = 5;
+                }
+
+                if (!f) {
+                    console.log("I - ENTROU IF");
+                    var k = X(O.g.U);
+                    console.log("k",k);
+                    var m = dG();
+                    console.log("m",m);
                     f = !m.from_cookie || k ? m.vid : void 0;
                     g = 6
                 }
+                console.log("--------------------------------");
+                console.log("f",f);
+                
                 f ? f = "" + f : (f = generateClientID(), g = 7, event_obj_data.metadata.is_first_visit = event_obj_data.metadata.is_new_to_site = true);
+                if (f) {
+                    console.log("J - ENTROU IF");
+                    f = "" + f;
+                } else {
+                    console.log("K - ENTROU ELSE");
+                    f = generateClientID();
+                    g = 7;
+                    event_obj_data.metadata.is_first_visit = true;
+                    event_obj_data.metadata.is_new_to_site = true;
+                }
                 gG(event_obj_data, f, g, "GH2")
             }
         
             //ex: event_start_timestamp_ms = 1733682816603
-            //ex: current_event_timestamp = 1733682816
+            //ex: current_event_timestamp  = 1733682816
             var current_event_timestamp = Math.floor(event_obj_data.metadata.event_start_timestamp_ms / 1E3),
         
             p = void 0;
@@ -14445,6 +14500,8 @@
             
             var its_session_start = false;
         
+            //First Visit
+            //Verifica se o cookie de sessão existe
             if(!session_cookie_obj){
                 its_session_start = true;
                 event_obj_data.metadata.is_first_visit = true;
@@ -14452,13 +14509,14 @@
                 session_cookie_obj = {
                     sessionId: String(current_event_timestamp),//session_id
                     Qc: 1,//session_number
-                    Nd: false,
+                    Nd: false,//is_engaged_session
                     cf: current_event_timestamp,//cookie event_timestamp
                     Mc: false,//is_user_provided_data_on
                     Dd: void 0
                 }
             }
-        
+
+            
             //Ex: 30 * 60 = 1800
             var session_duration_in_secs = session_duration * 60;
         
@@ -14473,18 +14531,36 @@
                 session_cookie_obj.Nd = false;
                 session_cookie_obj.Dd = void 0;
             }
-        
-            var seila = d.gm();
-            console.log("seila", seila);
-            console.log("session_engaged_time", session_engaged_time);
-            console.log("O.g.ac", O.g.ac);
+
+            
+            
             if(its_session_start){
                 event_obj_data.metadata.is_session_start = true;
                 d.qm(event_obj_data);
-                console.log("chico_session_start");
             }
-            else if (d.gm() > session_engaged_time || event_obj_data.eventName === O.g.ac) session_cookie_obj.Nd = true;
-            event_obj_data.metadata.euid_mode_enabled ? V(event_obj_data.m, O.g.Ca) ? session_cookie_obj.Mc = true : (session_cookie_obj.Mc && !S(13) && (session_cookie_obj.Dd = void 0), session_cookie_obj.Mc = false) : session_cookie_obj.Mc = false;
+            else if (d.gm() > session_engaged_time || event_obj_data.eventName === O.g.ac){
+                //d.gm() = tempo total de engajamento no site
+                //Ex: 5884
+                //O.g.ac = 'page_view'
+                session_cookie_obj.Nd = true; //engaged_session = true
+            }
+            
+            //Ca = "user_id"
+            if(event_obj_data.metadata.euid_mode_enabled){
+                if(V(event_obj_data.m, O.g.Ca)){
+                    session_cookie_obj.Mc = true;//is_user_provided_data_on
+                }else{
+                    if(session_cookie_obj.Mc){//is_user_provided_data_on == true
+                        if(!S(13)){
+                            session_cookie_obj.Dd = void 0;//alguma coisa do user_provided_data
+                            session_cookie_obj.Mc = false;//is_user_provided_data_on
+                        }
+                    }
+                }
+            }else{
+                session_cookie_obj.Mc = false;//is_user_provided_data_on
+            }
+            
             var t = session_cookie_obj.Dd;
             if (event_obj_data.metadata.euid_mode_enabled || Qt(event_obj_data)) {
                 var w = V(event_obj_data.m, O.g.ee),
