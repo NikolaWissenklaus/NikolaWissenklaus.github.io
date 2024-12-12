@@ -8470,6 +8470,7 @@
     }
 
     function Up(a, b, c) {
+        console.log("UP");
         var d = Sp(a.prefix),
             e = Pp[d];
         if (e) {
