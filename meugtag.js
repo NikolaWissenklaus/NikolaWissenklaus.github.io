@@ -14450,7 +14450,7 @@
         
                 if (!f) {
                     console.log("I - ENTROU IF");
-                    console.log("O.g.U",O.g.U);
+                    //O.g.U = analytics_storage
                     var k = X(O.g.U);
                     console.log("k",k);
                     var m = dG();
@@ -14734,7 +14734,9 @@
         }
     };
     h.Zm = function(a) {
-        
+        console.log("***********INIT**********");
+        console.log(a);
+        console.log("*************************");
         
         var b = this;
         this.j = a;
@@ -14842,6 +14844,9 @@
                 return
             }
             this.bk(a);
+            console.log("***********END***********");
+            console.log(a);
+            console.log("*************************");
             a.m.onSuccess()
         } catch (f) {
             a.m.onFailure()
