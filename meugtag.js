@@ -13735,6 +13735,9 @@
             Ko() && (a._ng = "1")
         },
         JG = function(a) {
+            console.log("JG");
+            console.log("a",a);
+            console.log("-JG-");
             if (a.metadata.is_merchant_center) return {
                 url: Jj("https://www.merchant-center-analytics.goog") + "/mc/collect",
                 endpoint: 20
@@ -13759,11 +13762,13 @@
             }
         },
         HG = function() {
+            console.log("HGHGHG");
             var a;
             KG && rl() !== "" && (a = rl());
             return "https://" + (a ? a + "." : "") + "analytics.google.com/g/collect"
         },
         IG = function() {
+            console.log("IGIGOG");
             var a = "www";
             KG && rl() && (a = rl());
             return "https://" + a + ".google-analytics.com/g/collect"
@@ -14082,6 +14087,12 @@
             c ? Bc(d, c) : Ac(d)
         },
         gH = function(a, b, c, d) {
+            console.log("gH");
+            console.log("a",a);
+            console.log("b",b);
+            console.log("c",c);
+            console.log("d",d);
+            console.log("-gH-");
             var e = b,
                 f = Hc();
             f !== void 0 && (e += "&tfd=" + Math.round(f));
