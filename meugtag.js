@@ -8470,7 +8470,6 @@
     }
 
     function Up(a, b, c) {
-        console.log("UP");
         var d = Sp(a.prefix),
             e = Pp[d];
         if (e) {
@@ -13991,6 +13990,7 @@
             return b
         },
         YG = function(a, b, c) {
+            console.log("=============INIT SEND==============");
             var d = 0,
                 e = new C.XMLHttpRequest;
             e.withCredentials = !0;
@@ -14006,6 +14006,8 @@
                 eventSourceEligible: !1,
                 triggerEligible: !0
             });
+            console.log("b",b);
+            console.log("=============END SEND================");
             e.send(b)
         },
         $G = function(a, b, c) {
