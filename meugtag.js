@@ -2010,6 +2010,7 @@
     }
 
     function Ac(a) {
+        console.log("Ac",a);
         var b;
         try {
             b = gc.sendBeacon && gc.sendBeacon(a)
@@ -2020,6 +2021,7 @@
     }
 
     function Bc(a, b) {
+        console.log("Bc",a,b);
         try {
             return gc.sendBeacon(a, b)
         } catch (c) {
