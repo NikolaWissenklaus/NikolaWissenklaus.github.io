@@ -257,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       function eventoRecebidoIframe(event)
       {
         console.log(event);
-        dataLayer.push(event.data);
+        dataLayer.push(JSON.parse(event.data));
       }
   </script>
   <header id="header">
