@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {console.log("aaa");
-    console.log("v = 1");
+    console.log("v = 2");
 
     var data = {
         "resource": {
@@ -1272,7 +1272,7 @@
         for (d in a.map)
             if (a.map.hasOwnProperty(d)) {console.log("aaa");
                 var e = d.substring(5);
-                switch (b) {console.log("aaa");
+                switch (b) {
                     case 1:
                         c.push(e);
                         break;
@@ -2080,7 +2080,7 @@
             return "e"
         }
         if (!a) return "u";
-        switch (a) {console.log("aaa");
+        switch (a) {
             case "navigate":
                 return "n";
             case "back_forward":
@@ -2130,7 +2130,7 @@
     function Qc(a, b) {console.log("aaa");
         a = this.evaluate(a);
         b = this.evaluate(b);
-        switch (a) {console.log("aaa");
+        switch (a) {
             case "pageLocation":
                 var c = C.location.href;
                 b instanceof La && b.get("stripProtocol") && (c = c.replace(/^https?:\/\//, ""));
@@ -2172,7 +2172,7 @@
 
     function Wc(a) {console.log("aaa");
         if (a == void 0 || Array.isArray(a) || Uc(a)) return !0;
-        switch (typeof a) {console.log("aaa");
+        switch (typeof a) {
             case "boolean":
             case "number":
             case "string":
@@ -2452,7 +2452,7 @@
                     return r
                 }
                 var u = !1;
-                switch (c) {console.log("aaa");
+                switch (c) {
                     case 1:
                         u = !0;
                         break;
@@ -2465,7 +2465,7 @@
                     default:
                 }
                 if (g instanceof ed && u) return g.getValue();
-                switch (typeof g) {console.log("aaa");
+                switch (typeof g) {
                     case "boolean":
                     case "number":
                     case "string":
@@ -2510,7 +2510,7 @@
                 var t = typeof g;
                 if (g === null || t === "string" || t === "number" || t === "boolean") return g;
                 var w = !1;
-                switch (c) {console.log("aaa");
+                switch (c) {
                     case 1:
                         w = !0;
                         break;
@@ -3362,7 +3362,7 @@
     };
 
     function Ie(a) {console.log("aaa");
-        switch (a) {console.log("aaa");
+        switch (a) {
             case 1:
                 return "1";
             case 2:
@@ -3466,7 +3466,7 @@
         zf = function(a, b, c) {console.log("aaa");
             if (Array.isArray(a)) {console.log("aaa");
                 var d;
-                switch (a[0]) {console.log("aaa");
+                switch (a[0]) {
                     case "function_id":
                         return a[1];
                     case "list":
@@ -3557,7 +3557,7 @@
                         if (q == null) n = "";
                         else {
                             var r;
-                            switch (p) {console.log("aaa");
+                            switch (p) {
                                 case 2:
                                     r = hf[q];
                                     break;
@@ -4169,7 +4169,7 @@
             var c = b.preHit;
             if (c) {console.log("aaa");
                 var d = a[0];
-                switch (d) {console.log("aaa");
+                switch (d) {
                     case "hitData":
                         return a.length < 2 ? void 0 : Sg(c.getHitData(a[1]), a.slice(2));
                     case "metadata":
@@ -4192,7 +4192,7 @@
                             e = d.keyParts;
                         if (e && e.length !== 0) {console.log("aaa");
                             var f = d.namespaceType;
-                            switch (f) {console.log("aaa");
+                            switch (f) {
                                 case 1:
                                     c = Tg(e, b);
                                     break a;
@@ -4222,7 +4222,7 @@
             var d = function(g) {console.log("aaa");
                 return Vg(g, b)
             };
-            switch (a.type) {console.log("aaa");
+            switch (a.type) {
                 case 1:
                     for (var e = 0; e < c.length; e++)
                         if (d(c[e])) return !0;
@@ -4849,7 +4849,7 @@
     var Qh = Sh;
 
     function Uh(a) {console.log("aaa");
-        switch (a) {console.log("aaa");
+        switch (a) {
             case 0:
                 break;
             case 9:
@@ -4905,7 +4905,7 @@
     var Zh = [];
 
     function $h(a) {console.log("aaa");
-        switch (a) {console.log("aaa");
+        switch (a) {
             case 0:
                 return 0;
             case 44:
@@ -5432,7 +5432,7 @@
             }
         },
         qj = function(a, b) {console.log("aaa");
-            switch (a.enhanced_conversions_mode) {console.log("aaa");
+            switch (a.enhanced_conversions_mode) {
                 case "manual":
                     if (b && Uc(b)) return b;
                     var c = a.enhanced_conversions_manual_var;
@@ -5474,7 +5474,7 @@
     function xj(a, b, c, d, e) {console.log("aaa");
         var f, g = wj(a.protocol);
         b && (b = String(b).toLowerCase());
-        switch (b) {console.log("aaa");
+        switch (b) {
             case "url_no_fragment":
                 f = yj(a);
                 break;
@@ -6113,7 +6113,7 @@
         var b = Qk();
         b.accessedAny = !0;
         return (z(a) ? [a] : a).every(function(c) {console.log("aaa");
-            switch (b.getConsentState(c, Xk)) {console.log("aaa");
+            switch (b.getConsentState(c, Xk)) {
                 case 1:
                 case 3:
                     return !0;
@@ -6325,7 +6325,7 @@
             if (!c.includes(ol()) && !c.includes(nl())) return
         }
         jb(a, function(d, e) {console.log("aaa");
-            switch (d) {console.log("aaa");
+            switch (d) {
                 case "ad_storage":
                 case "analytics_storage":
                 case "ad_user_data":
@@ -6663,7 +6663,7 @@
         },
         nm = function(a, b) {console.log("aaa");
             var c = [];
-            switch (b) {console.log("aaa");
+            switch (b) {
                 case 3:
                     c.push(a.j);
                     c.push(a.P);
@@ -6991,7 +6991,7 @@
                 g = f.j;
             if (f.messageContext.deferrable) !g || an(this, g).H ? (f.messageContext.deferrable = !1, this.commands.push(f)) : c.push(f), this.commands.shift();
             else {
-                switch (f.type) {console.log("aaa");
+                switch (f.type) {
                     case "require":
                         if (an(this, g).status !== 3 && !a) {console.log("aaa");
                             this.commands.push.apply(this.commands, c);
@@ -7591,7 +7591,7 @@
 
     function yo(a) {console.log("aaa");
         if (a === void 0) return 0;
-        switch (V(a, O.g.ma)) {console.log("aaa");
+        switch (V(a, O.g.ma)) {
             case void 0:
                 return 1;
             case !1:
@@ -7605,7 +7605,7 @@
         if (ol() === "US-CO" && gc.globalPrivacyControl === !0) return !1;
         var b = yo(a);
         if (b === 3) return !1;
-        switch (Zk(O.g.za)) {console.log("aaa");
+        switch (Zk(O.g.za)) {
             case 1:
             case 3:
                 return !0;
@@ -7634,7 +7634,7 @@
         Do = (Co[O.g.O] = 0, Co[O.g.U] = 1, Co[O.g.N] = 2, Co[O.g.za] = 3, Co);
 
     function Eo(a) {console.log("aaa");
-        switch (a) {console.log("aaa");
+        switch (a) {
             case void 0:
                 return 1;
             case !0:
@@ -9029,7 +9029,7 @@
         g.gclid = a;
         g.gclsrc = b;
         g.dclid = c;
-        if (a !== void 0 && a.match(uq)) switch (b) {console.log("aaa");
+        if (a !== void 0 && a.match(uq)) switch (b) {
             case void 0:
                 k(a, "aw");
                 break;
@@ -10491,7 +10491,7 @@
             }
             var H = 0,
                 W = v;
-            switch (b.length - t) {console.log("aaa");
+            switch (b.length - t) {
                 case 2:
                     H = b[t + 1], W = r[(H & 15) << 2] || v;
                 case 1:
@@ -12383,7 +12383,7 @@
             }
             return !1
         }
-        switch (a["function"]) {console.log("aaa");
+        switch (a["function"]) {
             case "_cn":
                 return qg(b, c);
             case "_css":
@@ -12451,7 +12451,7 @@
     function gA() {console.log("aaa");
         var a = 0;
         return function(b) {console.log("aaa");
-            switch (b) {console.log("aaa");
+            switch (b) {
                 case 1:
                     a |= 1;
                     break;
@@ -12910,7 +12910,7 @@
         b.set("tagName", a.tagName);
         a.querySelector !== void 0 && b.set("querySelector", a.querySelector);
         a.isVisible !== void 0 && b.set("isVisible", a.isVisible);
-        if (S(28)) {console.log("aaa");} else switch (a.type) {console.log("aaa");
+        if (S(28)) {console.log("aaa");} else switch (a.type) {
             case mt.vc:
                 b.set("type", "email")
         }
