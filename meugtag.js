@@ -2010,7 +2010,7 @@
     }
 
     function Ac(a) {
-        console.log("Ac",a);
+        //console.log("Ac",a);
         var b;
         try {
             b = gc.sendBeacon && gc.sendBeacon(a)
@@ -2021,7 +2021,7 @@
     }
 
     function Bc(a, b) {
-        console.log("Bc",a,b);
+        //console.log("Bc",a,b);
         try {
             return gc.sendBeacon(a, b)
         } catch (c) {
@@ -5607,7 +5607,7 @@
     }
 
     function Jj(a, b) {
-        console.log(">>>> Jj", a, b);
+        //console.log(">>>> Jj", a, b);
         return cj() ? "" + bj() + (b ? Ej[a] || "" : "") : a
     };
 
@@ -13735,9 +13735,9 @@
             Ko() && (a._ng = "1")
         },
         JG = function(a) {
-            console.log("JG");
-            console.log("a",a);
-            console.log("-JG-");
+            //console.log("JG");
+            //console.log("a",a);
+            //console.log("-JG-");
             if (a.metadata.is_merchant_center) return {
                 url: Jj("https://www.merchant-center-analytics.goog") + "/mc/collect",
                 endpoint: 20
@@ -13762,13 +13762,13 @@
             }
         },
         HG = function() {
-            console.log("HGHGHG");
+            //console.log("HGHGHG");
             var a;
             KG && rl() !== "" && (a = rl());
             return "https://" + (a ? a + "." : "") + "analytics.google.com/g/collect"
         },
         IG = function() {
-            console.log("IGIGOG");
+            //console.log("IGIGOG");
             var a = "www";
             KG && rl() && (a = rl());
             return "https://" + a + ".google-analytics.com/g/collect"
@@ -14014,7 +14014,7 @@
                 eventSourceEligible: !1,
                 triggerEligible: !0
             });
-            console.log("b",b);
+            //console.log("b",b);
             console.log("=============END SEND================");
             e.send(b)
         },
@@ -14087,12 +14087,12 @@
             c ? Bc(d, c) : Ac(d)
         },
         gH = function(a, b, c, d) {
-            console.log("gH");
-            console.log("a",a);
-            console.log("b",b);
-            console.log("c",c);
-            console.log("d",d);
-            console.log("-gH-");
+            //console.log("gH");
+            //console.log("a",a);
+            //console.log("b",b);
+            //console.log("c",c);
+            //console.log("d",d);
+            //console.log("-gH-");
             var e = b,
                 f = Hc();
             f !== void 0 && (e += "&tfd=" + Math.round(f));
@@ -14421,78 +14421,78 @@
                     só preenche depois do primeiro evento
                     - EX: 1734023336.1.1.1734025490.0.0.0
             */
-            console.log("event_obj_data",event_obj_data);
-            console.log("d",d);
-            console.log("e",e);
+            //console.log("event_obj_data",event_obj_data);
+            //console.log("d",d);
+            //console.log("e",e);
             //O.g.tb = client_id
             var f = V(event_obj_data.m, O.g.tb);
-            console.log("f",f);
-            console.log("--------------------------------");
+            //console.log("f",f);
+            //console.log("--------------------------------");
             //O.g.Ob = is_legacy_loaded
             //O.g.jc = is_legacy_converted
             if (V(event_obj_data.m, O.g.Ob) && V(event_obj_data.m, O.g.jc)){ 
-                console.log("A - ENTROU IF");
+                //console.log("A - ENTROU IF");
                 if(f){
-                    console.log("B - ENTROU IF");
+                    //console.log("B - ENTROU IF");
                     gG(event_obj_data, f, 1, "GH");
                 }else{
-                    console.log("C - ENTROU ELSE");
+                    //console.log("C - ENTROU ELSE");
                     U(127);
                     event_obj_data.isAborted = true;
                 }
             } else {
-                console.log("D - ENTROU IF");
+                //console.log("D - ENTROU IF");
                 if(f){
-                    console.log("E - ENTROU IF");
+                    //console.log("E - ENTROU IF");
                     g = 1;
                 }else{
-                    console.log("F - ENTROU ELSE");
+                    //console.log("F - ENTROU ELSE");
                     g = 8;
                 }
                 
                 event_obj_data.metadata.is_new_to_site = false;
                 if (!f) {
-                    console.log("G - ENTROU IF");
+                    //console.log("G - ENTROU IF");
                     f = kG(event_obj_data);
-                    console.log("f",f);
+                    //console.log("f",f);
                     g = 3;
                 }
         
                 if (!f) {
-                    console.log("H - ENTROU IF");
+                    //console.log("H - ENTROU IF");
                     f = cookie_user_value;
-                    console.log("f",f);
+                    //console.log("f",f);
                     g = 5;
                 }
         
                 if (!f) {
-                    console.log("I - ENTROU IF");
+                    //console.log("I - ENTROU IF");
                     //O.g.U = analytics_storage
                     var k = X(O.g.U);
-                    console.log("k",k);
+                    //console.log("k",k);
                     var m = dG();
-                    console.log("m",m);
+                    //console.log("m",m);
                     if (!m.from_cookie || k) {
-                        console.log("J - ENTROU IF");
+                        //console.log("J - ENTROU IF");
                         f = m.vid;
-                        console.log("f",f)
+                        //console.log("f",f)
                     } else {
-                       console.log("K - ENTROU ELSE");
+                       //console.log("K - ENTROU ELSE");
                        f = void 0;
-                       console.log("f",f)
+                       //console.log("f",f)
                     }              
                     g = 6
                 }
-                console.log("--------------------------------");
-                console.log("f",f);        
+                //console.log("--------------------------------");
+                //console.log("f",f);        
                 if (f) {
-                    console.log("L - ENTROU IF");
+                    //console.log("L - ENTROU IF");
                     f = "" + f;
-                    console.log("f",f)
+                    //console.log("f",f)
                 } else {
-                    console.log("M - ENTROU ELSE");
+                    //console.log("M - ENTROU ELSE");
                     f = generateClientID();
-                    console.log("f",f)
+                    //console.log("f",f)
                     g = 7;
                     event_obj_data.metadata.is_first_visit = true;
                     event_obj_data.metadata.is_new_to_site = true;
@@ -14696,6 +14696,7 @@
     h = TH.prototype;
     h.Ym = function(a, b, c) {
         
+        
         var d = this,
             e = Vl(this.H);
         if (e)
@@ -14751,9 +14752,9 @@
         }
     };
     h.Zm = function(a) {
-        console.log("***********INIT**********");
-        console.log(a);
-        console.log("*************************");
+        //console.log("***********INIT**********");
+        //console.log(a);
+        //console.log("*************************");
         
         var b = this;
         this.j = a;
@@ -14861,9 +14862,9 @@
                 return
             }
             this.bk(a);
-            console.log("***********END***********");
-            console.log(a);
-            console.log("*************************");
+            //console.log("***********END***********");
+            //console.log(a);
+            //console.log("*************************");
             a.m.onSuccess()
         } catch (f) {
             a.m.onFailure()
