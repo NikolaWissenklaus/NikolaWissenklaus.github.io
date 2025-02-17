@@ -1,6 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
+    console.log("v = 1");
 
     var data = {
         "resource": {
@@ -14014,7 +14015,7 @@
                 eventSourceEligible: !1,
                 triggerEligible: !0
             });
-            //console.log("b",b);
+            console.log("b",b);
             console.log("=============END SEND================");
             e.send(b)
         },
