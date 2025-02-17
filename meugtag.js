@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 3");
+    console.log("v = 5");
 
     var data = {
         "resource": {
@@ -5677,6 +5677,7 @@
     };
 
     function ak() {
+        console.log("a");
         var a = kc("google_tag_data", {}),
             b = a.tidr;
         b && typeof b === "object" || (b = new ck, a.tidr = b);
@@ -5956,6 +5957,7 @@
     }
 
     function Qk() {
+        console.log("b");
         var a = kc("google_tag_data", {});
         return a.ics = a.ics || new Rk
     }
@@ -6418,6 +6420,7 @@
     function Ml(a, b) {
         b = b === void 0 ? !1 : b;
         if (Ll(a)) {
+            console.log("c");
             var c, d, e = (d = (c = kc("google_tag_data", {})).xcd) != null ? d : c.xcd = {};
             if (e[a]) return e[a];
             if (b) {
@@ -6596,6 +6599,7 @@
         if (Rj && a === "config") {
             var d, e = (d = Vl(b)) == null ? void 0 : d.ids;
             if (!(e && e.length > 1)) {
+                console.log("d");
                 var f, g = kc("google_tag_data", {});
                 g.td || (g.td = {});
                 f = g.td;
@@ -8128,6 +8132,7 @@
     }
 
     function pp() {
+        console.log("e");
         var a = kc("google_tag_data", {}),
             b = a.gl;
         b && b.decorators || (b = {
