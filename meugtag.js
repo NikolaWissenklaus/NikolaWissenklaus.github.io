@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 5");
+    console.log("v = 6");
 
     var data = {
         "resource": {
@@ -1109,8 +1109,7 @@
             return a
         },
         fa = function(a) {
-            console.log("ordem: a");
-            console.log("a", a);
+            
             for (var b = ["object" == typeof globalThis && globalThis, a, "object" == typeof window && window, "object" == typeof self && self, "object" == typeof global && global], c = 0; c < b.length; ++c) {
                 var d = b[c];
                 if (d && d.Math == Math) return d
@@ -1862,9 +1861,7 @@
         jc = ic && ic.src;
 
     function kc(a, b) {
-        console.log("kc a - ",a);
-        console.log("kc b - ", b);
-        console.log("kc C - ", C);
+       
         var c = C[a];
         C[a] = c === void 0 ? b : c;
         return C[a]
@@ -5677,7 +5674,6 @@
     };
 
     function ak() {
-        console.log("a");
         var a = kc("google_tag_data", {}),
             b = a.tidr;
         b && typeof b === "object" || (b = new ck, a.tidr = b);
@@ -5957,7 +5953,6 @@
     }
 
     function Qk() {
-        console.log("b");
         var a = kc("google_tag_data", {});
         return a.ics = a.ics || new Rk
     }
@@ -6420,7 +6415,6 @@
     function Ml(a, b) {
         b = b === void 0 ? !1 : b;
         if (Ll(a)) {
-            console.log("c");
             var c, d, e = (d = (c = kc("google_tag_data", {})).xcd) != null ? d : c.xcd = {};
             if (e[a]) return e[a];
             if (b) {
@@ -6599,7 +6593,6 @@
         if (Rj && a === "config") {
             var d, e = (d = Vl(b)) == null ? void 0 : d.ids;
             if (!(e && e.length > 1)) {
-                console.log("d");
                 var f, g = kc("google_tag_data", {});
                 g.td || (g.td = {});
                 f = g.td;
@@ -8132,7 +8125,6 @@
     }
 
     function pp() {
-        console.log("e");
         var a = kc("google_tag_data", {}),
             b = a.gl;
         b && b.decorators || (b = {
@@ -14432,9 +14424,10 @@
                     só preenche depois do primeiro evento
                     - EX: 1734023336.1.1.1734025490.0.0.0
             */
-            //console.log("event_obj_data",event_obj_data);
-            //console.log("d",d);
-            //console.log("e",e);
+            console.log("event_obj_data",event_obj_data);
+            console.log("d",d);
+            console.log("e",e);
+            console.log("=======================");
             //O.g.tb = client_id
             var f = V(event_obj_data.m, O.g.tb);
             //console.log("f",f);
