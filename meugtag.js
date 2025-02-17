@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 6");
+    console.log("v = 7");
 
     var data = {
         "resource": {
@@ -14708,6 +14708,7 @@
             else {
                 a !== O.g.ba && a !== O.g.Ya && LH(a) && U(58);
                 UH(c.j);
+                console.log("Ym");
                 var f = new YB(e, a, c);
                 
                 f.metadata.event_start_timestamp_ms = b;
@@ -14735,7 +14736,9 @@
                     }
                     f.metadata.speculative || f.isAborted || Bv(f)
                 },
+                
                 f = new YB(d, a, b);
+                console.log("Wm");
             f.metadata.hit_type = "page_view";
             f.metadata.speculative = !0;
             f.metadata.is_server_side_destination = c.metadata.is_server_side_destination;
@@ -14932,6 +14935,7 @@
     h.sl = function(a) {
         a.eventName !== O.g.Ya && this.C.rl(a)
     };
+    console.log("h",h);
     var XH = function(a) {
             var b = E.location.protocol;
             b !== "http:" && b !== "https:" && (U(29), a.isAborted = !0)
