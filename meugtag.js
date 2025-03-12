@@ -2042,13 +2042,23 @@
     };
 
     function Dc(a, b, c) {
-        if (Ec()) {
+        console.log("--- aaa ---");
+        console.log("a",a);
+        console.log("b",b);
+        console.log("c",c);
+        console.log("--- aaa end ---");
+        if (Ec()) {//verifica se o window.fetch funciona
             var d = Object.assign({}, Cc);
             b && (d.body = b);
             c && (c.attributionReporting && (d.attributionReporting = c.attributionReporting), c.browsingTopics && (d.browsingTopics = c.browsingTopics));
             try {
+                console.log("--- Enviando hit ---");
+                console.log("a",a);
+                console.log("d",d);
                 var e = C.fetch(a, d);
                 e && e.catch(ab);
+                console.log("e",);
+                console.log("--- Enviando hit end ---");
                 return !0
             } catch (f) {}
         }
@@ -10722,6 +10732,7 @@
                         c.push(e + "=" + f)
                     });
                     var d = Jj(X([O.g.O, O.g.N]) ? "https://www.google.com" : "https://pagead2.googlesyndication.com", !0) + "/ccm/collect?" + c.join("&");
+                    console.log("BV");
                     S(21) && S(22) && Ec() ? Dc(d, void 0, {
                         noFallback: !0
                     }) : Ac(d);
@@ -14105,6 +14116,7 @@
             if (d && !XF) cH(g, c);
             else {
                 var k = b;
+                console.log("gH");
                 Ec() ? Dc(a + "?" + k, c, {
                     noFallback: !0
                 }) || eH(a, dH(k, "_z=failedfetch"), c) : eH(a, dH(k, "_z=nofetch"), c)
@@ -14193,6 +14205,7 @@
             }
         } else {
             var k = eg(d, this.K++);
+            console.log("iH");
             gH(d.baseUrl, k.params, k.body, d.H);
             var m = a.metadata.create_dc_join,
                 n = a.metadata.create_google_join,
@@ -14225,6 +14238,7 @@
     iH.prototype.flush = function() {
         if (this.C.events.length) {
             var a = gg(this.C, this.K++);
+            console.log("iH flush");
             gH(this.C.baseUrl, a.params, a.body, this.C.C);
             this.C = new bg;
             this.H >= 0 && (C.clearTimeout(this.H), this.H = -1)
