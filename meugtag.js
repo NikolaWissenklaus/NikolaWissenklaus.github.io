@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 8");
+    console.log("v = 9");
 
     var data = {
         "resource": {
@@ -7278,6 +7278,7 @@
                 d;
             b = b === void 0 ? !1 : b;
             d = d === void 0 ? !1 : d;
+            console.log("ccccccccccccccccccc");
             if (c.fetch) {
                 var e = {
                     keepalive: !0,
@@ -7293,6 +7294,7 @@
                     e.headers = {
                         "Attribution-Reporting-Eligible": "event-source"
                     });
+                console.log("ddddddddddddddddddddddd");
                 c.fetch(a, e)
             } else Pn(c, a, b === void 0 ? !1 : b, d === void 0 ? !1 : d)
         };
