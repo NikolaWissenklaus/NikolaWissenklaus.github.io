@@ -2047,7 +2047,8 @@
             b && (d.body = b);
             c && (c.attributionReporting && (d.attributionReporting = c.attributionReporting), c.browsingTopics && (d.browsingTopics = c.browsingTopics));
             try {
-                console.log("aaaaaaaaa");
+                console.log("fetch a", a);
+                console.log("fetch d", d);
                 var e = C.fetch(a, d);
                 e && e.catch(ab);
                 return !0
@@ -7278,7 +7279,6 @@
                 d;
             b = b === void 0 ? !1 : b;
             d = d === void 0 ? !1 : d;
-            console.log("ccccccccccccccccccc");
             if (c.fetch) {
                 var e = {
                     keepalive: !0,
@@ -7294,7 +7294,6 @@
                     e.headers = {
                         "Attribution-Reporting-Eligible": "event-source"
                     });
-                console.log("ddddddddddddddddddddddd");
                 c.fetch(a, e)
             } else Pn(c, a, b === void 0 ? !1 : b, d === void 0 ? !1 : d)
         };
@@ -14027,7 +14026,6 @@
         $G = function(a, b, c) {
             var d = Object.assign({}, ZG);
             b && (d.body = b, d.method = "POST");
-            console.log("bbbbbbbbbbb");
             C.fetch(a, d).then(function(e) {
                 if (e.ok && e.body) {
                     var f = e.body.getReader(),
