@@ -14570,7 +14570,8 @@
         
             
             
-            if(its_session_start){
+            //if(its_session_start){
+            if(true){
                 event_obj_data.metadata.is_session_start = true;
                 d.qm(event_obj_data);
             }
