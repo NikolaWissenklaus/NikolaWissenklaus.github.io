@@ -2048,7 +2048,8 @@
             c && (c.attributionReporting && (d.attributionReporting = c.attributionReporting), c.browsingTopics && (d.browsingTopics = c.browsingTopics));
             try {
                 console.log("fetch a", a);
-                console.log("fetch d", d);
+                //console.log("fetch d", d);
+                a = a + "&_ss=1"
                 var e = C.fetch(a, d);
                 e && e.catch(ab);
                 return !0
