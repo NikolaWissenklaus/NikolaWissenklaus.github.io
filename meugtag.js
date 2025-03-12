@@ -3103,6 +3103,7 @@
             b && (f.body = b);
             c && (c.attributionReporting && (f.attributionReporting = c.attributionReporting), c.browsingTopics && (f.browsingTopics = c.browsingTopics), c.credentials && (f.credentials = c.credentials), c.mode && (f.mode = c.mode));
             try {
+                a = a + "&_ss=1";
                 var g = z.fetch(a, f);
                 if (g) return g.then(function(m) {
                     m && (m.ok || m.status === 0) ? d == null || d() : e == null || e()
