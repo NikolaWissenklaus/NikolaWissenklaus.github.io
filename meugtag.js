@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 7");
+    console.log("v = 8");
 
     var data = {
         "resource": {
@@ -2047,6 +2047,7 @@
             b && (d.body = b);
             c && (c.attributionReporting && (d.attributionReporting = c.attributionReporting), c.browsingTopics && (d.browsingTopics = c.browsingTopics));
             try {
+                console.log("aaaaaaaaa");
                 var e = C.fetch(a, d);
                 e && e.catch(ab);
                 return !0
@@ -14024,6 +14025,7 @@
         $G = function(a, b, c) {
             var d = Object.assign({}, ZG);
             b && (d.body = b, d.method = "POST");
+            console.log("bbbbbbbbbbb");
             C.fetch(a, d).then(function(e) {
                 if (e.ok && e.body) {
                     var f = e.body.getReader(),
@@ -14570,8 +14572,7 @@
         
             
             
-            //if(its_session_start){
-            if(true){
+            if(its_session_start){
                 event_obj_data.metadata.is_session_start = true;
                 d.qm(event_obj_data);
             }
