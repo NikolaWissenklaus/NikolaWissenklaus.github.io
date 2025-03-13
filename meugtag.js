@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 9");
+    console.log("v = 7");
 
     var data = {
         "resource": {
@@ -14588,8 +14588,7 @@
         
             
             
-            //if(its_session_start){
-            if(true){
+            if(its_session_start){
                 event_obj_data.metadata.is_session_start = true;
                 d.qm(event_obj_data);
             }
