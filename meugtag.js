@@ -1,7 +1,7 @@
 // Copyright 2012 Google Inc. All rights reserved.
 
 (function() {
-    console.log("v = 7");
+    console.log("v = 8");
 
     var data = {
         "resource": {
@@ -2055,6 +2055,7 @@
                 console.log("--- Enviando hit ---");
                 console.log("a",a);
                 console.log("d",d);
+                //a = a + "&_ss=1";
                 var e = C.fetch(a, d);
                 e && e.catch(ab);
                 console.log("e",);
@@ -13880,7 +13881,10 @@
             a.metadata.is_first_visit &&
                 (e._fv = a.metadata.is_first_visit_conversion ? 2 : 1);
             a.metadata.is_new_to_site && (e._nsi = 1);
+            console.log("<><><>");
+            console.log("a >> ", a);
             a.metadata.is_session_start && (e._ss = a.metadata.is_session_start_conversion ? 2 : 1);
+            console.log("<><><>");
             a.metadata.is_conversion && (e._c = 1);
             a.metadata.is_external_event && (e._ee = 1);
             if (a.metadata.is_ecommerce) {
